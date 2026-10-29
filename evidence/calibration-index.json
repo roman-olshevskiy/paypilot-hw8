@@ -2,6 +2,12 @@
   "baseline_v1": "reports/calibration-l09_labels-20261029T142704481494Z-02244a87.json",
   "baseline_v1_error_source": "reports/calibration-l09_labels-20261029T142020036786Z-51c9c04e.json",
   "v1_complete_sha256": "6d28093b40de4e9beea494c16fb39be22e5ebdafc4a5470166b79bfc6cd44e84",
-  "v2": null,
-  "diagnostic": null
+  "v2": "reports/calibration-l09_labels-20261029T143819958028Z-f23d6ab6.json",
+  "diagnostic": "reports/diagnostic-pairs-20261029T143539150040Z.json",
+  "v2_error_sources": [
+    "reports/calibration-l09_labels-20261029T143029033067Z-ed659b53.json",
+    "reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json"
+  ],
+  "selected_rubric": "rubric.v1",
+  "decision": "Reject v2: agreement25/30\u219224/30, missed defects2\u21923, no correction of T1 false alarms. Keep v1 as an advisory signal with human review, not autonomous regulatory approval."
 }

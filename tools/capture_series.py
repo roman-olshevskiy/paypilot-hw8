@@ -25,7 +25,7 @@ def run_series(label,profiles,cli_args,rubric_version='rubric.v1'):
    if response.get('usage',{}).get('model')!='anthropic/claude-haiku-5.5':raise RuntimeError('Unexpected actual agent model; stop before mixing conditions')
    return response
   def case(c):
-   context.update(case=c['id'],run=0);return original_case(c)
+   context.update(case=c['id'],run=0);os.environ.update(HW8_CASE_ID=c['id'],HW8_PHASE=label,HW8_PROFILE=profile);return original_case(c)
   stand._call=call;runner.run_case=case
   # Upstream shares its stamp across CLI calls; isolate profile trace folders.
   runner.RUN_STAMP=stamp+'-'+label+'-'+profile

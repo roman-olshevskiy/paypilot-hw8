@@ -16,9 +16,9 @@ class Environment(unittest.TestCase):
   key=os.environ.get('ANTHROPIC_API_KEY');self.assertTrue(key)
   models=get('https://api.anthropic.com/v1/models',{'x-api-key':key,'anthropic-version':'2023-06-01'})
   safe=[{k:m[k] for k in ['id','display_name','created_at'] if k in m} for m in models['data']]
-  save(ROOT/'evidence/environment/anthropic-models.json',{'models':safe,'has_more':models.get('has_more'),'scope':'GET models only; no inference'})
+  save(ROOT/('evidence/environment/anthropic-models-final.json' if os.environ.get('HW8_FINAL_ENV')=='1' else 'evidence/environment/anthropic-models.json'),{'models':safe,'has_more':models.get('has_more'),'scope':'GET models only; no inference'})
   script="import os,json;print(json.dumps({k:os.environ.get(k,'') for k in ['LLM_PROVIDER','LLM_MODEL','CLOCK_OVERRIDE','HTTPS_PROXY','TRACE_CAPTURE_CONTENT']}))"
   runtime=json.loads(subprocess.check_output(['docker','compose','exec','-T','stand','python','-c',script],cwd=ROOT.parent/'paypilot-stand-shared',text=True))
   self.assertEqual(runtime['LLM_PROVIDER'],'openrouter');self.assertEqual(runtime['CLOCK_OVERRIDE'],'2026-09-15T10:00:00Z');self.assertFalse(runtime['HTTPS_PROXY']);self.assertEqual(runtime['TRACE_CAPTURE_CONTENT'],'1');self.assertTrue(health['trace_content'])
-  save(ROOT/'evidence/environment/readiness.json',{'health':health,'runtime':runtime,'defects':defects,'prompt':prompt,'paid_inference_calls':0,'recorded_at_utc':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()})
+  save(ROOT/('evidence/environment/readiness-final.json' if os.environ.get('HW8_FINAL_ENV')=='1' else 'evidence/environment/readiness.json'),{'health':health,'runtime':runtime,'defects':defects,'prompt':prompt,'paid_inference_calls':0,'recorded_at_utc':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()})
   print('Agent provider:',health['provider']);print('Anthropic model IDs:',[m['id'] for m in safe])

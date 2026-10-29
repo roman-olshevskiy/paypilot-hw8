@@ -1,0 +1,15 @@
+{
+  "scope": "All HW8 pilot/frequency/working/calibration/diagnostic model calls, including protocol failures and unauthenticated diagnostic chats",
+  "openrouter_key_delta_usd": 0.069512705,
+  "openrouter_provider_spans_usd": 0.070888895,
+  "openrouter_difference_usd": -0.00137619,
+  "openrouter_verified": false,
+  "anthropic_usage_price_estimate_usd": 0.40619299999999997,
+  "anthropic_account_verified": false,
+  "total_estimated_usd": 0.477081895,
+  "agent_chats": 110,
+  "judge_provider_calls": 336,
+  "remaining_stop_budget_usd": 1.5,
+  "pricing_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+  "account_available_balances_published": false
+}

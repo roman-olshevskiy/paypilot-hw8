@@ -1,0 +1,18 @@
+{
+  "series": [
+    {
+      "profile": "clean",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "native_exit": 1,
+      "agent_responses": 31,
+      "error": null
+    },
+    {
+      "profile": "lesson-09",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "native_exit": 1,
+      "agent_responses": 31,
+      "error": null
+    }
+  ]
+}

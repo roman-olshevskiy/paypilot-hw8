@@ -37,7 +37,7 @@ def judge(question,answer,rubric,model=None,temperature=None):
   if not key:raise RuntimeError('ANTHROPIC_API_KEY is missing')
   headers.update({'x-api-key':key,'anthropic-version':'2023-06-01'});url='https://api.anthropic.com/v1/messages'
  stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');folder=ROOT/'evidence/judge-calls'/f'{stamp}-{uuid.uuid4().hex[:8]}';folder.mkdir(parents=True,exist_ok=False)
- record={'model_requested':model,'temperature_requested':temperature,'effective_temperature':None,'request_body':body,'response_body':None,'error':None,'http_attempts':1,'scope':'No automatic inference retries or silent temperature removal'};start=time.perf_counter()
+ record={'capture_context':{k:os.environ[k] for k in ['HW8_CASE_ID','HW8_PHASE','HW8_PROFILE'] if k in os.environ},'model_requested':model,'temperature_requested':temperature,'effective_temperature':None,'request_body':body,'response_body':None,'error':None,'http_attempts':1,'scope':'No automatic inference retries or silent temperature removal'};start=time.perf_counter()
  save(folder/'call.json',record)
  try:
   request=urllib.request.Request(url,data=json.dumps(body).encode('utf-8'),headers=headers)

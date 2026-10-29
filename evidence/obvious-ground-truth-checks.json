@@ -1,0 +1,225 @@
+{
+  "scope": "Post-freeze deterministic confirmation of the 20 already human-reviewed obvious labels. Does not create/alter labels; no claims for disputed fixtures or general semantic validity.",
+  "rows": [
+    {
+      "id": "HW8-01",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-02",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-03",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-04",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-05",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-06",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-07",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-08",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-09",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-10",
+      "frozen_human_label": "PASS",
+      "level_3_4_lexical_verdict": "PASS",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-11",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": false,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-12",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": false,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-13",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": false,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-14",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": false,
+        "prohibited_outcome": false,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-15",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": true,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-16",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": true,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-17",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": true,
+        "internal_reason": false
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-18",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": true
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-19",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": true
+      },
+      "agrees": true
+    },
+    {
+      "id": "HW8-20",
+      "frozen_human_label": "FAIL",
+      "level_3_4_lexical_verdict": "FAIL",
+      "signals": {
+        "human_marker": true,
+        "prohibited_outcome": false,
+        "internal_reason": true
+      },
+      "agrees": true
+    }
+  ]
+}

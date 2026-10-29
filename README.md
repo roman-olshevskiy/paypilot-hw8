@@ -1,40 +1,53 @@
 # ДЗ №8 · Judge Trust Statement
 
-**Людську розмітку підтверджено; пілот завершено.** [Результат пілота й бюджет](docs/pilot-review.md). Повні серії ще не запускалися. Основа — повна копія L09 6439a32; стенд shared74f1995.
+**Результати готові до локального review. У LMS ще не надіслано.** Основна заява коротка; деталі — у додатках. Повна копія L09 6439a32, стенд shared74f1995; [provenance](evidence/provenance.json), [початковий README](sources/L09-README.md).
 
-- [Вимога й робочий набір](docs/requirement-split.md), [7 кейсів](sets/l09_escalation.jsonl): поріг daily/1, контроль release/5, п’ять judge release/5.
-- [Рубрика v1](rubrics/rubric.v1.md), [changelog](rubrics/CHANGELOG.md).
-- [30 чернеткових міток](evals/sets/l09_labels.draft.jsonl):10 очевидних PASS,10 очевидних FAIL,10 спірних. Це власні синтетичні відповіді, не captures стенду; людські label підтверджено 2026-10-29.
-- [Прогноз](docs/forecast-before-runs.md), [метод і відхилення кіта](docs/preparation.md).
-- [Початковий README L09](sources/L09-README.md), [provenance](evidence/provenance.json), [готовність](evidence/environment/readiness.json).
+- [Judge Trust Statement](judge-trust-statement.md) · [калібрування, матриці й невдале виправлення](docs/calibration-report.md).
+- [30 людських міток](evals/sets/l09_labels.jsonl) · [freeze](evidence/labels-freeze.json) · [порядок комітів](evidence/chronology.json).
+- [Рубрика v1](rubrics/rubric.v1.md) — обрана; [v2](rubrics/rubric.v2.md) — відхилена; [changelog](rubrics/CHANGELOG.md).
+- [7 робочих кейсів](sets/l09_escalation.jsonl) · [розщеплення вимоги](docs/requirement-split.md) · [прогони](docs/run-index.md).
+- [Витрати](evidence/final-billing-reconciliation.json) · [всі первинні виклики](evidence/judge-calls).
 
-## Без оплати
+## Результат
+
+| Показник | v1 | v2 |
+|---|---|---|
+| Agreement із людськими мітками | 25/30 | 24/30 |
+| Пропуски / хибні тривоги | 2 /3 | 3 /3 |
+| Сталість п’яти валідних verdicts | 30/30 | 30/30 |
+
+Висока сталість не усуває систематичної помилки. v2 не прийнята. Факт ескалації перевіряє код; v1 використовується лише як допоміжний сигнал із людським review.
+
+T-14: ескалація clean10/10, lesson-09 0/10; контроль0/10 в обох. Native working gate: **clean6/7, lesson-09 3/7**, без SKIP. Clean FAIL ESC-J03 — виявлене розкриття внутрішньої причини, не виправлений еталон заради зеленого статусу.
+
+Калібрування: перші5 валідних verdicts на кейс; 1/2 відхилені протокольні виходи v1/v2 збережено, включено у витрати й end-to-end сталість. Діагностика D18/D25 — окремі20 сирих emissions,7 із повним валідним протоколом; не змішується з30 кейсами.
+
+## Запуск без оплати
+
+Потрібен Docker; контейнер містить Git для перевірки freeze. STAND_DIR типово ../paypilot-stand-shared.
 
 ~~~powershell
+docker compose build eval
 docker compose run --rm eval python -m unittest discover -s tests -v
-docker compose run --rm --entrypoint python eval tools/calibrate_run.py evals/sets/l09_labels.draft.jsonl --validate-only --draft
+docker compose run --rm --entrypoint python eval tools/calibrate_run.py l09_labels --validate-only
 docker compose run --rm eval --set l09_escalation --dry-run
 ~~~
 
-Для іншого розташування стенду задати STAND_DIR. Значення ключів лише в локальному .env; .env.example не містить секретів. Службові read-only тести health/catalog запускаються окремо з HW8_ENV=1. Суддя: claude-haiku-4-5-20251001, HW8_JUDGE_TEMPERATURE=0.7; кандидат змінений до оплати через API-обмеження Haiku5.5.
+[Replay із чистого клону](evidence/clean-clone-replay.json) використовує записані fixtures, не нові модельні виклики. [Інструменти й обмеження](tools/README.md).
 
-## Після людського review — без генерацій
+## Платні команди відтворення
 
-1. Явно підтвердити або виправити всі30 запропонованих міток; фінальні рішення записати в локальний review JSON (`human_review_confirmed: true`, `labels: {ID: PASS/FAIL}`, за потреби `reasons`).
-2. Виконати `python tools/promote_labels.py <review.json>`: створюється канонічний evals/sets/l09_labels.jsonl. Інструмент відмовляється перезаписати наявні фінальні labels.
-3. Після локального review закомітити labels, rubric і прогноз ДО першого судді; `python tools/freeze_labels.py` перевіряє їхні байти у коміті та записує freeze. Автокоміту немає.
-
-**Крок7 завершено.** Мітки підтверджено й закомічено; guard перевіряє їхню незмінність перед /chat і judge inference.
-
-## Майбутні платні команди — зараз не виконувати
-
-Після freeze і окремого переходу до пілота:
+Не запускаються автоматично тестами. Ключ Anthropic — лише локально в .env за .env.example; ключ агента лишається в .env стенду. Judge=claude-haiku-4-5-20251001, HW8_JUDGE_TEMPERATURE=0.7; системний TEMP не використовується. Агент=OpenRouter Haiku5.5, без L07 proxy. Контекст customer_id/clock уже в кейсах.
 
 ~~~powershell
 docker compose run --rm -e HW8_PAID=1 --entrypoint python eval tools/calibrate_run.py l09_labels
-docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate release --profile clean --traces
+docker compose run --rm -e HW8_PAID=1 --entrypoint python eval tools/calibrate_run.py l09_labels --rubric rubrics/rubric.v2.md
+docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate all --profile lesson-09 --traces
+docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate all --profile clean --traces
 ~~~
 
-Калібрування судить записану answer_under_test п’ять разів. Native working runner генерує5 агентських відповідей на judge-кейс і судить лише останню; це не вимірювання самоузгодженості судді. Звіти калібрування повертають exit1 за розбіжностей і exit2 за помилок, зберігаючи часткові дані. SKIP не є PASS.
+Daily: ESC-001, runs1; release: ESC-002 і ESC-J01–05, runs5. Native runner судить лише останню із5 свіжих відповідей judge-кейса, а calibrate_run — записану answer_under_test п’ять разів. Дані цих двох режимів не взаємозамінні.
 
-Пілот: OpenRouter USD0.005005395 звірено з key delta; Anthropic USD0.002873 — usage-based оцінка без account billing підтвердження. [Звірка](evidence/pilot-accounting.json), [підтвердження міток](docs/label-review-confirmation.md).
+ERROR не перетворюється на PASS; звіти не перезаписуються. Calibration exit1 — розбіжності, exit2 — протокол/інфраструктура; native exit1 — не всі кейси пройшли. Початкові зупинені reports збережено; продовження не повторювали готові результати й не обирали з двох суперечливих JSON.
+
+**Git-історію людської розмітки треба зберегти:** PR зливати merge-комітом, без squash/rebase; freeze-коміт потрібен для перевірки та умови «мітки до судді».

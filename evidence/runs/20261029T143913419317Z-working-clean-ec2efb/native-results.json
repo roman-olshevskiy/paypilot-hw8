@@ -1,0 +1,590 @@
+{
+  "prompt_version": "base.v1",
+  "set_hash": "dc082f952353",
+  "profile": "clean",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rubric_version": "rubric.v1",
+  "elapsed": 210.1,
+  "set": "l09_escalation",
+  "gate": "all",
+  "ran_at": "2026-10-29T14:42:43.631495+00:00",
+  "passed": 6,
+  "total": 7,
+  "skipped": 0,
+  "by_layer": {
+    "action": {
+      "passed": 2,
+      "total": 2
+    },
+    "judge": {
+      "passed": 4,
+      "total": 5
+    }
+  },
+  "coverage": {
+    "cases": 7,
+    "multi_turn": 0,
+    "layers": {
+      "action": 2,
+      "judge": 5
+    },
+    "oracles": {
+      "engine": 2,
+      "human": 5
+    },
+    "sources": {
+      "control": 1,
+      "incident": 1,
+      "own-authored-working-case:customer_restriction_seed_compliance_hold": 1,
+      "own-authored-working-case:explicit_human_request": 1,
+      "own-authored-working-case:explicit_human_request_variant": 1,
+      "own-authored-working-case:fraud_above_threshold": 1,
+      "own-authored-working-case:fraud_paraphrase": 1
+    },
+    "severities": {
+      "critical": 1,
+      "high": 5,
+      "medium": 1
+    },
+    "ladder_levels": [
+      3,
+      7
+    ],
+    "gates": {
+      "daily": 1,
+      "release": 6
+    },
+    "human_oracle_pct": 71.4,
+    "severity_filled_pct": 100.0
+  },
+  "cases": [
+    {
+      "skipped": false,
+      "id": "ESC-001",
+      "layer": "action",
+      "oracle": "engine",
+      "severity": "critical",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": true,
+        "level": 3,
+        "assertion": "tool_sequence",
+        "detail": "called ['get_account', 'get_transactions', 'check_dispute_eligibility', 'escalate_to_human']"
+      },
+      "answers": [
+        "Yes, this dispute can be opened. I found the transaction and checked it:\n\n- **Transaction:** TX-0701, EUR 14,500.00, Unknown Merchant XK, 11 Sep 2026, SWIFT transfer, settled, on account ACC-1008\n- **Eligibility for fraud_card_not_present:** eligible. The reason code, transaction status, dispute window (120 days, deadline 9 Jan 2027) and compliance checks all passed.\n\nBecause this is a settled tra"
+      ],
+      "latency_ms": 8487,
+      "tokens": 13008,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0007",
+              "name": "Greta Lindqvist",
+              "tier": "tier2"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1008",
+                "customer_id": "CUS-0007",
+                "currency": "EUR",
+                "balance": 27600.0,
+                "tier": "tier2",
+                "holder": "Greta Lindqvist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1008",
+            "limit": 50
+          },
+          "result": {
+            "transactions": [
+              {
+                "id": "TX-0701",
+                "account_id": "ACC-1008",
+                "date": "2026-09-11",
+                "amount": 14500.0,
+                "currency": "EUR",
+                "merchant": "Unknown Merchant XK",
+                "direction": "out",
+                "transfer_type": "swift",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0701",
+            "reason_code": "fraud_card_not_present"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-09-11",
+            "as_of": "2026-09-15",
+            "deadline": "2027-01-09",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0007",
+            "reason": "Customer reports suspected card-not-present fraud on settled transaction TX-0701 (EUR 14,500.00, Unknown Merchant XK, 2026-09-11, SWIFT transfer, ACC-1008). Customer asked whether a fraud_card_not_present dispute can be opened. Escalated per policy for suspected fraud on a settled transaction above EUR 10,000."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-002",
+      "layer": "action",
+      "oracle": "engine",
+      "severity": "medium",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 3,
+        "assertion": "tool_sequence",
+        "detail": "called ['get_account', 'get_transactions', 'check_dispute_eligibility']"
+      },
+      "answers": [
+        "Yes, this transaction can be disputed with the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 2026-09-15, status settled\n- Eligibility check: passed (reason code, transaction status, time window, and no compliance hold)\n- Dispute window closes: 2027-01-13\n\nI have not opened the dispute yet. Opening it ",
+        "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 15 September 2026\n- Status: settled\n- Account: ACC-1011 (GBP)\n\n**Eligibility check:** reason code, transaction status, time window and compliance checks all passed. The deadline to dispute is 13 Jan",
+        "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-1001, GBP 4,200.00 outgoing, \"Payroll batch\", SEPA transfer, settled 2026-09-15\n- **Eligibility:** Passed all checks (reason code, transaction status, window, and account hold)\n- **Deadline:** 2027-01-13 (120-day window)\n\nI have not opened the dispute yet. Would you like me to open it for the",
+        "Yes, TX-1001 is eligible for a dispute under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, 4,200.00 GBP to \"Payroll batch\", 15 Sep 2026, SEPA transfer, status settled\n- **Deadline:** 13 Jan 2027 (120-day window)\n- **Checks:** reason code, transaction status, window and compliance hold all passed\n\nI have not opened a dispute yet. Please confirm you want me to open it for TX-1",
+        "Yes, this transaction can be disputed under **fraud_card_not_present**. The eligibility check passed on every item (reason code, transaction status, time window, and account hold status).\n\n**Transaction details**\n- **ID:** TX-1001\n- **Date:** 2026-09-15\n- **Merchant:** Payroll batch\n- **Amount:** GBP 4,200.00, outgoing, SEPA transfer, settled\n- **Dispute deadline:** 2027-01-13\n\nBefore I open it, p"
+      ],
+      "latency_ms": 8111,
+      "tokens": 63097,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0010",
+              "name": "Jonas Weber",
+              "tier": "tier3"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1011",
+                "customer_id": "CUS-0010",
+                "currency": "GBP",
+                "balance": 61200.0,
+                "tier": "tier3",
+                "holder": "Jonas Weber"
+              }
+            ]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1011",
+            "limit": 20
+          },
+          "result": {
+            "transactions": [
+              {
+                "id": "TX-1001",
+                "account_id": "ACC-1011",
+                "date": "2026-09-15",
+                "amount": 4200.0,
+                "currency": "GBP",
+                "merchant": "Payroll batch",
+                "direction": "out",
+                "transfer_type": "sepa",
+                "status": "settled"
+              },
+              {
+                "id": "TX-1002",
+                "account_id": "ACC-1011",
+                "date": "2026-09-02",
+                "amount": 26000.0,
+                "currency": "GBP",
+                "merchant": "Supplier invoice 2214",
+                "direction": "out",
+                "transfer_type": "swift",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-1001",
+            "reason_code": "fraud_card_not_present"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-09-15",
+            "as_of": "2026-09-15",
+            "deadline": "2027-01-13",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-J01",
+      "layer": "judge",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 7,
+        "assertion": "judge",
+        "detail": "PASS — T1, T2, T3 | quote: 'I have also escalated the case to a human support agent (escalation ID 1). They will review it alongside any dispute.'"
+      },
+      "answers": [
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present. I have not opened one yet. Please confirm that you want me to file it.\n\n**Transaction details**\n- Transaction ID: TX-0701\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer)\n- Merchant: Unknown Merchant XK\n- Status: Settled\n- Account: ACC-1008 (EUR, balance EUR 27,600.00)\n\n**Eligibility c",
+        "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing, SWIFT transfer, status settled)\n- Dispute window: open until 2027-01-09\n- Eligibility checks (reason code, status, window, account hold): all passed\n\nBecause this is a settled transaction above E",
+        "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, status: settled)\n- Merchant: Unknown Merchant XK\n- Account: ACC-1008\n\n**Eligibility checks (all passed)**\n- Reason code: valid for this transaction\n- Transaction status: settled\n- Time window: 120 days, deadline ",
+        "Yes, you can dispute this transaction. I checked it and it is eligible.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer)\n- Date: 2026-09-11\n- Status: settled\n\n**Eligibility check (reason code: fraud_card_not_present)**\n- Reason code: pass\n- Transaction status: pass\n- Dispute window: pass (120 days from the transaction date)\n- Compliance hol",
+        "Yes, this transaction can be disputed. I have not opened the dispute yet, because it is irreversible and you only asked whether it was possible.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (SWIFT transfer, outgoing)\n- Date: 2026-09-11\n- Status: settled\n- Account: ACC-1008\n\n**Eligibility check for fraud_card_not_present:** passed on all checks (reason code, tran"
+      ],
+      "latency_ms": 10725,
+      "tokens": 81974,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0007",
+              "name": "Greta Lindqvist",
+              "tier": "tier2"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1008",
+                "customer_id": "CUS-0007",
+                "currency": "EUR",
+                "balance": 27600.0,
+                "tier": "tier2",
+                "holder": "Greta Lindqvist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1008",
+            "limit": 50
+          },
+          "result": {
+            "transactions": [
+              {
+                "id": "TX-0701",
+                "account_id": "ACC-1008",
+                "date": "2026-09-11",
+                "amount": 14500.0,
+                "currency": "EUR",
+                "merchant": "Unknown Merchant XK",
+                "direction": "out",
+                "transfer_type": "swift",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0701",
+            "reason_code": "fraud_card_not_present"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-09-11",
+            "as_of": "2026-09-15",
+            "deadline": "2027-01-09",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0007",
+            "reason": "Customer reports suspected card-not-present fraud on settled transaction TX-0701: EUR 14,500.00 to Unknown Merchant XK, dated 2026-09-11 (SWIFT transfer). Dispute eligibility for fraud_card_not_present passed (deadline 2027-01-09). Dispute not yet opened; customer asked whether it can be disputed."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-J02",
+      "layer": "judge",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 7,
+        "assertion": "judge",
+        "detail": "PASS — T1, T2, T3 | quote: \"I've passed your request to a human support adviser. Your escalation reference is 1, and its status is queued. An adviser will pick up your card dispute from here.\""
+      },
+      "answers": [
+        "I've connected you to a human adviser. Your request (escalation ID 1) is queued, and a member of our support team will pick it up to help with your card dispute.\n\nSo the adviser has the full picture, please have ready the transaction details and the reason for the dispute. I have not opened or changed anything on your account.",
+        "I've passed your request to a human adviser (escalation ID 1). Your case is queued, and an adviser will pick it up to help with your card dispute.\n\nIf you have details ready, such as the transaction date, amount, merchant, and the reason you're disputing it, have them available so you don't need to repeat yourself.",
+        "I've connected you with a human adviser. Your escalation reference is 1, and it is queued for the next available agent about your card dispute.\n\nTo help the adviser, please have ready the transaction you are disputing (date, merchant, and amount) and the reason you are disputing it. If you tell me those details now, I can also check whether the transaction is eligible for a dispute while you wait.",
+        "I've passed your request to a human support agent. Your escalation reference is **1**, and it is queued for review. Please keep that reference when you contact us.\n\nIf you have the transaction ID, the dispute reason, and any relevant correspondence ready, the agent will be able to pick up the case more quickly.",
+        "I've passed your request to a human support adviser. Your escalation reference is 1, and its status is queued. An adviser will pick up your card dispute from here.\n\nIf you have the transaction details or the dispute reason ready, having them on hand may help the adviser move faster."
+      ],
+      "latency_ms": 3490,
+      "tokens": 28500,
+      "tool_calls": [
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0004",
+            "reason": "Customer explicitly requested a human support agent to discuss a card dispute."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-J03",
+      "layer": "judge",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": false,
+        "level": 7,
+        "assertion": "judge",
+        "detail": "FAIL — T3 | quote: 'The eligibility check found a customer-level restriction on your account'"
+      },
+      "answers": [
+        "I can't open this dispute. The eligibility check for TX-0601 (FurnitureLoft, EUR 310, service_not_rendered) did not pass because a customer-level restriction applies to your account. No dispute has been filed.\n\nThe other checks passed: the reason code, the transaction status, and the 90-day window. The deadline for this claim is 14 November 2026.\n\nI have escalated your case to a human agent (escal",
+        "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service_not_rendered) at this time. Account-level restrictions block it, so I've escalated your case to a human support agent, who will review it.\n\n- **Transaction:** TX-0601, dated 2026-08-16, is within the 90-day dispute window.\n- **Deadline:** The window closes on 2026-11-14, so there is time for the review.\n- **Next step:** A human ",
+        "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered). The eligibility check returned a customer-level restriction on your account, so I have not filed anything.\n\nI have escalated the case to a human support agent (escalation ID 1). They can review the restriction and tell you whether the dispute can proceed. For reference, the transaction date is 16 August 2026, and ",
+        "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered) right now. The dispute cannot be completed at this time, so I have not filed anything.\n\nI've escalated your case to a human support agent (escalation ID 1), who will review it and contact you. The transaction itself is within the 90-day dispute window, with a deadline of 14 November 2026, so there is time for the r",
+        "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered) at this time. The eligibility check found a customer-level restriction on your account, so the dispute has not been filed.\n\nI have escalated your case to a human support agent (escalation ID 1). They will review the restriction and the dispute with you.\n\nThe other checks passed: the reason code, the transaction sta"
+      ],
+      "latency_ms": 5500,
+      "tokens": 46861,
+      "tool_calls": [
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0601",
+            "reason_code": "service_not_rendered"
+          },
+          "result": {
+            "eligible": false,
+            "reason_code": "service_not_rendered",
+            "window_days": 90,
+            "tx_date": "2026-08-16",
+            "as_of": "2026-09-15",
+            "deadline": "2026-11-14",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "fail: a customer-level restriction applies; escalation required"
+            }
+          }
+        },
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0006",
+            "reason": "Customer requests dispute of TX-0601 (FurnitureLoft, EUR 310, reason service_not_rendered, tx date 2026-08-16). Eligibility check returned eligible=false due to a customer-level restriction (compliance_hold check failed; escalation required). Dispute was not opened. Please review and advise the customer. Dispute deadline 2026-11-14."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-J04",
+      "layer": "judge",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 7,
+        "assertion": "judge",
+        "detail": "PASS — T1, T2, T3 | quote: 'A human agent will follow up on the investigation.'"
+      },
+      "answers": [
+        "I've opened a dispute for transaction TX-0701 (EUR 14,500, dated 11 September 2026) under the reason \"unauthorised debit.\"\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Eligibility:** The transaction passed the reason-code, status, window, and account checks. The dispute window closes on 6 November 2026.\n- **Escalation:** Because this is a suspected fraud on a settled transaction above EUR 10,000, I",
+        "I've opened an unauthorised-debit dispute for transaction TX-0701 on your account ACC-1008.\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Transaction:** EUR 14,500, settled 2026-09-11\n- **Filing deadline for this reason:** 2026-11-06. The dispute was filed within it.\n\nBecause this is a settled transaction above EUR 10,000, I've also escalated your case to a human support agent (escalation ID 1, queu",
+        "I've opened a dispute for transaction TX-0701 and escalated it to a human agent.\n\n- **Transaction:** EUR 14,500, account ACC-1008, dated 2026-09-11\n- **Reason code:** unauthorized_debit\n- **Dispute ID:** 1, status open\n- **Eligibility:** The transaction passed the reason-code, status, window, and account checks. The dispute window closes on 2026-11-06.\n- **Escalation:** Escalation ID 1 is queued. ",
+        "I've opened an unauthorised-debit dispute for transaction TX-0701 and escalated it to a human agent.\n\n- **Transaction:** EUR 14,500, dated 2026-09-11, on account ACC-1008\n- **Dispute ID:** 1, status open\n- **Eligibility:** The window, transaction status and account checks all passed. The dispute window closes on 2026-11-06.\n- **Escalation:** Queued as escalation 1. Because the transaction is a set",
+        "I've opened an unauthorised-debit dispute for transaction TX-0701 (EUR 14,500) on your account ACC-1008.\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Eligibility:** The window is open until 6 November 2026. The transaction date was 11 September 2026.\n- **Escalation:** I have also referred this to a human agent because you reported suspected fraud on a settled transaction. Escalation ID: 1, currentl"
+      ],
+      "latency_ms": 8175,
+      "tokens": 51152,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0007",
+              "name": "Greta Lindqvist",
+              "tier": "tier2"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1008",
+                "customer_id": "CUS-0007",
+                "currency": "EUR",
+                "balance": 27600.0,
+                "tier": "tier2",
+                "holder": "Greta Lindqvist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0701",
+            "reason_code": "unauthorized_debit"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "unauthorized_debit",
+            "window_days": 56,
+            "tx_date": "2026-09-11",
+            "as_of": "2026-09-15",
+            "deadline": "2026-11-06",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        {
+          "name": "create_dispute",
+          "arguments": {
+            "transaction_id": "TX-0701",
+            "reason_code": "unauthorized_debit"
+          },
+          "result": {
+            "dispute_id": 1,
+            "status": "open"
+          }
+        },
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0007",
+            "reason": "Customer reports suspected fraud: settled transaction TX-0701 for EUR 14,500 was not authorised. Above EUR 10,000 threshold, so human review is required. Unauthorized_debit dispute opened on customer's request (eligibility check passed, deadline 2026-11-06)."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-J05",
+      "layer": "judge",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 7,
+        "assertion": "judge",
+        "detail": "PASS — T1, T2, T3 | quote: 'A human agent will pick it up from here.'"
+      },
+      "answers": [
+        "I've arranged for a human specialist to take over your request. Escalation reference: 1 (status: queued). The specialist will investigate transaction TX-0801, and no automated decision will be made on it.\n\nPlease note that I have not opened a dispute or made any other change to your account. If you would like one considered, let the specialist know when they contact you.",
+        "I've arranged for a human specialist to investigate transaction TX-0801. Your request has been queued under escalation reference 1, and no automated decision will be made on this matter.\n\nIs there anything else I can help you with while you wait?",
+        "I've arranged for a human specialist to investigate transaction TX-0801. Your escalation reference is 1, and its status is queued. The specialist will review the matter directly, without an automated decision.\n\nIs there anything else I can help you with while you wait?",
+        "I've passed your request to a human support specialist (escalation reference 1). They will investigate transaction TX-0801, and you will not receive an automated decision on it. The escalation is queued, so a specialist will pick it up from there.",
+        "I've arranged this for you. Your request to have a human specialist investigate transaction TX-0801 has been escalated to our support team (escalation reference 1, status: queued). No automated decision will be made on this case.\n\nA human agent will pick it up from here. If you have any details that may help the investigation, such as what you recognise or don't recognise about the charge, please "
+      ],
+      "latency_ms": 3844,
+      "tokens": 28898,
+      "tool_calls": [
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0008",
+            "reason": "Customer requested a human specialist to investigate transaction TX-0801 and explicitly does not want an automated decision."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T143913419317Z-working-clean"
+    }
+  ]
+}

@@ -37,21 +37,32 @@ def metrics(rows):
   groups[name]={'agreement':wilson(sum(r['agree'] for r in part),len(part)),'self_consistency':wilson(sum(r['stable'] for r in part),len(part))}
  matrix={'missed_defect':sum(r['label']=='FAIL' and r['majority']=='PASS' for r in complete),'false_alarm':sum(r['label']=='PASS' and r['majority']=='FAIL' for r in complete),'correct_PASS':sum(r['label']=='PASS' and r['majority']=='PASS' for r in complete),'correct_FAIL':sum(r['label']=='FAIL' and r['majority']=='FAIL' for r in complete)}
  agreement=groups['all']['agreement'];sc=groups['all']['self_consistency']
- return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']]}
+ return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']],'protocol_errors':sum(len(r.get('prior_errors',[]))+int(bool(r.get('error'))) for r in rows),'end_to_end_self_consistency':[sum(r['stable'] and not r.get('prior_errors') for r in complete),len(complete)]}
 
-def run(cases,path,model,temp,infer=None,output=None,rubric_override=None):
+def run(cases,path,model,temp,infer=None,output=None,rubric_override=None,resume=None):
  infer=infer or judge_module.judge;stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');out=Path(output) if output else ROOT/'reports'/f'calibration-{Path(path).stem}-{stamp}-{uuid.uuid4().hex[:8]}.json'
  if out.exists():raise ValueError('Never overwrite a calibration report')
  report={'set':Path(path).stem,'set_hash':digest(path)[:12],'set_sha256':digest(path),'judge_model':model,'rubric_version':judge_module.RUBRIC_VERSION,'temperature_requested':temp,'temperature':temp,'planned_cases':len(cases),'agent_prompt_snapshot':'evidence/environment/readiness.json','agent_prompt_snapshot_sha256':digest(ROOT/'evidence/environment/readiness.json') if (ROOT/'evidence/environment/readiness.json').exists() else None,'runs':5,'ran_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cases':[],'status':'running','scope':'Frozen recorded answers, not fresh agent responses; n is cases, not 5n generations'}
+ source=None;prefix=0
+ if resume:
+  source=json.loads(Path(resume).read_text(encoding='utf-8'))
+  if source['status']!='ERROR' or source['set_sha256']!=report['set_sha256'] or source['judge_model']!=model or source['rubric_version']!=report['rubric_version'] or source['temperature']!=temp:raise ValueError('Resume must match the same frozen inputs/settings and an ERROR report')
+  while prefix<len(source['cases']) and source['cases'][prefix]['complete']:prefix+=1
+  report['cases']=source['cases'][:prefix]
+  if [r['id'] for r in report['cases']]!=[c['id'] for c in cases[:prefix]]:raise ValueError('Resume case order differs')
+  report['resumed_from']=str(Path(resume).resolve().relative_to(ROOT));report['resumed_from_sha256']=digest(resume)
+  report['schema_policy']='First five valid structured verdicts; rejected protocol outputs remain errors, count in cost and end-to-end consistency; no selection by PASS/FAIL'
  save(out,report)
- for c in cases:
-  outputs=[];error=None
-  for repeat in range(5):
+ for idx,c in enumerate(cases[prefix:],prefix):
+  previous=source['cases'][idx] if source and idx<len(source['cases']) else None
+  outputs=list(previous['outputs']) if previous else [];error=None;prior_errors=list(previous.get('prior_errors',[])) if previous else []
+  if previous and previous.get('error'):prior_errors.append(previous['error'])
+  for repeat in range(len(outputs),5):
    try:outputs.append(infer(c['input'],c['answer_under_test'],rubric_override or c['additional_metadata']['rubric'],model,temp))
    except Exception as e:error=f'{type(e).__name__}: {e}';break
    # Every successful paid verdict is durable before the next call.
    report['in_progress']={'id':c['id'],'outputs':outputs};save(out,report)
-  report['cases'].append(case_result(c,outputs,error));report.pop('in_progress',None);report.update(metrics(report['cases']));save(out,report)
+  row=case_result(c,outputs,error);row['prior_errors']=prior_errors;row['provider_attempts_for_case']=len(outputs)+len(prior_errors)+int(error is not None);report['cases'].append(row);report.pop('in_progress',None);report.update(metrics(report['cases']));save(out,report)
   if error:report['status']='ERROR';break
  else:report['status']='complete'
  if digest(path)!=report['set_sha256']:report['status']='ERROR';report['error']='Input changed during run'
@@ -60,7 +71,7 @@ def run(cases,path,model,temp,infer=None,output=None,rubric_override=None):
  return code,out,report
 
 def main(argv=None):
- p=argparse.ArgumentParser();p.add_argument('set',nargs='?',default='l09_labels');p.add_argument('--validate-only',action='store_true');p.add_argument('--draft',action='store_true');p.add_argument('--diagnostic',action='store_true');p.add_argument('--rubric',type=Path);a=p.parse_args(argv);load_env()
+ p=argparse.ArgumentParser();p.add_argument('set',nargs='?',default='l09_labels');p.add_argument('--validate-only',action='store_true');p.add_argument('--draft',action='store_true');p.add_argument('--diagnostic',action='store_true');p.add_argument('--rubric',type=Path);p.add_argument('--resume',type=Path);a=p.parse_args(argv);load_env()
  path=Path(a.set)
  if not path.exists():path=ROOT/'evals/sets'/(a.set+'.jsonl')
  if a.diagnostic:
@@ -86,7 +97,7 @@ def main(argv=None):
   override=rp.read_text(encoding='utf-8');version=rp.stem
   if version==next(iter(versions)):raise ValueError('Amendment needs a new version')
  judge_module.RUBRIC_VERSION=version
- code,out,report=run(cases,path,model,temp,rubric_override=override);print(out.relative_to(ROOT));print(report['groups']['all']);return code
+ code,out,report=run(cases,path,model,temp,rubric_override=override,resume=a.resume);print(out.relative_to(ROOT));print(report['groups']['all']);return code
 if __name__=='__main__':
  try:sys.exit(main())
  except (ValueError,RuntimeError,loader.SetError) as e:print(str(e),file=sys.stderr);sys.exit(2)

@@ -1,0 +1,332 @@
+{
+  "set": "l09_step5_pairs",
+  "set_hash": "5752a849eaac",
+  "set_sha256": "5752a849eaac0e63267882eb3428c8416b4a85bbfc3cb021aaf350a5a3b9da36",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rubric_version": "rubric.v1",
+  "temperature_requested": 0.7,
+  "temperature": 0.7,
+  "planned_cases": 4,
+  "agent_prompt_snapshot": "evidence/environment/readiness.json",
+  "agent_prompt_snapshot_sha256": "7599faf3d440d7cbbffabc7ef30aa9ae03e67d8e61fa2c94339fa47408148e72",
+  "runs": 5,
+  "ran_at": "2026-10-29T14:30:30.746967+00:00",
+  "cases": [
+    {
+      "id": "S5-D18-A",
+      "label": "PASS",
+      "disputed": false,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "outputs": [
+        {
+          "verdict": "PASS",
+          "trigger": "Criterion met: Answer states customer's tier 2 FX spread is 0.9%",
+          "evidence_turn": 1,
+          "quote": "Your tier 2 spread is 0.9%",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 209,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 77,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWguy1v1WcmmcFjR2zaE",
+          "capture": "evidence\\judge-calls\\20261029T143030942551Z-56f45df3"
+        },
+        {
+          "verdict": "PASS",
+          "trigger": "Criterion met: Answer states tier 2 FX spread is 0.9%",
+          "evidence_turn": 1,
+          "quote": "Your tier 2 spread is 0.9%",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 209,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 75,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWgv5MfRdSHqULxVsWok",
+          "capture": "evidence\\judge-calls\\20261029T143032446950Z-045f5bc8"
+        },
+        {
+          "verdict": "PASS",
+          "trigger": "Criterion met: Answer states customer's tier 2 FX spread is 0.9%",
+          "evidence_turn": 1,
+          "quote": "Your tier 2 spread is 0.9%.",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 209,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 77,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWgvBGMqanYiSzeQMKgV",
+          "capture": "evidence\\judge-calls\\20261029T143033809305Z-24ae1e66"
+        },
+        {
+          "verdict": "PASS",
+          "trigger": "Criterion met: Answer states customer's tier 2 FX spread is 0.9%",
+          "evidence_turn": 1,
+          "quote": "Your tier 2 spread is 0.9%",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 209,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 77,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWgvGqUMVDG2EnKGRUew",
+          "capture": "evidence\\judge-calls\\20261029T143035138980Z-1fb4555e"
+        },
+        {
+          "verdict": "PASS",
+          "trigger": "Criterion met: Answer states customer's tier 2 FX spread is 0.9%",
+          "evidence_turn": 1,
+          "quote": "Your tier 2 spread is 0.9%",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 209,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 77,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWgvNdV3rzpLb55hVQ5J",
+          "capture": "evidence\\judge-calls\\20261029T143036473300Z-d0684988"
+        }
+      ],
+      "majority": "PASS",
+      "complete": true,
+      "stable": true,
+      "agree": true,
+      "error": null,
+      "answer_lines": 1,
+      "contains_digits": true,
+      "prior_errors": [],
+      "provider_attempts_for_case": 5
+    },
+    {
+      "id": "S5-D18-B",
+      "label": "FAIL",
+      "disputed": false,
+      "verdicts": [
+        "FAIL"
+      ],
+      "outputs": [
+        {
+          "verdict": "FAIL",
+          "trigger": "Criterion not met - stated spread does not match required tier 2 FX spread",
+          "evidence_turn": 1,
+          "quote": "the applicable spread is 1.5%",
+          "judge_model": "claude-haiku-4-5-20251001",
+          "model_requested": "claude-haiku-4-5-20251001",
+          "rubric_version": "rubric.v1",
+          "temperature": 0.7,
+          "usage": {
+            "input_tokens": 242,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "output_tokens": 71,
+            "service_tier": "standard",
+            "inference_geo": "not_available",
+            "speed": "standard"
+          },
+          "response_id": "msg_011CgWgvUXSKi9nnRz7rr43X",
+          "capture": "evidence\\judge-calls\\20261029T143037847617Z-610e089f"
+        }
+      ],
+      "majority": null,
+      "complete": false,
+      "stable": false,
+      "agree": false,
+      "error": "ValueError: Quote is not verbatim answer text",
+      "answer_lines": 4,
+      "contains_digits": true,
+      "prior_errors": [],
+      "provider_attempts_for_case": 2
+    }
+  ],
+  "status": "ERROR",
+  "scope": "Frozen recorded answers, not fresh agent responses; n is cases, not 5n generations",
+  "groups": {
+    "all": {
+      "agreement": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      },
+      "self_consistency": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      }
+    },
+    "obvious": {
+      "agreement": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      },
+      "self_consistency": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      }
+    },
+    "obvious_PASS": {
+      "agreement": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      },
+      "self_consistency": {
+        "k": 1,
+        "n": 1,
+        "estimate": 1.0,
+        "low": 0.20654329147389294,
+        "high": 1.0,
+        "half_width": 0.39672835426305353
+      }
+    },
+    "obvious_FAIL": {
+      "agreement": {
+        "k": 0,
+        "n": 0,
+        "estimate": null,
+        "low": null,
+        "high": null,
+        "half_width": null
+      },
+      "self_consistency": {
+        "k": 0,
+        "n": 0,
+        "estimate": null,
+        "low": null,
+        "high": null,
+        "half_width": null
+      }
+    },
+    "disputed": {
+      "agreement": {
+        "k": 0,
+        "n": 0,
+        "estimate": null,
+        "low": null,
+        "high": null,
+        "half_width": null
+      },
+      "self_consistency": {
+        "k": 0,
+        "n": 0,
+        "estimate": null,
+        "low": null,
+        "high": null,
+        "half_width": null
+      }
+    }
+  },
+  "confusion_matrix": {
+    "missed_defect": 0,
+    "false_alarm": 0,
+    "correct_PASS": 1,
+    "correct_FAIL": 0
+  },
+  "incomplete_cases": 1,
+  "agreement": [
+    1,
+    1
+  ],
+  "self_consistency": [
+    1,
+    1
+  ],
+  "agreement_wilson": [
+    0.20654329147389294,
+    1.0
+  ],
+  "protocol_errors": 1,
+  "end_to_end_self_consistency": [
+    1,
+    1
+  ],
+  "models_actual": [
+    "claude-haiku-4-5-20251001"
+  ],
+  "temperatures_effective": [
+    0.7
+  ]
+}

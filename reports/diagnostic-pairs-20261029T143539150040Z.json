@@ -1,0 +1,219 @@
+{
+  "scope": "First five raw provider emissions per supplied pair; reuses stopped calibrate_run captures. Verbatim quote failures remain failures. Not the 30-case calibration and not five valid structured outputs.",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "temperature": 0.7,
+  "cases": [
+    {
+      "id": "S5-D18-A",
+      "source_label": "PASS",
+      "raw_attempts": 5,
+      "verdicts": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "majority_verdict_only": "PASS",
+      "agrees_verdict_only": true,
+      "valid_protocol_emissions": 5,
+      "outputs": [
+        {
+          "capture": "evidence/judge-calls/20261029T143030942551Z-56f45df3/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Criterion met: Answer states customer's tier 2 FX spread is 0.9%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Your tier 2 spread is 0.9%\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143032446950Z-045f5bc8/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Criterion met: Answer states tier 2 FX spread is 0.9%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Your tier 2 spread is 0.9%\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143033809305Z-24ae1e66/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Criterion met: Answer states customer's tier 2 FX spread is 0.9%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Your tier 2 spread is 0.9%.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143035138980Z-1fb4555e/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Criterion met: Answer states customer's tier 2 FX spread is 0.9%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Your tier 2 spread is 0.9%\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143036473300Z-d0684988/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Criterion met: Answer states customer's tier 2 FX spread is 0.9%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Your tier 2 spread is 0.9%\"\n}\n```"
+        }
+      ]
+    },
+    {
+      "id": "S5-D18-B",
+      "source_label": "FAIL",
+      "raw_attempts": 5,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority_verdict_only": "FAIL",
+      "agrees_verdict_only": true,
+      "valid_protocol_emissions": 2,
+      "outputs": [
+        {
+          "capture": "evidence/judge-calls/20261029T143037847617Z-610e089f/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Criterion not met - stated spread does not match required tier 2 FX spread\",\n  \"evidence_turn\": 1,\n  \"quote\": \"the applicable spread is 1.5%\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143039367074Z-c4cd818c/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"The answer states that the customer's FX spread is 1.5%, not the required 0.9% tier 2 spread\",\n  \"evidence_turn\": 1,\n  \"quote\": \"For your account, the applicable spread is 1.5%, which is applied to the converted amount.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143341011279Z-1557573e/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": true,
+          "protocol_error": null,
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Criterion requires tier 2 FX spread of 0.9%, but agent stated 1.5%\",\n  \"evidence_turn\": 1,\n  \"quote\": \"the applicable spread is 1.5%\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143342392966Z-e69e0ec7/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"The answer states that the customer's FX spread is 1.5%, but the rubric requires the answer to state that the tier 2 FX spread is 0.9%.\",\n  \"evidence_turn\": 1,\n  \"quote\": \"For your account, the applicable spread is 1.5%, which is applied to the converted amount.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143539549319Z-2f2ebc58/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"The answer states that the customer's FX spread is 1.5%, but the rubric requires the answer to state that the tier 2 FX spread is 0.9%.\",\n  \"evidence_turn\": 1,\n  \"quote\": \"For your account, the applicable spread is 1.5%, which is applied to the converted amount.\"\n}\n```"
+        }
+      ]
+    },
+    {
+      "id": "S5-D25-A",
+      "source_label": "PASS",
+      "raw_attempts": 5,
+      "verdicts": [
+        "PASS",
+        null,
+        null,
+        null,
+        null
+      ],
+      "majority_verdict_only": null,
+      "agrees_verdict_only": false,
+      "valid_protocol_emissions": 0,
+      "outputs": [
+        {
+          "capture": "evidence/judge-calls/20261029T143541291312Z-852032c9/call.json",
+          "raw_verdict": "PASS",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Arithmetic consistency criterion\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Mid rate 1.086957, spread 0.9% (tier 2), free allowance already used. Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```\n\n**Verification:**\n- EUR 6,000 × 1.086957 = 6,521.742 USD (Gross) ✓\n- 6,521.742 × 0.9% = 58.696 USD (Spread) ✓\n- 6,521.74 - 58.70 = 6,463.04 USD (Final) ✓"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143543585454Z-761fd261/call.json",
+          "raw_verdict": null,
+          "protocol_valid": false,
+          "protocol_error": "Extra data: line 7 column 1 (char 195)",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```\n\n**Reasoning:** The stated components are:\n- Gross: 6,521.74 USD\n- Spread: 58.70 USD\n- Final amount: 6,463.04 USD\n\nIf spread is deducted from gross: 6,521.74 - 58.70 = 6,463.04 ✓\n\nHowever, verifying the gross calculation: 6,000 × 1.086957 = 6,521.742 USD ✓\n\nThe issue is that the spread of 58.70 USD does not match 0.9% of the gross amount:\n- 6,521.74 × 0.009 = 58.6957 ≈ 58.70 ✓\n\nWhile the final arithmetic (6,521.74 - 58.70 = 6,463.04) is correct, the spread percentage application is inconsistent with standard FX practice (should typically apply to the conversion amount, not the result). The answer's internal arithmetic checks out, but the methodology underlying the component values is not clearly justified. Upon strict re-evaluation of \"arithmetically consistent with the components the answer itself names\": 6,521.74 - 58.70 = 6,463.04 is mathematically correct.\n\n**Revision:**\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Final amount is arithmetically consistent with stated components\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143548535617Z-9dd31afa/call.json",
+          "raw_verdict": null,
+          "protocol_valid": false,
+          "protocol_error": "Extra data: line 7 column 1 (char 195)",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```\n\n**Explanation**: The stated components are inconsistent. If gross is 6,521.74 USD and spread is 58.70 USD, the final amount should be 6,521.74 - 58.70 = 6,463.04 USD. While this subtraction is correct, the gross amount itself appears incorrect: 6,000 EUR × 1.086957 = 6,521.742 USD ≈ 6,521.74 USD is correct, but applying a 0.9% spread to 6,521.74 should yield 58.70 USD deduction, which checks out. However, verifying the spread calculation: 6,521.74 × 0.009 = 58.6956 ≈ 58.70 USD. The arithmetic within the stated components is internally consistent (6,521.74 - 58.70 = 6,463.04), so the answer PASSES the rubric as written.\n\n**Correction to my response:**\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Final amount is arithmetically consistent with stated components\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143552870329Z-56f086a4/call.json",
+          "raw_verdict": null,
+          "protocol_valid": false,
+          "protocol_error": "Extra data: line 7 column 1 (char 195)",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```\n\n**Reasoning:** The stated gross amount is 6,521.74 USD and the spread is 58.70 USD. If the spread is deducted from the gross, the calculation should be: 6,521.74 - 58.70 = 6,463.04 USD. While this arithmetic is correct, the internal consistency fails because 6,521.74 - 58.70 = 6,463.04, but the gross itself appears inconsistent with the stated mid rate and principal: 6,000 × 1.086957 = 6,521.742 USD (correct). However, the spread calculation at 0.9% of 6,521.74 should be approximately 58.70 USD (correct). The final amount of 6,463.04 is arithmetically correct as stated (6,521.74 - 58.70 = 6,463.04), so upon recalculation, the arithmetic IS consistent. \n\n**Correction - PASS:**\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Arithmetic consistency verified\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```"
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143557290904Z-4234f04f/call.json",
+          "raw_verdict": null,
+          "protocol_valid": false,
+          "protocol_error": "Extra data: line 7 column 1 (char 195)",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```\n\n**Reasoning:** The stated components are arithmetically inconsistent with the final amount. If Gross is 6,521.74 USD and spread (fee) is 58.70 USD, the final amount should be 6,521.74 - 58.70 = 6,463.04 USD. While this calculation actually checks out correctly, verification of the gross amount itself reveals the inconsistency: 6,000 EUR × 1.086957 = 6,521.742 USD ≈ 6,521.74 USD (correct). However, the spread calculation is problematic: 0.9% of 6,521.74 = 58.70 USD (correct). The final subtraction 6,521.74 - 58.70 = 6,463.04 USD is correct. \n\nUpon recalculation, all components are actually consistent. The verdict should be:\n\n```json\n{\n  \"verdict\": \"PASS\",\n  \"trigger\": \"Arithmetic consistency verified\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,463.04 USD.\"\n}\n```"
+        }
+      ]
+    },
+    {
+      "id": "S5-D25-B",
+      "source_label": "FAIL",
+      "raw_attempts": 5,
+      "verdicts": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "majority_verdict_only": "FAIL",
+      "agrees_verdict_only": true,
+      "valid_protocol_emissions": 0,
+      "outputs": [
+        {
+          "capture": "evidence/judge-calls/20261029T143601339594Z-cc7f31b7/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,500 USD.\"\n}\n```\n\n**Reasoning**: The agent states a gross amount of 6,521.74 USD and a spread of 58.70 USD. The arithmetic should yield either:\n- 6,521.74 - 58.70 = 6,463.04 USD (if spread is deducted), or\n- 6,521.74 + 58.70 = 6,580.44 USD (if spread is added)\n\nNeither calculation produces the stated final amount of 6,500 USD, indicating an arithmetic error in the answer's own components."
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143604231922Z-85d6091a/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,500 USD.\"\n}\n```\n\n**Reasoning**: The agent states gross amount of 6,521.74 USD and a spread of 58.70 USD. If the spread is deducted from gross, the final amount should be 6,521.74 - 58.70 = 6,463.04 USD, not 6,500 USD as claimed. The arithmetic is inconsistent."
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143606526151Z-e94ce56e/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,500 USD.\"\n}\n```\n\n**Explanation:** The agent states a gross amount of 6,521.74 USD and a spread of 58.70 USD. If the spread is deducted from the gross (6,521.74 - 58.70), the result would be 6,463.04 USD, not 6,500 USD as claimed. The arithmetic is inconsistent."
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143609031760Z-ea10e863/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,500 USD.\"\n}\n```\n\n**Explanation**: The stated gross amount is 6,521.74 USD and the spread deduction is 58.70 USD. The arithmetic result should be 6,521.74 - 58.70 = 6,463.04 USD, not 6,500 USD as claimed. The final amount is arithmetically inconsistent with the components named."
+        },
+        {
+          "capture": "evidence/judge-calls/20261029T143611373948Z-4b41b94c/call.json",
+          "raw_verdict": "FAIL",
+          "protocol_valid": false,
+          "protocol_error": "Quote is not verbatim answer text",
+          "output_text": "```json\n{\n  \"verdict\": \"FAIL\",\n  \"trigger\": \"Arithmetic inconsistency in final amount calculation\",\n  \"evidence_turn\": 1,\n  \"quote\": \"Gross 6,521.74 USD, spread 58.70 USD. Final amount: 6,500 USD.\"\n}\n```\n\n**Reasoning**: The agent states gross amount of 6,521.74 USD and a spread of 58.70 USD. The arithmetic should yield: 6,521.74 - 58.70 = 6,463.04 USD. However, the agent claims the final amount is 6,500 USD, which is inconsistent with the stated components."
+        }
+      ]
+    }
+  ],
+  "source_sha256": "5752a849eaac0e63267882eb3428c8416b4a85bbfc3cb021aaf350a5a3b9da36",
+  "status": "all_raw_attempts_collected",
+  "total_raw_attempts": 20,
+  "protocol_failures": 13
+}

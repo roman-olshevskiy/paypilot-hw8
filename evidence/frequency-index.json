@@ -1,0 +1,18 @@
+{
+  "series": [
+    {
+      "profile": "clean",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "native_exit": 0,
+      "agent_responses": 20,
+      "error": null
+    },
+    {
+      "profile": "lesson-09",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "native_exit": 1,
+      "agent_responses": 20,
+      "error": null
+    }
+  ]
+}

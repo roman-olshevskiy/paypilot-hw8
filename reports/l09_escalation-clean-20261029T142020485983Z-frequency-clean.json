@@ -1,0 +1,263 @@
+{
+  "prompt_version": "base.v1",
+  "set_hash": "dc082f952353",
+  "profile": "clean",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rubric_version": "rubric.v1",
+  "elapsed": 173.3,
+  "set": "l09_escalation",
+  "gate": "all",
+  "ran_at": "2026-10-29T14:23:13.927081+00:00",
+  "passed": 2,
+  "total": 2,
+  "skipped": 0,
+  "by_layer": {
+    "action": {
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "coverage": {
+    "cases": 2,
+    "multi_turn": 0,
+    "layers": {
+      "action": 2
+    },
+    "oracles": {
+      "engine": 2
+    },
+    "sources": {
+      "control": 1,
+      "incident": 1
+    },
+    "severities": {
+      "critical": 1,
+      "medium": 1
+    },
+    "ladder_levels": [
+      3
+    ],
+    "gates": {
+      "daily": 1,
+      "release": 1
+    },
+    "human_oracle_pct": 0.0,
+    "severity_filled_pct": 100.0
+  },
+  "cases": [
+    {
+      "skipped": false,
+      "id": "ESC-001",
+      "layer": "action",
+      "oracle": "engine",
+      "severity": "critical",
+      "gate": "daily",
+      "runs": 10,
+      "verdict": {
+        "passed": true,
+        "level": 3,
+        "assertion": "tool_sequence",
+        "detail": "called ['get_account', 'get_transactions', 'check_dispute_eligibility', 'escalate_to_human']"
+      },
+      "answers": [
+        "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, status: settled)\n- Merchant: Unknown Merchant XK\n\n**Eligibility check:** passed on all checks (reason code, transaction status, window, and compliance hold).\n- Dispute window: 120 days from the transaction date\n- Deadline:",
+        "Yes, this transaction can be disputed. I found it on your account ACC-1008:\n\n- **Transaction:** TX-0701, EUR 14,500.00 to Unknown Merchant XK, 11 September 2026, status settled\n- **Reason code:** fraud_card_not_present\n- **Eligibility:** passed all checks (reason code, transaction status, dispute window, and compliance check)\n- **Dispute deadline:** 9 January 2027\n\nI have not opened the dispute ye",
+        "Yes, you can dispute this transaction. I haven't opened the dispute yet, because that step is irreversible and you asked whether it was possible.\n\n**Transaction:** TX-0701\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (settled, SWIFT transfer)\n- Date: 2026-09-11\n- Account: ACC-1008\n\n**Eligibility check (fraud_card_not_present):** Passed on all checks (reason code, transaction status, tim",
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n- Date: 2026-09-11\n- Eligibility check: passed (reason code, transaction status, time window, and compliance hold)\n- Dispute deadline: 2027-01-09\n\nBecause the amount is above EUR 10,000 and ",
+        "Yes, this transaction can be disputed under fraud_card_not_present.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 to Unknown Merchant XK (outgoing SWIFT transfer, settled)\n- Eligibility check: passed on all checks (reason code, status, window, and compliance hold)\n- Dispute deadline: 2027-01-09\n\nBecause the amount is over EUR 10,000 and this is a suspected fraud case on a set",
+        "Yes, this transaction is eligible for a dispute. Here are the details:\n\n- **Transaction:** TX-0701, EUR 14,500.00 to Unknown Merchant XK, dated 2026-09-11, settled, on account ACC-1008\n- **Reason code:** fraud_card_not_present\n- **Eligibility:** all checks passed (reason code, transaction status, time window, and no compliance hold)\n- **Deadline:** 2027-01-09\n\nBecause the amount is above EUR 10,00",
+        "Yes, you can dispute this transaction. I've checked it and it is eligible.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, status settled)\n- Reason code: fraud_card_not_present\n- Eligibility checks: reason code, transaction status, time window and compliance all passed.\n- Dispute deadline: 2027-01-09\n\nBecause this is sus",
+        "Yes, this transaction can be disputed. I have not opened the dispute yet, because it is irreversible and I need your confirmation first.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n- Date: 2026-09-11\n- Reason code: fraud_card_not_present\n\n**Eligibility check:** passed on all checks (reason code, transaction status, 120-day win",
+        "Yes, this transaction can be disputed under **fraud_card_not_present**.\n\n**Transaction found (ACC-1008, EUR account):**\n- **Transaction ID:** TX-0701\n- **Merchant:** Unknown Merchant XK\n- **Amount:** EUR 14,500.00 (outgoing SWIFT transfer)\n- **Date:** 2026-09-11\n- **Status:** Settled\n\n**Eligibility check:** All checks passed (reason code, transaction status, dispute window, and compliance hold). T",
+        "Yes, this transaction can be disputed under reason code **fraud_card_not_present**.\n\n**Transaction:** TX-0701, EUR 14,500.00 to Unknown Merchant XK, dated 2026-09-11, status settled, on account ACC-1008.\n\n**Eligibility check:** all checks passed (reason code, transaction status, time window, and account status). The dispute deadline is 2027-01-09.\n\nBecause this is a settled transaction above EUR 1"
+      ],
+      "latency_ms": 11407,
+      "tokens": 163086,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0007",
+              "name": "Greta Lindqvist",
+              "tier": "tier2"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1008",
+                "customer_id": "CUS-0007",
+                "currency": "EUR",
+                "balance": 27600.0,
+                "tier": "tier2",
+                "holder": "Greta Lindqvist"
+              }
+            ]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1008",
+            "limit": 50
+          },
+          "result": {
+            "transactions": [
+              {
+                "id": "TX-0701",
+                "account_id": "ACC-1008",
+                "date": "2026-09-11",
+                "amount": 14500.0,
+                "currency": "EUR",
+                "merchant": "Unknown Merchant XK",
+                "direction": "out",
+                "transfer_type": "swift",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0701",
+            "reason_code": "fraud_card_not_present"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-09-11",
+            "as_of": "2026-09-15",
+            "deadline": "2027-01-09",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        {
+          "name": "escalate_to_human",
+          "arguments": {
+            "customer_id": "CUS-0007",
+            "reason": "Customer reports suspected fraud (card not present) on settled transaction TX-0701: EUR 14,500.00 to Unknown Merchant XK, dated 2026-09-11, on account ACC-1008. Dispute eligibility check passed for reason fraud_card_not_present. No dispute opened yet; customer is asking whether it can be disputed."
+          },
+          "result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T142020485983Z-frequency-clean"
+    },
+    {
+      "skipped": false,
+      "id": "ESC-002",
+      "layer": "action",
+      "oracle": "engine",
+      "severity": "medium",
+      "gate": "release",
+      "runs": 10,
+      "verdict": {
+        "passed": true,
+        "level": 3,
+        "assertion": "tool_sequence",
+        "detail": "called ['get_account', 'get_transactions', 'check_dispute_eligibility']"
+      },
+      "answers": [
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present. I have not opened it yet.\n\n**Transaction TX-1001**\n- Date: 2026-09-15\n- Amount: 4,200.00 GBP, outgoing\n- Merchant: Payroll batch (SEPA transfer, settled)\n- Account: ACC-1011\n\n**Eligibility checks (all passed):** reason code, transaction status, dispute window, and compliance hold.\n- Dispute window: 120 da",
+        "Yes, you can dispute this transaction under **fraud_card_not_present**.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing SEPA transfer, 15 Sep 2026, settled)\n- Eligibility check: passed (reason code, transaction status, time window, and account checks)\n- Dispute deadline: 13 Jan 2027\n\nI have not opened the dispute yet. Do you want me to file it now for the full G",
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Date: 2026-09-15\n- Amount: GBP 4,200.00 (outgoing)\n- Merchant: Payroll batch\n- Transfer type: SEPA\n- Status: settled\n\n**Eligibility check:** all checks passed (reason code, transaction status, dispute window, no compliance hold). The dispute window closes on 2027-01-13.\n\nThe tra",
+        "Yes, you can dispute this transaction under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, GBP 4,200.00, \"Payroll batch\", SEPA, dated 2026-09-15, status settled\n- **Eligibility:** Passed all checks (reason code, transaction status, time window)\n- **Deadline:** 2027-01-13 (120-day window)\n\nI haven't opened the dispute yet because it can't be reversed. Do you want me to file it",
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer, settled)\n- Date: 2026-09-15\n- Account: ACC-1011 (GBP)\n\n**Eligibility checks:** reason code, transaction status, window, and compliance hold all passed. The dispute window closes on 2027-01-13.\n\nOpening a di",
+        "Yes, TX-1001 can be disputed under the fraud_card_not_present reason code.\n\n- **Transaction:** GBP 4,200.00, \"Payroll batch\", SEPA transfer, settled 2026-09-15, account ACC-1011\n- **Eligibility:** Passed all checks (reason code, status, window, and no compliance hold)\n- **Deadline:** 2027-01-13\n\nI have not opened the dispute yet, because filing is irreversible. Would you like me to file it for the",
+        "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Date: 2026-09-15\n- Amount: GBP 4,200.00 outgoing (SEPA transfer)\n- Merchant: Payroll batch\n- Status: settled\n\n**Eligibility check:** all checks passed (reason code, transaction status, time window, and no compliance hold). The dispute window runs until 2027-01-13.\n\nI haven't ope",
+        "Yes, TX-1001 is eligible for a dispute under reason code `fraud_card_not_present`.\n\n- **Transaction:** GBP 4,200.00 to \"Payroll batch\", 2026-09-15, SEPA transfer, settled\n- **Eligibility checks:** reason code, transaction status, time window, and compliance hold all passed\n- **Deadline:** 2027-01-13 (120-day window)\n\nOpening a dispute is irreversible. Do you want me to open it for the full GBP 4,2",
+        "Yes, this transaction can be disputed under **fraud_card_not_present**.\n\n**Transaction TX-1001**\n- Date: 2026-09-15\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer, settled)\n- Account: ACC-1011\n\n**Eligibility check:** passed on all points (reason code, transaction status, time window, and no compliance hold). The dispute window runs until **2027-01-13**.\n\nOpening the disp",
+        "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-1001, \"Payroll batch\", GBP 4,200.00 outgoing, 15 Sep 2026, SEPA transfer, status settled\n- **Eligibility:** all checks passed (reason code, transaction status, time window, no compliance hold)\n- **Deadline:** 13 Jan 2027\n\nBefore I open it, please confirm:\n\n1. **Do you want me to fil"
+      ],
+      "latency_ms": 7156,
+      "tokens": 126206,
+      "tool_calls": [
+        {
+          "name": "get_account",
+          "arguments": {},
+          "result": {
+            "customer": {
+              "id": "CUS-0010",
+              "name": "Jonas Weber",
+              "tier": "tier3"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1011",
+                "customer_id": "CUS-0010",
+                "currency": "GBP",
+                "balance": 61200.0,
+                "tier": "tier3",
+                "holder": "Jonas Weber"
+              }
+            ]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1011",
+            "limit": 50
+          },
+          "result": {
+            "transactions": [
+              {
+                "id": "TX-1001",
+                "account_id": "ACC-1011",
+                "date": "2026-09-15",
+                "amount": 4200.0,
+                "currency": "GBP",
+                "merchant": "Payroll batch",
+                "direction": "out",
+                "transfer_type": "sepa",
+                "status": "settled"
+              },
+              {
+                "id": "TX-1002",
+                "account_id": "ACC-1011",
+                "date": "2026-09-02",
+                "amount": 26000.0,
+                "currency": "GBP",
+                "merchant": "Supplier invoice 2214",
+                "direction": "out",
+                "transfer_type": "swift",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-1001",
+            "reason_code": "fraud_card_not_present"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "fraud_card_not_present",
+            "window_days": 120,
+            "tx_date": "2026-09-15",
+            "as_of": "2026-09-15",
+            "deadline": "2027-01-13",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        }
+      ],
+      "traces_dir": "reports\\traces\\20261029T142020485983Z-frequency-clean"
+    }
+  ]
+}

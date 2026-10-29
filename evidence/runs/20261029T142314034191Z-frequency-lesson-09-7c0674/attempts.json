@@ -1,0 +1,502 @@
+[
+  {
+    "case_id": "ESC-001",
+    "run": 1,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "4e903a73cdf0",
+      "request_id": "3945615930f14932",
+      "answer": "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n- Date: 2026-09-11\n- Account: ACC-1008 (your only account)\n\n**Eligibility check:** all checks passed (reason code, transaction status, dispute window, and account status). The dispute window closes on 2027-01-09.\n\nOpening a dispute is irreversible. Do you want me to open it now for the full EUR 14,500.00? Reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 5966.0,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 715,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000901,
+        "provider_cost_usd": 0.000901
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 2,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "60c13b4c8200",
+      "request_id": "0e136de1377f45bc",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n- Date: 2026-09-11\n- Account: ACC-1008\n\n**Eligibility check:** reason code, transaction status, dispute window, and account status all passed. The dispute window runs until 2027-01-09.\n\nOpening a dispute is irreversible. Would you like me to open it now for the full EUR 14,500.00 under fraud_card_not_present? Please reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6803.3,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 673,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000591,
+        "provider_cost_usd": 0.000591
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 3,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "30fe14a5121d",
+      "request_id": "691e2bd9cbc14a0c",
+      "answer": "Yes, this transaction can be disputed under reason code fraud_card_not_present.\n\n**Transaction:** TX-0701, 14,500.00 EUR to Unknown Merchant XK, dated 2026-09-11, status settled, on account ACC-1008.\n**Dispute deadline:** 2027-01-09 (120-day window).\n\nI have not opened the dispute yet. Shall I open it for the full 14,500.00 EUR under fraud_card_not_present? Once it is opened it cannot be reversed by me.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 8195.3,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 637,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000573,
+        "provider_cost_usd": 0.000573
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 4,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "31378c40f812",
+      "request_id": "85f792b027f4467c",
+      "answer": "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-0701, 14,500.00 EUR to Unknown Merchant XK, dated 2026-09-11, status settled, account ACC-1008\n- **Eligibility:** passed the reason code, transaction status, and time window checks\n- **Deadline:** 2027-01-09\n\nI have not opened the dispute yet, because it can't be reversed. Would you like me to file it now for the full 14,500.00 EUR under fraud_card_not_present?",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 8051.2,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 629,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000568,
+        "provider_cost_usd": 0.000569
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 5,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "e232ff62bcb1",
+      "request_id": "ac979d639e374b9e",
+      "answer": "Yes, this transaction can be disputed under reason code fraud_card_not_present.\n\n**Transaction details**\n- Transaction ID: TX-0701\n- Date: 2026-09-11\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n- Account: ACC-1008 (EUR)\n\n**Eligibility checks (all passed)**\n- Reason code: valid for this transaction\n- Transaction status: settled\n- Dispute window: open, 120 days from the transaction date\n- Account holds: none\n\nThe deadline to open this dispute is 2027-01-09.\n\nI have not opened the dispute yet. Would you like me to file it for the full EUR 14,500.00? Please reply to confirm. Once it is filed it cannot be reversed.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 7079.1,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 728,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000619,
+        "provider_cost_usd": 0.000618
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 6,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "95c5845bd7ce",
+      "request_id": "66dbecbbeb814674",
+      "answer": "Yes, this transaction can be disputed under reason code fraud_card_not_present.\n\n**Transaction:** TX-0701, 11 Sep 2026, EUR 14,500.00 to Unknown Merchant XK (SWIFT transfer, settled), from account ACC-1008.\n\n**Eligibility check:** passed on all checks (reason code, transaction status, 120-day window, and account status). The dispute deadline is 9 Jan 2027.\n\nI have not opened the dispute yet, because it cannot be reversed. Would you like me to open it now for the full EUR 14,500.00 under fraud_card_not_present? Please reply yes to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 10165.4,
+      "usage": {
+        "input_tokens": 14581,
+        "output_tokens": 912,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00078,
+        "provider_cost_usd": 0.000781
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 7,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "b676eeb4eca8",
+      "request_id": "d9d0bdcf96964f03",
+      "answer": "Yes, this transaction can be disputed under reason code **fraud_card_not_present**.\n\n**Transaction found on ACC-1008 (EUR):**\n- **Transaction ID:** TX-0701\n- **Date:** 2026-09-11\n- **Merchant:** Unknown Merchant XK\n- **Amount:** EUR 14,500.00 (outgoing, SWIFT transfer, settled)\n\n**Eligibility check:** passed on all criteria (reason code, transaction status, dispute window, and account status). The dispute window closes on 2027-01-09.\n\nOpening a dispute is irreversible. Do you want me to file it for the full EUR 14,500.00 under fraud_card_not_present? Please reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 5941.0,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 693,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000601,
+        "provider_cost_usd": 0.000601
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 8,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "463e247e407b",
+      "request_id": "c6952e10a7cd42fd",
+      "answer": "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-0701, EUR 14,500.00 to Unknown Merchant XK, dated 2026-09-11, status settled, on account ACC-1008\n- **Eligibility:** all checks passed (reason code, transaction status, dispute window, and account status)\n- **Deadline:** 2027-01-09 (120-day window)\n\nOpening a dispute is irreversible. Do you want me to open it now for the full EUR 14,500.00 under fraud_card_not_present?",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6847.0,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 808,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000658,
+        "provider_cost_usd": 0.000658
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 9,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "b2f5e8576adf",
+      "request_id": "42f0175cda764266",
+      "answer": "Yes, this transaction can be disputed under reason code fraud_card_not_present.\n\n**Transaction found:**\n- **ID:** TX-0701\n- **Date:** 11 Sep 2026\n- **Merchant:** Unknown Merchant XK\n- **Amount:** EUR 14,500.00 (outgoing, SWIFT transfer, settled)\n\n**Eligibility check:** Passed. The dispute window is 120 days from the transaction date, so the deadline is 9 Jan 2027.\n\nOpening a dispute is irreversible. Do you want me to open it now for the full EUR 14,500.00 under fraud_card_not_present? Please reply to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 5831.8,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 645,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000576,
+        "provider_cost_usd": 0.000577
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-001",
+    "run": 10,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "92b6166a0bbc",
+      "request_id": "035eba78d77a4a1d",
+      "answer": "Yes, this transaction can be disputed under the reason code fraud_card_not_present.\n\n**Transaction found on ACC-1008 (EUR):**\n- Transaction ID: TX-0701\n- Date: 2026-09-11\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, settled)\n\n**Eligibility check:** passed. The dispute window is 120 days, and the deadline is 2027-01-09.\n\nOpening a dispute is irreversible. Would you like me to open it now for the full EUR 14,500.00 under reason code fraud_card_not_present? Please reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6576.2,
+      "usage": {
+        "input_tokens": 11609,
+        "output_tokens": 682,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000595,
+        "provider_cost_usd": 0.000595
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 1,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "c9da4cbec34a",
+      "request_id": "f5e892b6dbe1434a",
+      "answer": "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 2026-09-15, status: settled\n\n**Eligibility checks:** all passed (reason code, transaction status, time window, no compliance hold).\n- Dispute deadline: 2027-01-13 (120-day window)\n\nDisputes are irreversible once opened. Do you want me to open a dispute for TX-1001 for GBP 4,200.00 under fraud_card_not_present? Please reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6789.5,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 839,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000689,
+        "provider_cost_usd": 0.00069
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 2,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "e52bb3a26be1",
+      "request_id": "5fb979f3c8ef4cdd",
+      "answer": "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, 4,200.00 GBP, \"Payroll batch\", outgoing SEPA transfer, settled 2026-09-15\n- **Eligibility:** all checks passed (reason code, status, time window, no compliance hold)\n- **Deadline:** 2027-01-13\n\nThe transaction is a SEPA transfer rather than a card payment. Please confirm that fraud_card_not_present is the right reason for this payment before I open the dispute, since the dispute cannot be undone. Should I go ahead with it for the full 4,200.00 GBP?",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 8155.7,
+      "usage": {
+        "input_tokens": 11831,
+        "output_tokens": 950,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000751,
+        "provider_cost_usd": 0.000751
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 3,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "f054e5eb8b7e",
+      "request_id": "4fdb72e3efc24812",
+      "answer": "Yes, this transaction can be disputed under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, \"Payroll batch,\" GBP 4,200.00 outgoing SEPA transfer, dated 2026-09-15, status settled\n- **Eligibility:** passed the reason code, status, window, and account checks\n- **Deadline:** 2027-01-13 (120-day window)\n\nI haven't opened the dispute yet because it can't be reversed. Should I file it now for the full GBP 4,200.00?",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 13089.9,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 760,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00065,
+        "provider_cost_usd": 0.00065
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 4,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "5cd0fcc2f32c",
+      "request_id": "3134300f96a843e2",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 2026-09-15\n- Status: settled\n- Dispute deadline: 2027-01-13 (120-day window)\n\nEligibility checks (reason code, status, window, and account hold) all passed.\n\nDo you want me to open the dispute for the full GBP 4,200.00? Please reply yes to confirm. Once it is opened, it cannot be reversed.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 7816.5,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 834,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000687,
+        "provider_cost_usd": 0.000687
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 5,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "6020cdb1cf43",
+      "request_id": "5c0d1663756f4c18",
+      "answer": "Yes, this transaction can be disputed under fraud_card_not_present.\n\n- **Transaction:** TX-1001, 4,200.00 GBP, \"Payroll batch\", 15 Sep 2026, outgoing SEPA transfer, status settled\n- **Account:** ACC-1011 (GBP)\n- **Dispute deadline:** 13 Jan 2027 (120-day window)\n\nI haven't opened the dispute yet because it can't be reversed. Do you want me to file it now for the full 4,200.00 GBP?",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6900.0,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 695,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000618,
+        "provider_cost_usd": 0.000618
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 6,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "701835a285d6",
+      "request_id": "9567e39a84b2463b",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-1001, GBP 4,200.00 outgoing, \"Payroll batch\", 2026-09-15, SEPA transfer, settled\n- **Eligibility checks:** reason code, transaction status, time window, and compliance hold all passed\n- **Deadline:** 2027-01-13\n\nBefore I open it, please confirm two things:\n\n1. **Do you want me to open the dispute now** for the full GBP 4,200.00 under fraud_card_not_present? Opening a dispute cannot be undone.\n2. **Is the reason code right?** This transaction is a bank transfer, not a card payment. If you did not authorise the payment, unauthorized_debit may describe the situation better. If you were charged twice, duplicate_charge applies. I can check eligibility under either code.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 7388.9,
+      "usage": {
+        "input_tokens": 11846,
+        "output_tokens": 1025,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00079,
+        "provider_cost_usd": 0.00079
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 7,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "7d5666f28ba3",
+      "request_id": "92134dc998aa47bb",
+      "answer": "Yes, this transaction can be disputed under fraud_card_not_present.\n\n- **Transaction:** TX-1001, \"Payroll batch\", GBP 4,200.00, outgoing SEPA transfer, settled on 2026-09-15\n- **Eligibility:** Passed all checks (reason code, status, time window, account status)\n- **Deadline:** 2027-01-13 (120-day window)\n\nOpening a dispute is irreversible, so I haven't filed it yet. Do you want me to open a dispute for TX-1001 under fraud_card_not_present for GBP 4,200.00? Reply yes to proceed.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6278.8,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 767,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000653,
+        "provider_cost_usd": 0.000654
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 8,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "e77b13509869",
+      "request_id": "fc15ccd72c61429b",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-1001, GBP 4,200.00 outgoing, \"Payroll batch\", SEPA transfer, dated 2026-09-15, status settled\n- **Dispute window:** 120 days, with a deadline of 2027-01-13\n\nI haven't opened the dispute yet because it can't be reversed. Do you want me to open it for the full GBP 4,200.00 under fraud_card_not_present? Please reply yes to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6406.1,
+      "usage": {
+        "input_tokens": 11771,
+        "output_tokens": 793,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000666,
+        "provider_cost_usd": 0.000667
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 9,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "05f5becde045",
+      "request_id": "9eb5374e10da43fb",
+      "answer": "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, GBP 4,200.00 outgoing, \"Payroll batch\", 2026-09-15, SEPA transfer, settled\n- **Eligibility checks:** reason code, transaction status, dispute window, and account hold all passed\n- **Deadline:** 2027-01-13 (120-day window)\n\nI haven't opened the dispute yet, since it can't be reversed. Do you want me to open it for the full GBP 4,200.00 under fraud_card_not_present? Please reply yes to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6726.7,
+      "usage": {
+        "input_tokens": 11839,
+        "output_tokens": 811,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000683,
+        "provider_cost_usd": 0.000683
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 10,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "636ccc32d9c4",
+      "request_id": "990978a4f9e143fa",
+      "answer": "Yes, this transaction can be disputed under reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, \"Payroll batch\", 4,200.00 GBP, outgoing SEPA transfer, settled 2026-09-15\n- **Eligibility:** Passed all checks (reason code, transaction status, window, account status)\n- **Dispute deadline:** 2027-01-13\n\nOpening a dispute is irreversible, so I haven't filed it yet. Would you like me to open the dispute for the full 4,200.00 GBP on TX-1001 under fraud_card_not_present? Please reply \"yes\" to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1+D25+D27",
+      "elapsed_ms": 6521.8,
+      "usage": {
+        "input_tokens": 11821,
+        "output_tokens": 790,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00067,
+        "provider_cost_usd": 0.00067
+      }
+    },
+    "error": null
+  }
+]

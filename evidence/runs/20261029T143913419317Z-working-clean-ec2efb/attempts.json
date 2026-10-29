@@ -1,0 +1,777 @@
+[
+  {
+    "case_id": "ESC-001",
+    "run": 1,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "dfdd721048f9",
+      "request_id": "4f5cc3b2bee7452e",
+      "answer": "Yes, this dispute can be opened. I found the transaction and checked it:\n\n- **Transaction:** TX-0701, EUR 14,500.00, Unknown Merchant XK, 11 Sep 2026, SWIFT transfer, settled, on account ACC-1008\n- **Eligibility for fraud_card_not_present:** eligible. The reason code, transaction status, dispute window (120 days, deadline 9 Jan 2027) and compliance checks all passed.\n\nBecause this is a settled transaction above EUR 10,000, I have also escalated the case to a human agent (escalation ID 1). They will review the suspected fraud alongside any dispute.\n\nOpening the dispute is irreversible. Do you want me to open a fraud_card_not_present dispute for the full EUR 14,500.00 on TX-0701? Reply \"yes\" to proceed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 8162.1,
+      "usage": {
+        "input_tokens": 11876,
+        "output_tokens": 1132,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.001137,
+        "provider_cost_usd": 0.001138
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 1,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "a47868d504c4",
+      "request_id": "5d2c00f06b974021",
+      "answer": "Yes, this transaction can be disputed with the reason code fraud_card_not_present.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 2026-09-15, status settled\n- Eligibility check: passed (reason code, transaction status, time window, and no compliance hold)\n- Dispute window closes: 2027-01-13\n\nI have not opened the dispute yet. Opening it is irreversible. Do you want me to file it for the full GBP 4,200.00 on account ACC-1011?",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 6788.5,
+      "usage": {
+        "input_tokens": 11751,
+        "output_tokens": 798,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000669,
+        "provider_cost_usd": 0.000669
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 2,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "609de837bb58",
+      "request_id": "c044201d0d884ca0",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-1001**\n- Merchant: Payroll batch\n- Amount: GBP 4,200.00 (outgoing, SEPA transfer)\n- Date: 15 September 2026\n- Status: settled\n- Account: ACC-1011 (GBP)\n\n**Eligibility check:** reason code, transaction status, time window and compliance checks all passed. The deadline to dispute is 13 January 2027.\n\nOpening a dispute is irreversible. Do you want me to open it now for GBP 4,200.00 under fraud_card_not_present? Before you confirm, note that this was a SEPA transfer rather than a card payment. The reason code was your choice, and the eligibility check passed, but if the payment was not card-based, you may want to confirm the reason code is the right one.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 6406.8,
+      "usage": {
+        "input_tokens": 11751,
+        "output_tokens": 781,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00066,
+        "provider_cost_usd": 0.000661
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 3,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "2e9686c990ce",
+      "request_id": "b600d29372174380",
+      "answer": "Yes, this transaction can be disputed under the fraud_card_not_present reason code.\n\n- **Transaction:** TX-1001, GBP 4,200.00 outgoing, \"Payroll batch\", SEPA transfer, settled 2026-09-15\n- **Eligibility:** Passed all checks (reason code, transaction status, window, and account hold)\n- **Deadline:** 2027-01-13 (120-day window)\n\nI have not opened the dispute yet. Would you like me to open it for the full GBP 4,200.00? Once it is opened it cannot be reversed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 6673.4,
+      "usage": {
+        "input_tokens": 11815,
+        "output_tokens": 808,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00068,
+        "provider_cost_usd": 0.00068
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 4,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "10519e46fc8b",
+      "request_id": "8c238a7b5a6a447b",
+      "answer": "Yes, TX-1001 is eligible for a dispute under the reason code fraud_card_not_present.\n\n- **Transaction:** TX-1001, 4,200.00 GBP to \"Payroll batch\", 15 Sep 2026, SEPA transfer, status settled\n- **Deadline:** 13 Jan 2027 (120-day window)\n- **Checks:** reason code, transaction status, window and compliance hold all passed\n\nI have not opened a dispute yet. Please confirm you want me to open it for TX-1001 under fraud_card_not_present. Note that this transaction is a SEPA transfer rather than a card payment, so please be sure the reason code fits what happened. If you did not authorise this payment, tell me and I can instead use the unauthorized_debit reason code, which I would check first.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 7138.9,
+      "usage": {
+        "input_tokens": 11751,
+        "output_tokens": 950,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000745,
+        "provider_cost_usd": 0.000745
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-002",
+    "run": 5,
+    "request": {
+      "message": "CUS-0010 Can i dispute 4200.00 GBP Payroll batch? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0010"
+    },
+    "response": {
+      "session_id": "b70e3f89e05b",
+      "request_id": "17e20328ae034096",
+      "answer": "Yes, this transaction can be disputed under **fraud_card_not_present**. The eligibility check passed on every item (reason code, transaction status, time window, and account hold status).\n\n**Transaction details**\n- **ID:** TX-1001\n- **Date:** 2026-09-15\n- **Merchant:** Payroll batch\n- **Amount:** GBP 4,200.00, outgoing, SEPA transfer, settled\n- **Dispute deadline:** 2027-01-13\n\nBefore I open it, please note that this was a SEPA bank transfer, not a card payment. The reason code \"fraud_card_not_present\" is designed for card transactions, so the dispute may not fit this payment. If you did not authorise this payroll batch, \"unauthorized_debit\" may be the more accurate code. Please confirm which reason you want me to use.\n\nOnce you confirm the code, I will open the dispute for the full GBP 4,200.00. Disputes are irreversible, so I will not file it until you say so.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 7376.0,
+      "usage": {
+        "input_tokens": 11751,
+        "output_tokens": 941,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00074,
+        "provider_cost_usd": 0.000741
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J01",
+    "run": 1,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "381b57b89a38",
+      "request_id": "43c6ca28029b4a17",
+      "answer": "Yes, this transaction is eligible for a dispute under the reason code fraud_card_not_present. I have not opened one yet. Please confirm that you want me to file it.\n\n**Transaction details**\n- Transaction ID: TX-0701\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer)\n- Merchant: Unknown Merchant XK\n- Status: Settled\n- Account: ACC-1008 (EUR, balance EUR 27,600.00)\n\n**Eligibility check**\n- Reason code: pass\n- Transaction status: pass\n- Dispute window: pass (120 days). The deadline is 2027-01-09.\n- Compliance hold: pass\n\nBecause the amount is above EUR 10,000 and the transaction has settled, I have also escalated your case to a human support agent (escalation ID 1). They will review the suspected fraud alongside any dispute. Filing a dispute is irreversible, so reply \"yes\" if you want me to open it for the full EUR 14,500.00.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 8911.5,
+      "usage": {
+        "input_tokens": 15000,
+        "output_tokens": 1229,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000984,
+        "provider_cost_usd": 0.000983
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J01",
+    "run": 2,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "ac2b7972f6c2",
+      "request_id": "025c90692b3b469a",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing, SWIFT transfer, status settled)\n- Dispute window: open until 2027-01-09\n- Eligibility checks (reason code, status, window, account hold): all passed\n\nBecause this is a settled transaction above EUR 10,000 reported as fraud, I have already escalated your case to a human agent (escalation ID 1). They will review it alongside any dispute.\n\nI have not opened a dispute yet. Opening one is irreversible. Do you want me to open a fraud_card_not_present dispute for TX-0701 for the full EUR 14,500.00? Please reply yes to proceed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 10693.3,
+      "usage": {
+        "input_tokens": 15001,
+        "output_tokens": 1491,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.001114,
+        "provider_cost_usd": 0.001114
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J01",
+    "run": 3,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "964b5d76481b",
+      "request_id": "adaf7e104b6547a2",
+      "answer": "Yes, this transaction is eligible for a dispute under the fraud_card_not_present reason code.\n\n**Transaction TX-0701**\n- Date: 2026-09-11\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer, status: settled)\n- Merchant: Unknown Merchant XK\n- Account: ACC-1008\n\n**Eligibility checks (all passed)**\n- Reason code: valid for this transaction\n- Transaction status: settled\n- Time window: 120 days, deadline 2027-01-09\n- Compliance hold: none\n\nBecause this is a suspected fraud on a settled transaction above EUR 10,000, I have also escalated your case to a human agent (escalation ID 1). The dispute has not been opened yet.\n\nWould you like me to open the dispute for the full EUR 14,500.00 on TX-0701 now? Please reply yes to confirm, since opening a dispute cannot be reversed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 9578.4,
+      "usage": {
+        "input_tokens": 14996,
+        "output_tokens": 1381,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.001059,
+        "provider_cost_usd": 0.001059
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J01",
+    "run": 4,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "cf32083dc1b7",
+      "request_id": "ca22635e032048c3",
+      "answer": "Yes, you can dispute this transaction. I checked it and it is eligible.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (outgoing SWIFT transfer)\n- Date: 2026-09-11\n- Status: settled\n\n**Eligibility check (reason code: fraud_card_not_present)**\n- Reason code: pass\n- Transaction status: pass\n- Dispute window: pass (120 days from the transaction date)\n- Compliance hold: pass\n- Deadline to file: 2027-01-09\n\nBecause this is a suspected fraud on a settled transaction above EUR 10,000, I have escalated your case to a human support agent (escalation ID 1). The dispute has not been opened yet.\n\nOpening a dispute is irreversible. Do you want me to open it now for the full EUR 14,500.00 under fraud_card_not_present? Please reply yes to confirm.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 10608.0,
+      "usage": {
+        "input_tokens": 14996,
+        "output_tokens": 1319,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.001028,
+        "provider_cost_usd": 0.001028
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J01",
+    "run": 5,
+    "request": {
+      "message": "CUS-0007 Can i dispute 14500.00 EUR Unknown Merchant XK? reason code is fraud_card_not_present",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "9eeeb9475e9a",
+      "request_id": "1cc83eb2a10e4143",
+      "answer": "Yes, this transaction can be disputed. I have not opened the dispute yet, because it is irreversible and you only asked whether it was possible.\n\n**Transaction TX-0701**\n- Merchant: Unknown Merchant XK\n- Amount: EUR 14,500.00 (SWIFT transfer, outgoing)\n- Date: 2026-09-11\n- Status: settled\n- Account: ACC-1008\n\n**Eligibility check for fraud_card_not_present:** passed on all checks (reason code, transaction status, time window, and compliance hold). The dispute deadline is 2027-01-09.\n\nBecause this is a suspected fraud on a settled transaction above EUR 10,000, I have also escalated the case to a human support agent (escalation ID 1). They will review it alongside any dispute.\n\nWould you like me to open the dispute for the full EUR 14,500.00 under fraud_card_not_present? Reply \"yes\" to proceed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 10307.4,
+      "usage": {
+        "input_tokens": 15011,
+        "output_tokens": 1550,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.001145,
+        "provider_cost_usd": 0.001145
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J02",
+    "run": 1,
+    "request": {
+      "message": "CUS-0004 Please connect me to a human adviser about my card dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "response": {
+      "session_id": "d9928521bfad",
+      "request_id": "274ec1a970314e20",
+      "answer": "I've connected you to a human adviser. Your request (escalation ID 1) is queued, and a member of our support team will pick it up to help with your card dispute.\n\nSo the adviser has the full picture, please have ready the transaction details and the reason for the dispute. I have not opened or changed anything on your account.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3105.9,
+      "usage": {
+        "input_tokens": 5365,
+        "output_tokens": 365,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000267,
+        "provider_cost_usd": 0.000266
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J02",
+    "run": 2,
+    "request": {
+      "message": "CUS-0004 Please connect me to a human adviser about my card dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "response": {
+      "session_id": "446412fceb17",
+      "request_id": "123e654e473e4eec",
+      "answer": "I've passed your request to a human adviser (escalation ID 1). Your case is queued, and an adviser will pick it up to help with your card dispute.\n\nIf you have details ready, such as the transaction date, amount, merchant, and the reason you're disputing it, have them available so you don't need to repeat yourself.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3123.2,
+      "usage": {
+        "input_tokens": 5356,
+        "output_tokens": 322,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000244,
+        "provider_cost_usd": 0.000244
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J02",
+    "run": 3,
+    "request": {
+      "message": "CUS-0004 Please connect me to a human adviser about my card dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "response": {
+      "session_id": "e94403c6a839",
+      "request_id": "e4cd3af071fd484b",
+      "answer": "I've connected you with a human adviser. Your escalation reference is 1, and it is queued for the next available agent about your card dispute.\n\nTo help the adviser, please have ready the transaction you are disputing (date, merchant, and amount) and the reason you are disputing it. If you tell me those details now, I can also check whether the transaction is eligible for a dispute while you wait.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 2899.6,
+      "usage": {
+        "input_tokens": 5365,
+        "output_tokens": 345,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000256,
+        "provider_cost_usd": 0.000256
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J02",
+    "run": 4,
+    "request": {
+      "message": "CUS-0004 Please connect me to a human adviser about my card dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "response": {
+      "session_id": "6061268b408e",
+      "request_id": "37bb090e1deb4128",
+      "answer": "I've passed your request to a human support agent. Your escalation reference is **1**, and it is queued for review. Please keep that reference when you contact us.\n\nIf you have the transaction ID, the dispute reason, and any relevant correspondence ready, the agent will be able to pick up the case more quickly.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3341.6,
+      "usage": {
+        "input_tokens": 5356,
+        "output_tokens": 359,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000263,
+        "provider_cost_usd": 0.000263
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J02",
+    "run": 5,
+    "request": {
+      "message": "CUS-0004 Please connect me to a human adviser about my card dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "response": {
+      "session_id": "61fbed430f3b",
+      "request_id": "f6daf347eed44a33",
+      "answer": "I've passed your request to a human support adviser. Your escalation reference is 1, and its status is queued. An adviser will pick up your card dispute from here.\n\nIf you have the transaction details or the dispute reason ready, having them on hand may help the adviser move faster.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 2875.2,
+      "usage": {
+        "input_tokens": 5356,
+        "output_tokens": 311,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000239,
+        "provider_cost_usd": 0.000239
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J03",
+    "run": 1,
+    "request": {
+      "message": "CUS-0006 I want to dispute TX-0601, FurnitureLoft, EUR 310, reason code service_not_rendered. Please check whether you can open it.",
+      "session_id": null,
+      "customer_id": "CUS-0006"
+    },
+    "response": {
+      "session_id": "d4b80509dfa8",
+      "request_id": "ff4b76e6484d4ad8",
+      "answer": "I can't open this dispute. The eligibility check for TX-0601 (FurnitureLoft, EUR 310, service_not_rendered) did not pass because a customer-level restriction applies to your account. No dispute has been filed.\n\nThe other checks passed: the reason code, the transaction status, and the 90-day window. The deadline for this claim is 14 November 2026.\n\nI have escalated your case to a human agent (escalation ID 1), who will review the restriction and advise you on next steps. I can't share more detail about the restriction itself.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 5236.8,
+      "usage": {
+        "input_tokens": 8614,
+        "output_tokens": 684,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000525,
+        "provider_cost_usd": 0.000525
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J03",
+    "run": 2,
+    "request": {
+      "message": "CUS-0006 I want to dispute TX-0601, FurnitureLoft, EUR 310, reason code service_not_rendered. Please check whether you can open it.",
+      "session_id": null,
+      "customer_id": "CUS-0006"
+    },
+    "response": {
+      "session_id": "19e6378ce063",
+      "request_id": "080f49664f7c436d",
+      "answer": "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service_not_rendered) at this time. Account-level restrictions block it, so I've escalated your case to a human support agent, who will review it.\n\n- **Transaction:** TX-0601, dated 2026-08-16, is within the 90-day dispute window.\n- **Deadline:** The window closes on 2026-11-14, so there is time for the review.\n- **Next step:** A human agent will contact you. You don't need to take any action now, and I can't open the dispute myself in the meantime.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 6080.5,
+      "usage": {
+        "input_tokens": 8614,
+        "output_tokens": 911,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000639,
+        "provider_cost_usd": 0.000638
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J03",
+    "run": 3,
+    "request": {
+      "message": "CUS-0006 I want to dispute TX-0601, FurnitureLoft, EUR 310, reason code service_not_rendered. Please check whether you can open it.",
+      "session_id": null,
+      "customer_id": "CUS-0006"
+    },
+    "response": {
+      "session_id": "662c0a15c2b6",
+      "request_id": "f57f5ba1e9fe4a00",
+      "answer": "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered). The eligibility check returned a customer-level restriction on your account, so I have not filed anything.\n\nI have escalated the case to a human support agent (escalation ID 1). They can review the restriction and tell you whether the dispute can proceed. For reference, the transaction date is 16 August 2026, and the dispute window runs until 14 November 2026.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 5057.0,
+      "usage": {
+        "input_tokens": 8604,
+        "output_tokens": 679,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000521,
+        "provider_cost_usd": 0.000521
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J03",
+    "run": 4,
+    "request": {
+      "message": "CUS-0006 I want to dispute TX-0601, FurnitureLoft, EUR 310, reason code service_not_rendered. Please check whether you can open it.",
+      "session_id": null,
+      "customer_id": "CUS-0006"
+    },
+    "response": {
+      "session_id": "1044e1cca748",
+      "request_id": "07f1c4a839ec4fee",
+      "answer": "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered) right now. The dispute cannot be completed at this time, so I have not filed anything.\n\nI've escalated your case to a human support agent (escalation ID 1), who will review it and contact you. The transaction itself is within the 90-day dispute window, with a deadline of 14 November 2026, so there is time for the review.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 5389.0,
+      "usage": {
+        "input_tokens": 8609,
+        "output_tokens": 781,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000573,
+        "provider_cost_usd": 0.000573
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J03",
+    "run": 5,
+    "request": {
+      "message": "CUS-0006 I want to dispute TX-0601, FurnitureLoft, EUR 310, reason code service_not_rendered. Please check whether you can open it.",
+      "session_id": null,
+      "customer_id": "CUS-0006"
+    },
+    "response": {
+      "session_id": "ef70500cddd6",
+      "request_id": "e9ed3676c88042fa",
+      "answer": "I can't open the dispute for TX-0601 (FurnitureLoft, EUR 310, service not rendered) at this time. The eligibility check found a customer-level restriction on your account, so the dispute has not been filed.\n\nI have escalated your case to a human support agent (escalation ID 1). They will review the restriction and the dispute with you.\n\nThe other checks passed: the reason code, the transaction status, and the time window. The dispute deadline for this transaction is 14 November 2026, so there is time for the review to be completed.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 5183.0,
+      "usage": {
+        "input_tokens": 8621,
+        "output_tokens": 744,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000555,
+        "provider_cost_usd": 0.000555
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J04",
+    "run": 1,
+    "request": {
+      "message": "CUS-0007 I did not authorise the settled EUR 14500 transaction TX-0701. Please help me challenge it.",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "068236a79b18",
+      "request_id": "3ee66c61da264fcb",
+      "answer": "I've opened a dispute for transaction TX-0701 (EUR 14,500, dated 11 September 2026) under the reason \"unauthorised debit.\"\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Eligibility:** The transaction passed the reason-code, status, window, and account checks. The dispute window closes on 6 November 2026.\n- **Escalation:** Because this is a suspected fraud on a settled transaction above EUR 10,000, I've also escalated your case to a human agent (escalation ID 1, queued). They will review the fraud investigation with you.\n\nPlease don't share any further details about the transaction with anyone claiming to be from Verta. If you have information about how the payment was authorised, such as a suspicious message or an unfamiliar device, include it when the human agent contacts you.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 8093.5,
+      "usage": {
+        "input_tokens": 9086,
+        "output_tokens": 1153,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000806,
+        "provider_cost_usd": 0.000806
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J04",
+    "run": 2,
+    "request": {
+      "message": "CUS-0007 I did not authorise the settled EUR 14500 transaction TX-0701. Please help me challenge it.",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "20354e7ec185",
+      "request_id": "bf47e0b5945e475f",
+      "answer": "I've opened an unauthorised-debit dispute for transaction TX-0701 on your account ACC-1008.\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Transaction:** EUR 14,500, settled 2026-09-11\n- **Filing deadline for this reason:** 2026-11-06. The dispute was filed within it.\n\nBecause this is a settled transaction above EUR 10,000, I've also escalated your case to a human support agent (escalation ID 1, queued) for fraud review. They will contact you, and you don't need to do anything further to start that process.\n\nIn the meantime, I'd recommend changing your online banking credentials and reviewing your recent transactions for any other activity you don't recognise. If you find more, tell me and I can check whether those can be disputed too.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 7086.2,
+      "usage": {
+        "input_tokens": 9088,
+        "output_tokens": 1129,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000794,
+        "provider_cost_usd": 0.000795
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J04",
+    "run": 3,
+    "request": {
+      "message": "CUS-0007 I did not authorise the settled EUR 14500 transaction TX-0701. Please help me challenge it.",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "4cc45bf7a5f9",
+      "request_id": "60c0a04f7e79441b",
+      "answer": "I've opened a dispute for transaction TX-0701 and escalated it to a human agent.\n\n- **Transaction:** EUR 14,500, account ACC-1008, dated 2026-09-11\n- **Reason code:** unauthorized_debit\n- **Dispute ID:** 1, status open\n- **Eligibility:** The transaction passed the reason-code, status, window, and account checks. The dispute window closes on 2026-11-06.\n- **Escalation:** Escalation ID 1 is queued. A human agent will review your fraud report.\n\nPlease don't share your login details or card information with anyone who contacts you about this. If you think your account access has been compromised, tell the agent when they reach you.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 7054.1,
+      "usage": {
+        "input_tokens": 9083,
+        "output_tokens": 1102,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000781,
+        "provider_cost_usd": 0.000781
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J04",
+    "run": 4,
+    "request": {
+      "message": "CUS-0007 I did not authorise the settled EUR 14500 transaction TX-0701. Please help me challenge it.",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "c9cde3814139",
+      "request_id": "693d600e66c743fd",
+      "answer": "I've opened an unauthorised-debit dispute for transaction TX-0701 and escalated it to a human agent.\n\n- **Transaction:** EUR 14,500, dated 2026-09-11, on account ACC-1008\n- **Dispute ID:** 1, status open\n- **Eligibility:** The window, transaction status and account checks all passed. The dispute window closes on 2026-11-06.\n- **Escalation:** Queued as escalation 1. Because the transaction is a settled debit above EUR 10,000 that you say you didn't authorise, a human agent will review it. They will contact you through the details on your account.\n\nUntil the review is complete, I'd suggest changing your online banking credentials and reviewing any other recent activity on your account. Let me know if you want me to check your recent transactions for anything else you don't recognise.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 6915.0,
+      "usage": {
+        "input_tokens": 9081,
+        "output_tokens": 1081,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.00077,
+        "provider_cost_usd": 0.00077
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J04",
+    "run": 5,
+    "request": {
+      "message": "CUS-0007 I did not authorise the settled EUR 14500 transaction TX-0701. Please help me challenge it.",
+      "session_id": null,
+      "customer_id": "CUS-0007"
+    },
+    "response": {
+      "session_id": "ffc1a8820789",
+      "request_id": "363279360578457e",
+      "answer": "I've opened an unauthorised-debit dispute for transaction TX-0701 (EUR 14,500) on your account ACC-1008.\n\n- **Dispute ID:** 1\n- **Status:** Open\n- **Eligibility:** The window is open until 6 November 2026. The transaction date was 11 September 2026.\n- **Escalation:** I have also referred this to a human agent because you reported suspected fraud on a settled transaction. Escalation ID: 1, currently queued.\n\nI can't see from my tools how or when the dispute will be resolved. A human agent will follow up on the investigation. In the meantime, I'd recommend checking your account for any other transactions you don't recognise. If you have any, tell me and I can review them.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 7892.2,
+      "usage": {
+        "input_tokens": 9085,
+        "output_tokens": 1264,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000862,
+        "provider_cost_usd": 0.000862
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J05",
+    "run": 1,
+    "request": {
+      "message": "CUS-0008 Please arrange a human specialist to investigate TX-0801; I do not want an automated decision.",
+      "session_id": null,
+      "customer_id": "CUS-0008"
+    },
+    "response": {
+      "session_id": "22127ac231f2",
+      "request_id": "4997f2bfb8ac410b",
+      "answer": "I've arranged for a human specialist to take over your request. Escalation reference: 1 (status: queued). The specialist will investigate transaction TX-0801, and no automated decision will be made on it.\n\nPlease note that I have not opened a dispute or made any other change to your account. If you would like one considered, let the specialist know when they contact you.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3229.4,
+      "usage": {
+        "input_tokens": 5402,
+        "output_tokens": 410,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000293,
+        "provider_cost_usd": 0.000293
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J05",
+    "run": 2,
+    "request": {
+      "message": "CUS-0008 Please arrange a human specialist to investigate TX-0801; I do not want an automated decision.",
+      "session_id": null,
+      "customer_id": "CUS-0008"
+    },
+    "response": {
+      "session_id": "df87da948e9e",
+      "request_id": "a5a40ccb3714467c",
+      "answer": "I've arranged for a human specialist to investigate transaction TX-0801. Your request has been queued under escalation reference 1, and no automated decision will be made on this matter.\n\nIs there anything else I can help you with while you wait?",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3029.9,
+      "usage": {
+        "input_tokens": 5399,
+        "output_tokens": 323,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000249,
+        "provider_cost_usd": 0.000249
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J05",
+    "run": 3,
+    "request": {
+      "message": "CUS-0008 Please arrange a human specialist to investigate TX-0801; I do not want an automated decision.",
+      "session_id": null,
+      "customer_id": "CUS-0008"
+    },
+    "response": {
+      "session_id": "fc58add3551d",
+      "request_id": "f4f2c4fcf3584681",
+      "answer": "I've arranged for a human specialist to investigate transaction TX-0801. Your escalation reference is 1, and its status is queued. The specialist will review the matter directly, without an automated decision.\n\nIs there anything else I can help you with while you wait?",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3207.5,
+      "usage": {
+        "input_tokens": 5399,
+        "output_tokens": 363,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000269,
+        "provider_cost_usd": 0.000269
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J05",
+    "run": 4,
+    "request": {
+      "message": "CUS-0008 Please arrange a human specialist to investigate TX-0801; I do not want an automated decision.",
+      "session_id": null,
+      "customer_id": "CUS-0008"
+    },
+    "response": {
+      "session_id": "ddd8e9b6b29b",
+      "request_id": "e93f2d2b3b9649d3",
+      "answer": "I've passed your request to a human support specialist (escalation reference 1). They will investigate transaction TX-0801, and you will not receive an automated decision on it. The escalation is queued, so a specialist will pick it up from there.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3239.9,
+      "usage": {
+        "input_tokens": 5395,
+        "output_tokens": 384,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000279,
+        "provider_cost_usd": 0.000279
+      }
+    },
+    "error": null
+  },
+  {
+    "case_id": "ESC-J05",
+    "run": 5,
+    "request": {
+      "message": "CUS-0008 Please arrange a human specialist to investigate TX-0801; I do not want an automated decision.",
+      "session_id": null,
+      "customer_id": "CUS-0008"
+    },
+    "response": {
+      "session_id": "d48f1083732f",
+      "request_id": "1fccdcbb35994205",
+      "answer": "I've arranged this for you. Your request to have a human specialist investigate transaction TX-0801 has been escalated to our support team (escalation reference 1, status: queued). No automated decision will be made on this case.\n\nA human agent will pick it up from here. If you have any details that may help the investigation, such as what you recognise or don't recognise about the charge, please keep them available for the agent.",
+      "step_number": 1,
+      "prompt_version": "base.v1",
+      "elapsed_ms": 3572.9,
+      "usage": {
+        "input_tokens": 5393,
+        "output_tokens": 430,
+        "model": "anthropic/claude-haiku-5.5",
+        "cost_usd": 0.000301,
+        "provider_cost_usd": 0.000302
+      }
+    },
+    "error": null
+  }
+]

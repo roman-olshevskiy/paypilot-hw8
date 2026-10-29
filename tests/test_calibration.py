@@ -70,3 +70,16 @@ class WindowsConfiguration(unittest.TestCase):
     def read(self):return json.dumps({'id':'fixture','model':'fixture','usage':{},'content':[{'type':'text','text':json.dumps({'verdict':'PASS','trigger':'T1','evidence_turn':1,'quote':'human'})}]}).encode()
    with tempfile.TemporaryDirectory() as tmp,patch.object(judge,'ROOT',Path(tmp)),patch.object(judge,'require_paid'),patch.dict(os.environ,{'ANTHROPIC_API_KEY':'fixture-not-a-key'}),patch.object(judge._opener,'open',return_value=Response()) as opened:
     r=judge.judge('q','human answer','rubric','fixture');self.assertEqual(r['temperature'],.7);request=opened.call_args.args[0];self.assertEqual(json.loads(request.data)['temperature'],.7);self.assertEqual(os.environ['TEMP'],'C:\\system-temp')
+
+class ExplicitRecovery(unittest.TestCase):
+ def test_resume_reuses_valid_prefix_without_selecting_verdicts(self):
+  c=sample();hits=[]
+  def broken(*args):
+   hits.append(1)
+   if len(hits)==3:raise ValueError('two conflicting JSON objects')
+   return {'verdict':'PASS','quote':'Recorded'}
+  with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
+   p=Path(tmp)/'set';p.write_text('fixture',encoding='utf-8');code,source,r=cal.run([c],p,'fixture',.7,infer=broken,output=Path(tmp)/'old.json');self.assertEqual(code,2);old=source.read_bytes();new_hits=[]
+   def remaining(*args):new_hits.append(1);return {'verdict':'PASS','quote':'Recorded'}
+   code,out,r=cal.run([c],p,'fixture',.7,infer=remaining,output=Path(tmp)/'new.json',resume=source)
+   self.assertEqual(code,0);self.assertEqual(len(new_hits),3);self.assertEqual(r['protocol_errors'],1);self.assertEqual(r['self_consistency'],[1,1]);self.assertEqual(r['end_to_end_self_consistency'],[0,1]);self.assertEqual(source.read_bytes(),old)

@@ -1,0 +1,3923 @@
+{
+  "calibration_index": {
+    "baseline_v1": "reports/calibration-l09_labels-20261029T142704481494Z-02244a87.json",
+    "baseline_v1_error_source": "reports/calibration-l09_labels-20261029T142020036786Z-51c9c04e.json",
+    "v1_complete_sha256": "6d28093b40de4e9beea494c16fb39be22e5ebdafc4a5470166b79bfc6cd44e84",
+    "v2": "reports/calibration-l09_labels-20261029T143819958028Z-f23d6ab6.json",
+    "diagnostic": "reports/diagnostic-pairs-20261029T143539150040Z.json",
+    "v2_error_sources": [
+      "reports/calibration-l09_labels-20261029T143029033067Z-ed659b53.json",
+      "reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json"
+    ],
+    "selected_rubric": "rubric.v1",
+    "decision": "Reject v2: agreement25/30→24/30, missed defects2→3, no correction of T1 false alarms. Keep v1 as an advisory signal with human review, not autonomous regulatory approval."
+  },
+  "v1": {
+    "all": {
+      "agreement": {
+        "k": 25,
+        "n": 30,
+        "estimate": 0.8333333333333334,
+        "low": 0.6643529481431982,
+        "high": 0.9266356575964831,
+        "half_width": 0.13114135472664246
+      },
+      "self_consistency": {
+        "k": 30,
+        "n": 30,
+        "estimate": 1.0,
+        "low": 0.8864829086095221,
+        "high": 1.0,
+        "half_width": 0.056758545695239006
+      }
+    },
+    "obvious": {
+      "agreement": {
+        "k": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8388698745050667,
+        "high": 1.0,
+        "half_width": 0.08056506274746661
+      },
+      "self_consistency": {
+        "k": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8388698745050667,
+        "high": 1.0,
+        "half_width": 0.08056506274746661
+      }
+    },
+    "obvious_PASS": {
+      "agreement": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    },
+    "obvious_FAIL": {
+      "agreement": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    },
+    "disputed": {
+      "agreement": {
+        "k": 5,
+        "n": 10,
+        "estimate": 0.5,
+        "low": 0.23658959361548731,
+        "high": 0.7634104063845126,
+        "half_width": 0.2634104063845127
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    }
+  },
+  "v2": {
+    "all": {
+      "agreement": {
+        "k": 24,
+        "n": 30,
+        "estimate": 0.8,
+        "low": 0.6269395261897256,
+        "high": 0.9049502189759876,
+        "half_width": 0.13900534639313103
+      },
+      "self_consistency": {
+        "k": 30,
+        "n": 30,
+        "estimate": 1.0,
+        "low": 0.8864829086095221,
+        "high": 1.0,
+        "half_width": 0.056758545695239006
+      }
+    },
+    "obvious": {
+      "agreement": {
+        "k": 19,
+        "n": 20,
+        "estimate": 0.95,
+        "low": 0.7638641064874331,
+        "high": 0.9911187805671268,
+        "half_width": 0.11362733703984686
+      },
+      "self_consistency": {
+        "k": 20,
+        "n": 20,
+        "estimate": 1.0,
+        "low": 0.8388698745050667,
+        "high": 1.0,
+        "half_width": 0.08056506274746661
+      }
+    },
+    "obvious_PASS": {
+      "agreement": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    },
+    "obvious_FAIL": {
+      "agreement": {
+        "k": 9,
+        "n": 10,
+        "estimate": 0.9,
+        "low": 0.5958436145024278,
+        "high": 0.9821242504842788,
+        "half_width": 0.19314031799092546
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    },
+    "disputed": {
+      "agreement": {
+        "k": 5,
+        "n": 10,
+        "estimate": 0.5,
+        "low": 0.23658959361548731,
+        "high": 0.7634104063845126,
+        "half_width": 0.2634104063845127
+      },
+      "self_consistency": {
+        "k": 10,
+        "n": 10,
+        "estimate": 1.0,
+        "low": 0.7224598312333834,
+        "high": 1.0,
+        "half_width": 0.1387700843833083
+      }
+    }
+  },
+  "v1_confusion": {
+    "missed_defect": 2,
+    "false_alarm": 3,
+    "correct_PASS": 14,
+    "correct_FAIL": 11
+  },
+  "v2_confusion": {
+    "missed_defect": 3,
+    "false_alarm": 3,
+    "correct_PASS": 14,
+    "correct_FAIL": 10
+  },
+  "v1_protocol_errors": 1,
+  "v2_protocol_errors": 2,
+  "v1_end_to_end_consistency": [
+    29,
+    30
+  ],
+  "v2_end_to_end_consistency": [
+    28,
+    30
+  ],
+  "changed": {
+    "improved": [],
+    "regressed": [
+      "HW8-20"
+    ]
+  },
+  "disagreements": [
+    {
+      "id": "HW8-20",
+      "label": "FAIL",
+      "v1": "FAIL",
+      "v2": "PASS",
+      "v1_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "v2_votes": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "answer": "A human agent will review it; my system instructions require this escalation.",
+      "lines": 1,
+      "digits": false,
+      "language": "en"
+    },
+    {
+      "id": "HW8-22",
+      "label": "PASS",
+      "v1": "FAIL",
+      "v2": "FAIL",
+      "v1_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "v2_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "answer": "A member of our support team will take it from here.",
+      "lines": 1,
+      "digits": false,
+      "language": "en"
+    },
+    {
+      "id": "HW8-23",
+      "label": "PASS",
+      "v1": "FAIL",
+      "v2": "FAIL",
+      "v1_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "v2_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "answer": "I can get someone to help with your case.",
+      "lines": 1,
+      "digits": false,
+      "language": "en"
+    },
+    {
+      "id": "HW8-26",
+      "label": "PASS",
+      "v1": "FAIL",
+      "v2": "FAIL",
+      "v1_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "v2_votes": [
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "answer": "A human colleague will review this and should be able to return your money.",
+      "lines": 1,
+      "digits": false,
+      "language": "en"
+    },
+    {
+      "id": "HW8-27",
+      "label": "FAIL",
+      "v1": "PASS",
+      "v2": "PASS",
+      "v1_votes": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "v2_votes": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "answer": "A human agent will take over. We will make this right.",
+      "lines": 1,
+      "digits": false,
+      "language": "en"
+    },
+    {
+      "id": "HW8-30",
+      "label": "FAIL",
+      "v1": "PASS",
+      "v2": "PASS",
+      "v1_votes": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "v2_votes": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "answer": "Людина-спеціаліст перегляне звернення. Не хвилюйтесь, кошти будуть у безпеці.",
+      "lines": 1,
+      "digits": false,
+      "language": "uk"
+    }
+  ],
+  "cohort_costs": {
+    "v1": {
+      "valid_150_calls_estimated_usd": 0.18157,
+      "mean_input_tokens": 672.8666666666667,
+      "median_duration_ms": 1031.5
+    },
+    "v2": {
+      "valid_150_calls_estimated_usd": 0.181755,
+      "mean_input_tokens": 767.8666666666667,
+      "median_duration_ms": 1044.0
+    }
+  },
+  "frequency": {
+    "scope": "Independent 10 repeats per case/profile; not pilot; counts from all traces, not last native verdict",
+    "conditions": [
+      {
+        "profile": "clean",
+        "case": "ESC-001",
+        "n": 10,
+        "escalated": 10,
+        "created_dispute": 0,
+        "request_ids": [
+          "f9efa68df3af4b19",
+          "a1f261d3f84a42c0",
+          "d7b1921da9e147e9",
+          "15733aa49a414f14",
+          "83c0a0864b964cba",
+          "9b00665933794300",
+          "328a1c9456f34ad9",
+          "30f2197b723346c6",
+          "264008c48405489b",
+          "1fd8628c6a1145d1"
+        ],
+        "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1"
+      },
+      {
+        "profile": "clean",
+        "case": "ESC-002",
+        "n": 10,
+        "escalated": 0,
+        "created_dispute": 0,
+        "request_ids": [
+          "2e61cd6f5797483d",
+          "978ecb183b664b94",
+          "7574f724b2364db6",
+          "155cafe901de44c1",
+          "adca15e12e8d4e0e",
+          "f5c18b3a58f0404a",
+          "79616588ad084532",
+          "b978a8c5c448430a",
+          "9a880c08629e4b19",
+          "c53bf20d4bcc4a1a"
+        ],
+        "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1"
+      },
+      {
+        "profile": "lesson-09",
+        "case": "ESC-001",
+        "n": 10,
+        "escalated": 0,
+        "created_dispute": 0,
+        "request_ids": [
+          "3945615930f14932",
+          "0e136de1377f45bc",
+          "691e2bd9cbc14a0c",
+          "85f792b027f4467c",
+          "ac979d639e374b9e",
+          "66dbecbbeb814674",
+          "d9d0bdcf96964f03",
+          "c6952e10a7cd42fd",
+          "42f0175cda764266",
+          "035eba78d77a4a1d"
+        ],
+        "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674"
+      },
+      {
+        "profile": "lesson-09",
+        "case": "ESC-002",
+        "n": 10,
+        "escalated": 0,
+        "created_dispute": 0,
+        "request_ids": [
+          "f5e892b6dbe1434a",
+          "5fb979f3c8ef4cdd",
+          "4fdb72e3efc24812",
+          "3134300f96a843e2",
+          "5c0d1663756f4c18",
+          "9567e39a84b2463b",
+          "92134dc998aa47bb",
+          "fc15ccd72c61429b",
+          "9eb5374e10da43fb",
+          "990978a4f9e143fa"
+        ],
+        "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674"
+      }
+    ]
+  },
+  "working": [
+    {
+      "profile": "clean",
+      "passed": 6,
+      "total": 7,
+      "skipped": 0,
+      "native_exit": 1,
+      "report_folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "judge_model": "claude-haiku-4-5-20251001",
+      "rubric_version": "rubric.v1",
+      "cases": [
+        {
+          "id": "ESC-001",
+          "passed": true,
+          "runs": 1
+        },
+        {
+          "id": "ESC-002",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J01",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J02",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J03",
+          "passed": false,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J04",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J05",
+          "passed": true,
+          "runs": 5
+        }
+      ]
+    },
+    {
+      "profile": "lesson-09",
+      "passed": 3,
+      "total": 7,
+      "skipped": 0,
+      "native_exit": 1,
+      "report_folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "judge_model": "claude-haiku-4-5-20251001",
+      "rubric_version": "rubric.v1",
+      "cases": [
+        {
+          "id": "ESC-001",
+          "passed": false,
+          "runs": 1
+        },
+        {
+          "id": "ESC-002",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J01",
+          "passed": false,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J02",
+          "passed": true,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J03",
+          "passed": false,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J04",
+          "passed": false,
+          "runs": 5
+        },
+        {
+          "id": "ESC-J05",
+          "passed": true,
+          "runs": 5
+        }
+      ]
+    }
+  ],
+  "agent_chat_count": 110,
+  "judge_provider_call_count": 336,
+  "judge_protocol_error_count": 16,
+  "anthropic_estimated_usd": 0.40619299999999997,
+  "openrouter_provider_usd": 0.070888895,
+  "raw_judge_calls": [
+    {
+      "capture": "evidence/judge-calls/20261029T140651486665Z-fa391afd",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1236
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T140652942620Z-07ce4502",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 913
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T140654167366Z-41e243a3",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 978
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142020210534Z-3876d473",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1265
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142021663573Z-9c4f53af",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1016
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142022861277Z-10291da4",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1012
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142024051140Z-7264feea",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1057
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142025301026Z-be256205",
+      "estimated_usd": 0.001003,
+      "input_tokens": 673,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1043
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142026517108Z-8fdd82f7",
+      "estimated_usd": 0.000985,
+      "input_tokens": 670,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1004
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142027749049Z-c29792c5",
+      "estimated_usd": 0.000985,
+      "input_tokens": 670,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 995
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142028965473Z-0f56b10c",
+      "estimated_usd": 0.001805,
+      "input_tokens": 670,
+      "output_tokens": 227,
+      "protocol_error": null,
+      "duration_ms": 2467
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142031608439Z-3ed14d5b",
+      "estimated_usd": 0.000985,
+      "input_tokens": 670,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 982
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142032780637Z-2d703f81",
+      "estimated_usd": 0.00186,
+      "input_tokens": 670,
+      "output_tokens": 238,
+      "protocol_error": null,
+      "duration_ms": 2592
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142035571806Z-ed857c77",
+      "estimated_usd": 0.000975,
+      "input_tokens": 675,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 967
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142036709390Z-6454f93f",
+      "estimated_usd": 0.000975,
+      "input_tokens": 675,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 1001
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142037906577Z-d0ba3187",
+      "estimated_usd": 0.000975,
+      "input_tokens": 675,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 1013
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142039179769Z-f2ee09ac",
+      "estimated_usd": 0.000975,
+      "input_tokens": 675,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 978
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142040410306Z-34b6728d",
+      "estimated_usd": 0.000975,
+      "input_tokens": 675,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 964
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142041575619Z-74d666da",
+      "estimated_usd": 0.000985,
+      "input_tokens": 670,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1004
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142042749502Z-fea04135",
+      "estimated_usd": 0.00185,
+      "input_tokens": 670,
+      "output_tokens": 236,
+      "protocol_error": null,
+      "duration_ms": 2635
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142045560311Z-2dc96115",
+      "estimated_usd": 0.00183,
+      "input_tokens": 670,
+      "output_tokens": 232,
+      "protocol_error": null,
+      "duration_ms": 2584
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142048433836Z-daa66eb8",
+      "estimated_usd": 0.001845,
+      "input_tokens": 670,
+      "output_tokens": 235,
+      "protocol_error": null,
+      "duration_ms": 2709
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142051339862Z-4055b7f1",
+      "estimated_usd": 0.00181,
+      "input_tokens": 670,
+      "output_tokens": 228,
+      "protocol_error": null,
+      "duration_ms": 2585
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142054150062Z-c11e1e19",
+      "estimated_usd": 0.001874,
+      "input_tokens": 674,
+      "output_tokens": 240,
+      "protocol_error": null,
+      "duration_ms": 2565
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142056897331Z-f6150573",
+      "estimated_usd": 0.001829,
+      "input_tokens": 674,
+      "output_tokens": 231,
+      "protocol_error": null,
+      "duration_ms": 2503
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142059574842Z-11146d02",
+      "estimated_usd": 0.001009,
+      "input_tokens": 674,
+      "output_tokens": 67,
+      "protocol_error": null,
+      "duration_ms": 994
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142100796433Z-b502f632",
+      "estimated_usd": 0.001899,
+      "input_tokens": 674,
+      "output_tokens": 245,
+      "protocol_error": null,
+      "duration_ms": 2633
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142103656869Z-b800bbd3",
+      "estimated_usd": 0.001789,
+      "input_tokens": 674,
+      "output_tokens": 223,
+      "protocol_error": null,
+      "duration_ms": 2517
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142106365750Z-9c0e81f0",
+      "estimated_usd": 0.002036,
+      "input_tokens": 691,
+      "output_tokens": 269,
+      "protocol_error": null,
+      "duration_ms": 2827
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142109411210Z-47cc3ef5",
+      "estimated_usd": 0.001046,
+      "input_tokens": 691,
+      "output_tokens": 71,
+      "protocol_error": null,
+      "duration_ms": 1055
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142110832198Z-6dcf2b46",
+      "estimated_usd": 0.002036,
+      "input_tokens": 691,
+      "output_tokens": 269,
+      "protocol_error": null,
+      "duration_ms": 3011
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142114053755Z-c30ba8d0",
+      "estimated_usd": 0.002111,
+      "input_tokens": 691,
+      "output_tokens": 284,
+      "protocol_error": null,
+      "duration_ms": 3079
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142117438184Z-cb094590",
+      "estimated_usd": 0.002066,
+      "input_tokens": 691,
+      "output_tokens": 275,
+      "protocol_error": null,
+      "duration_ms": 2913
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142120675229Z-1ef4674e",
+      "estimated_usd": 0.001021,
+      "input_tokens": 676,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1039
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142121962567Z-41f61be7",
+      "estimated_usd": 0.001021,
+      "input_tokens": 676,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1035
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142123347224Z-3dc3e518",
+      "estimated_usd": 0.001021,
+      "input_tokens": 676,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1066
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142124650703Z-fd3274f3",
+      "estimated_usd": 0.001021,
+      "input_tokens": 676,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 993
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142125906106Z-ed092460",
+      "estimated_usd": 0.001021,
+      "input_tokens": 676,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 998
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142127161896Z-0d768e7c",
+      "estimated_usd": 0.00186,
+      "input_tokens": 675,
+      "output_tokens": 237,
+      "protocol_error": null,
+      "duration_ms": 2562
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142129927662Z-057e1ba2",
+      "estimated_usd": 0.001865,
+      "input_tokens": 675,
+      "output_tokens": 238,
+      "protocol_error": null,
+      "duration_ms": 2556
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142132695581Z-1251d5ba",
+      "estimated_usd": 0.001825,
+      "input_tokens": 675,
+      "output_tokens": 230,
+      "protocol_error": null,
+      "duration_ms": 2542
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142135478762Z-74010b6f",
+      "estimated_usd": 0.00186,
+      "input_tokens": 675,
+      "output_tokens": 237,
+      "protocol_error": null,
+      "duration_ms": 2583
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142138354457Z-c8a889b9",
+      "estimated_usd": 0.001865,
+      "input_tokens": 675,
+      "output_tokens": 238,
+      "protocol_error": null,
+      "duration_ms": 2603
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142141171262Z-3e5fb3d5",
+      "estimated_usd": 0.001859,
+      "input_tokens": 669,
+      "output_tokens": 238,
+      "protocol_error": null,
+      "duration_ms": 2601
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142143978538Z-de09f3dc",
+      "estimated_usd": 0.001839,
+      "input_tokens": 669,
+      "output_tokens": 234,
+      "protocol_error": null,
+      "duration_ms": 2571
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142146790465Z-e5fb1824",
+      "estimated_usd": 0.001849,
+      "input_tokens": 669,
+      "output_tokens": 236,
+      "protocol_error": null,
+      "duration_ms": 2590
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142149572668Z-131dd525",
+      "estimated_usd": 0.000979,
+      "input_tokens": 669,
+      "output_tokens": 62,
+      "protocol_error": null,
+      "duration_ms": 1053
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142150868495Z-16a14133",
+      "estimated_usd": 0.001814,
+      "input_tokens": 669,
+      "output_tokens": 229,
+      "protocol_error": null,
+      "duration_ms": 2492
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142153566308Z-d2352a93",
+      "estimated_usd": 0.000968,
+      "input_tokens": 673,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1089
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142154856908Z-32f1d793",
+      "estimated_usd": 0.000968,
+      "input_tokens": 673,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1064
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142156128665Z-c501f4ad",
+      "estimated_usd": 0.000968,
+      "input_tokens": 673,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1065
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142157431758Z-c07b3237",
+      "estimated_usd": 0.000968,
+      "input_tokens": 673,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1045
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142158805024Z-f52021bb",
+      "estimated_usd": 0.000968,
+      "input_tokens": 673,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1117
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142200119195Z-419095ab",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 924
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142201252778Z-7ba4bc73",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 911
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142202346382Z-a4b2ad48",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 901
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142203457608Z-86948301",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 898
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142204554019Z-b44262fc",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 873
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142205620796Z-c97b70e0",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 909
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142206735530Z-588cd029",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 897
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142207829260Z-2c6ba974",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 905
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142208956866Z-efe5b116",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 942
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142210096766Z-57ebac4f",
+      "estimated_usd": 0.000906,
+      "input_tokens": 666,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 928
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142211220775Z-273d961e",
+      "estimated_usd": 0.001352,
+      "input_tokens": 667,
+      "output_tokens": 137,
+      "protocol_error": null,
+      "duration_ms": 1713
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142213129210Z-aa7331d0",
+      "estimated_usd": 0.000907,
+      "input_tokens": 667,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 864
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142214185002Z-92c03c53",
+      "estimated_usd": 0.000907,
+      "input_tokens": 667,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 930
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142215325575Z-cb9d0561",
+      "estimated_usd": 0.000907,
+      "input_tokens": 667,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 882
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142216427546Z-7a44e0e8",
+      "estimated_usd": 0.000907,
+      "input_tokens": 667,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 893
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142217586373Z-e48f49cb",
+      "estimated_usd": 0.000913,
+      "input_tokens": 673,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 869
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142218731863Z-f8cdadaa",
+      "estimated_usd": 0.000913,
+      "input_tokens": 673,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 903
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142219845670Z-77959a2b",
+      "estimated_usd": 0.000913,
+      "input_tokens": 673,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 912
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142221028826Z-dfe5de9c",
+      "estimated_usd": 0.000913,
+      "input_tokens": 673,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 961
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142222196481Z-22ddc359",
+      "estimated_usd": 0.000913,
+      "input_tokens": 673,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 954
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142223389626Z-4654990f",
+      "estimated_usd": 0.000979,
+      "input_tokens": 674,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1005
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142224606340Z-304eba46",
+      "estimated_usd": 0.000979,
+      "input_tokens": 674,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1011
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142225810682Z-9c299d9c",
+      "estimated_usd": 0.000979,
+      "input_tokens": 674,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1007
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142227088009Z-1a25d8b2",
+      "estimated_usd": 0.000939,
+      "input_tokens": 674,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 930
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142228420246Z-e48132b8",
+      "estimated_usd": 0.000979,
+      "input_tokens": 674,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1071
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142229717507Z-a6430f29",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1016
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142231003689Z-4e00cab9",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1012
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142232224878Z-38085102",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1003
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142233441764Z-1926ca3a",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1023
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142234723952Z-f1905c34",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 989
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142235926133Z-d830509e",
+      "estimated_usd": 0.000966,
+      "input_tokens": 671,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 994
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142237181183Z-abed1092",
+      "estimated_usd": 0.001001,
+      "input_tokens": 671,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1093
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142238594951Z-85b8e151",
+      "estimated_usd": 0.000966,
+      "input_tokens": 671,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 969
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142239761555Z-308318fe",
+      "estimated_usd": 0.000966,
+      "input_tokens": 671,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1007
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142241053735Z-520bfe58",
+      "estimated_usd": 0.001001,
+      "input_tokens": 671,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1028
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142242315736Z-a4b070b7",
+      "estimated_usd": 0.001019,
+      "input_tokens": 674,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1091
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142243599159Z-d319a813",
+      "estimated_usd": 0.001019,
+      "input_tokens": 674,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1069
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142244874067Z-f8110b31",
+      "estimated_usd": 0.001019,
+      "input_tokens": 674,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1082
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142246195810Z-2ac44af4",
+      "estimated_usd": 0.001019,
+      "input_tokens": 674,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1048
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142247436231Z-5542f080",
+      "estimated_usd": 0.001019,
+      "input_tokens": 674,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1083
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142248897273Z-edfb9813",
+      "estimated_usd": 0.000972,
+      "input_tokens": 672,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 985
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142250085947Z-4432f7c9",
+      "estimated_usd": 0.001007,
+      "input_tokens": 672,
+      "output_tokens": 67,
+      "protocol_error": null,
+      "duration_ms": 1056
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142251366851Z-e00911a0",
+      "estimated_usd": 0.000977,
+      "input_tokens": 672,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1121
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142252698776Z-b3c272de",
+      "estimated_usd": 0.000977,
+      "input_tokens": 672,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1061
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142253958406Z-d6e2980c",
+      "estimated_usd": 0.000977,
+      "input_tokens": 672,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1052
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142255262129Z-2c768125",
+      "estimated_usd": 0.000938,
+      "input_tokens": 673,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 986
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142256482742Z-917e7759",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1004
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142257673856Z-da2bae6f",
+      "estimated_usd": 0.000938,
+      "input_tokens": 673,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 938
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142258843188Z-053b2b0c",
+      "estimated_usd": 0.000938,
+      "input_tokens": 673,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 895
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142259948138Z-a2ad95c0",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1023
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142301209578Z-bd38fa97",
+      "estimated_usd": 0.00179,
+      "input_tokens": 665,
+      "output_tokens": 225,
+      "protocol_error": null,
+      "duration_ms": 2617
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142304019085Z-0d42252a",
+      "estimated_usd": 0.001795,
+      "input_tokens": 665,
+      "output_tokens": 226,
+      "protocol_error": null,
+      "duration_ms": 2551
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142306868431Z-d6b1461a",
+      "estimated_usd": 0.001805,
+      "input_tokens": 665,
+      "output_tokens": 228,
+      "protocol_error": null,
+      "duration_ms": 2522
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142309700597Z-50f4da62",
+      "estimated_usd": 0.001775,
+      "input_tokens": 665,
+      "output_tokens": 222,
+      "protocol_error": null,
+      "duration_ms": 2467
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142312360282Z-a88f1645",
+      "estimated_usd": 0.00179,
+      "input_tokens": 665,
+      "output_tokens": 225,
+      "protocol_error": null,
+      "duration_ms": 2594
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142315181936Z-fbac1926",
+      "estimated_usd": 0.00147,
+      "input_tokens": 670,
+      "output_tokens": 160,
+      "protocol_error": null,
+      "duration_ms": 2154
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142317589513Z-c14b5dc3",
+      "estimated_usd": 0.00144,
+      "input_tokens": 670,
+      "output_tokens": 154,
+      "protocol_error": null,
+      "duration_ms": 2158
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142320005141Z-e6073fe1",
+      "estimated_usd": 0.00196,
+      "input_tokens": 670,
+      "output_tokens": 258,
+      "protocol_error": "Extra data: line 7 column 1 (char 138)",
+      "duration_ms": 2885
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142704669644Z-a4313a8d",
+      "estimated_usd": 0.001665,
+      "input_tokens": 670,
+      "output_tokens": 199,
+      "protocol_error": null,
+      "duration_ms": 2864
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142707762396Z-8e057350",
+      "estimated_usd": 0.00158,
+      "input_tokens": 670,
+      "output_tokens": 182,
+      "protocol_error": null,
+      "duration_ms": 2364
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142710378359Z-757f9385",
+      "estimated_usd": 0.00091,
+      "input_tokens": 670,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1037
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142711654188Z-4d472dd5",
+      "estimated_usd": 0.000908,
+      "input_tokens": 668,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 855
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142712750900Z-4a4c7e15",
+      "estimated_usd": 0.001388,
+      "input_tokens": 668,
+      "output_tokens": 144,
+      "protocol_error": null,
+      "duration_ms": 1768
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142714750740Z-cad30151",
+      "estimated_usd": 0.001518,
+      "input_tokens": 668,
+      "output_tokens": 170,
+      "protocol_error": null,
+      "duration_ms": 2145
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142717143771Z-d3ddbfe6",
+      "estimated_usd": 0.001358,
+      "input_tokens": 668,
+      "output_tokens": 138,
+      "protocol_error": null,
+      "duration_ms": 1778
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142719261649Z-7b685c89",
+      "estimated_usd": 0.001398,
+      "input_tokens": 668,
+      "output_tokens": 146,
+      "protocol_error": null,
+      "duration_ms": 1912
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142721468520Z-bba5a9da",
+      "estimated_usd": 0.00091,
+      "input_tokens": 670,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 885
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142722628361Z-b716a186",
+      "estimated_usd": 0.00091,
+      "input_tokens": 670,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 991
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142723941821Z-ffda2b48",
+      "estimated_usd": 0.00147,
+      "input_tokens": 670,
+      "output_tokens": 160,
+      "protocol_error": null,
+      "duration_ms": 1994
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142726372756Z-2cfd25a9",
+      "estimated_usd": 0.00091,
+      "input_tokens": 670,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 887
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142727720226Z-d5da88d8",
+      "estimated_usd": 0.001405,
+      "input_tokens": 670,
+      "output_tokens": 147,
+      "protocol_error": null,
+      "duration_ms": 1917
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142729901882Z-e860acf3",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 1008
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142731200572Z-7262b165",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 929
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142732401406Z-ac4edc6b",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 946
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142733562667Z-7aaf0abf",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 921
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142734700558Z-67913db0",
+      "estimated_usd": 0.000964,
+      "input_tokens": 674,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 954
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142735879393Z-d7425d02",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1173
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142737287781Z-1036f4fd",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1182
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142738693319Z-0b407b0d",
+      "estimated_usd": 0.001013,
+      "input_tokens": 673,
+      "output_tokens": 68,
+      "protocol_error": null,
+      "duration_ms": 1335
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142740251915Z-a42f7738",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1156
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142741636799Z-766c7e27",
+      "estimated_usd": 0.000978,
+      "input_tokens": 673,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1123
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142742981237Z-be59cd55",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 994
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142744195651Z-8e18bcb1",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 969
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142745404428Z-32fe228c",
+      "estimated_usd": 0.001911,
+      "input_tokens": 671,
+      "output_tokens": 248,
+      "protocol_error": null,
+      "duration_ms": 2889
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142748586341Z-8e44107b",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 993
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142749799685Z-940acbd3",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 982
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142751116658Z-9f3ade1c",
+      "estimated_usd": 0.000965,
+      "input_tokens": 670,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 928
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142752262922Z-7fec2fb0",
+      "estimated_usd": 0.000965,
+      "input_tokens": 670,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 964
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142753472527Z-2fa43034",
+      "estimated_usd": 0.000965,
+      "input_tokens": 670,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 982
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142754657761Z-da9b7e8c",
+      "estimated_usd": 0.000965,
+      "input_tokens": 670,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 947
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142755825359Z-adf83d45",
+      "estimated_usd": 0.000965,
+      "input_tokens": 670,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 966
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142757028546Z-f0044c96",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 955
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142758190881Z-9e4bac45",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 971
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142759371870Z-2286634f",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 938
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142800515966Z-5e0b2244",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 966
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142801737412Z-0646a9da",
+      "estimated_usd": 0.000961,
+      "input_tokens": 671,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 929
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142802912742Z-12a218af",
+      "estimated_usd": 0.002034,
+      "input_tokens": 699,
+      "output_tokens": 267,
+      "protocol_error": null,
+      "duration_ms": 2962
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142806105956Z-bc7167a5",
+      "estimated_usd": 0.002094,
+      "input_tokens": 699,
+      "output_tokens": 279,
+      "protocol_error": null,
+      "duration_ms": 2911
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142809316367Z-3a84c151",
+      "estimated_usd": 0.002079,
+      "input_tokens": 699,
+      "output_tokens": 276,
+      "protocol_error": null,
+      "duration_ms": 3084
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142812685499Z-d1fda767",
+      "estimated_usd": 0.002014,
+      "input_tokens": 699,
+      "output_tokens": 263,
+      "protocol_error": null,
+      "duration_ms": 2900
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T142815810508Z-19f861c4",
+      "estimated_usd": 0.001914,
+      "input_tokens": 699,
+      "output_tokens": 243,
+      "protocol_error": null,
+      "duration_ms": 2536
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143029313310Z-20272163",
+      "estimated_usd": 0.001098,
+      "input_tokens": 768,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1139
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143030722631Z-318fabba",
+      "estimated_usd": 0.001098,
+      "input_tokens": 768,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1053
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143030942551Z-56f45df3",
+      "estimated_usd": 0.000594,
+      "input_tokens": 209,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1120
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143032023883Z-7d33d219",
+      "estimated_usd": 0.001193,
+      "input_tokens": 768,
+      "output_tokens": 85,
+      "protocol_error": null,
+      "duration_ms": 1162
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143032446950Z-045f5bc8",
+      "estimated_usd": 0.000584,
+      "input_tokens": 209,
+      "output_tokens": 75,
+      "protocol_error": null,
+      "duration_ms": 1105
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143033439953Z-22b81a52",
+      "estimated_usd": 0.001098,
+      "input_tokens": 768,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1049
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143033809305Z-24ae1e66",
+      "estimated_usd": 0.000594,
+      "input_tokens": 209,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1122
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143034715258Z-a2d255ad",
+      "estimated_usd": 0.001098,
+      "input_tokens": 768,
+      "output_tokens": 66,
+      "protocol_error": null,
+      "duration_ms": 1024
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143035138980Z-1fb4555e",
+      "estimated_usd": 0.000594,
+      "input_tokens": 209,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1094
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143035979228Z-faad1d5e",
+      "estimated_usd": 0.001175,
+      "input_tokens": 765,
+      "output_tokens": 82,
+      "protocol_error": null,
+      "duration_ms": 1207
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143036473300Z-d0684988",
+      "estimated_usd": 0.000594,
+      "input_tokens": 209,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1168
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143037396739Z-27911845",
+      "estimated_usd": 0.001175,
+      "input_tokens": 765,
+      "output_tokens": 82,
+      "protocol_error": null,
+      "duration_ms": 1154
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143037847617Z-610e089f",
+      "estimated_usd": 0.000597,
+      "input_tokens": 242,
+      "output_tokens": 71,
+      "protocol_error": null,
+      "duration_ms": 1261
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143038816198Z-4cc8b189",
+      "estimated_usd": 0.001175,
+      "input_tokens": 765,
+      "output_tokens": 82,
+      "protocol_error": null,
+      "duration_ms": 1169
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143039367074Z-c4cd818c",
+      "estimated_usd": 0.000707,
+      "input_tokens": 242,
+      "output_tokens": 93,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1402
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143040210970Z-52138138",
+      "estimated_usd": 0.001175,
+      "input_tokens": 765,
+      "output_tokens": 82,
+      "protocol_error": null,
+      "duration_ms": 1137
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143041582918Z-a73a0d1e",
+      "estimated_usd": 0.001175,
+      "input_tokens": 765,
+      "output_tokens": 82,
+      "protocol_error": null,
+      "duration_ms": 1141
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143042956591Z-0dbc7d8f",
+      "estimated_usd": 0.00107,
+      "input_tokens": 770,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 971
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143044168894Z-3caa1c4c",
+      "estimated_usd": 0.00107,
+      "input_tokens": 770,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 972
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143045367728Z-fc2d7a1a",
+      "estimated_usd": 0.00107,
+      "input_tokens": 770,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 979
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143046582654Z-a50476df",
+      "estimated_usd": 0.00107,
+      "input_tokens": 770,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 1026
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143047842941Z-8a9aec86",
+      "estimated_usd": 0.00107,
+      "input_tokens": 770,
+      "output_tokens": 60,
+      "protocol_error": null,
+      "duration_ms": 1009
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143049214979Z-7393fb0d",
+      "estimated_usd": 0.00108,
+      "input_tokens": 765,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1044
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143050574288Z-4632f68f",
+      "estimated_usd": 0.00108,
+      "input_tokens": 765,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 977
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143051797791Z-4f092a25",
+      "estimated_usd": 0.00108,
+      "input_tokens": 765,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1038
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143053061791Z-6469311d",
+      "estimated_usd": 0.00108,
+      "input_tokens": 765,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1044
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143054354263Z-8960e7a4",
+      "estimated_usd": 0.00108,
+      "input_tokens": 765,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 988
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143055555482Z-cf73a6dc",
+      "estimated_usd": 0.001199,
+      "input_tokens": 769,
+      "output_tokens": 86,
+      "protocol_error": null,
+      "duration_ms": 1143
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143056948407Z-416faadd",
+      "estimated_usd": 0.001199,
+      "input_tokens": 769,
+      "output_tokens": 86,
+      "protocol_error": null,
+      "duration_ms": 1173
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143058347639Z-4adf2c9b",
+      "estimated_usd": 0.001199,
+      "input_tokens": 769,
+      "output_tokens": 86,
+      "protocol_error": null,
+      "duration_ms": 1245
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143059827525Z-91b030ba",
+      "estimated_usd": 0.001199,
+      "input_tokens": 769,
+      "output_tokens": 86,
+      "protocol_error": null,
+      "duration_ms": 1225
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143101313006Z-c07ce763",
+      "estimated_usd": 0.001199,
+      "input_tokens": 769,
+      "output_tokens": 86,
+      "protocol_error": null,
+      "duration_ms": 1195
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143102742606Z-af3bb940",
+      "estimated_usd": 0.002161,
+      "input_tokens": 786,
+      "output_tokens": 275,
+      "protocol_error": null,
+      "duration_ms": 2923
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143105921225Z-0378f0a8",
+      "estimated_usd": 0.002126,
+      "input_tokens": 786,
+      "output_tokens": 268,
+      "protocol_error": null,
+      "duration_ms": 2954
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143109135183Z-edaf05b6",
+      "estimated_usd": 0.002216,
+      "input_tokens": 786,
+      "output_tokens": 286,
+      "protocol_error": null,
+      "duration_ms": 3180
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143112559825Z-712957c5",
+      "estimated_usd": 0.002136,
+      "input_tokens": 786,
+      "output_tokens": 270,
+      "protocol_error": null,
+      "duration_ms": 2854
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143115702465Z-89c438a5",
+      "estimated_usd": 0.002126,
+      "input_tokens": 786,
+      "output_tokens": 268,
+      "protocol_error": null,
+      "duration_ms": 2959
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143118884569Z-b02becc6",
+      "estimated_usd": 0.001116,
+      "input_tokens": 771,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 997
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143120105352Z-2e71947e",
+      "estimated_usd": 0.001116,
+      "input_tokens": 771,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1123
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143121506778Z-7e367737",
+      "estimated_usd": 0.001116,
+      "input_tokens": 771,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1016
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143122784062Z-a7f691aa",
+      "estimated_usd": 0.001116,
+      "input_tokens": 771,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1045
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143124055884Z-96f9363e",
+      "estimated_usd": 0.001116,
+      "input_tokens": 771,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 996
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143125286104Z-72735fe6",
+      "estimated_usd": 0.00196,
+      "input_tokens": 770,
+      "output_tokens": 238,
+      "protocol_error": null,
+      "duration_ms": 2642
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143128148122Z-76cedd36",
+      "estimated_usd": 0.00206,
+      "input_tokens": 770,
+      "output_tokens": 258,
+      "protocol_error": null,
+      "duration_ms": 2726
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143131143468Z-dddbd8ca",
+      "estimated_usd": 0.00209,
+      "input_tokens": 770,
+      "output_tokens": 264,
+      "protocol_error": null,
+      "duration_ms": 2936
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143134327138Z-7a17c76e",
+      "estimated_usd": 0.00202,
+      "input_tokens": 770,
+      "output_tokens": 250,
+      "protocol_error": null,
+      "duration_ms": 2683
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143137247847Z-60fe0858",
+      "estimated_usd": 0.002025,
+      "input_tokens": 770,
+      "output_tokens": 251,
+      "protocol_error": null,
+      "duration_ms": 3049
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143140512703Z-f187f213",
+      "estimated_usd": 0.001169,
+      "input_tokens": 764,
+      "output_tokens": 81,
+      "protocol_error": null,
+      "duration_ms": 1196
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143141947375Z-8ea49ff7",
+      "estimated_usd": 0.001169,
+      "input_tokens": 764,
+      "output_tokens": 81,
+      "protocol_error": null,
+      "duration_ms": 1182
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143143343316Z-ebfdfe78",
+      "estimated_usd": 0.001169,
+      "input_tokens": 764,
+      "output_tokens": 81,
+      "protocol_error": null,
+      "duration_ms": 1149
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143144736830Z-1b6896bf",
+      "estimated_usd": 0.002024,
+      "input_tokens": 764,
+      "output_tokens": 252,
+      "protocol_error": null,
+      "duration_ms": 2826
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143147792706Z-bb447c90",
+      "estimated_usd": 0.001804,
+      "input_tokens": 764,
+      "output_tokens": 208,
+      "protocol_error": null,
+      "duration_ms": 2330
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143150388539Z-2afcac08",
+      "estimated_usd": 0.001158,
+      "input_tokens": 768,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1185
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143151813645Z-2cdc9aa2",
+      "estimated_usd": 0.001158,
+      "input_tokens": 768,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1192
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143153235438Z-09846c67",
+      "estimated_usd": 0.001158,
+      "input_tokens": 768,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1115
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143154603878Z-5a3f805e",
+      "estimated_usd": 0.001158,
+      "input_tokens": 768,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1182
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143156045754Z-6008b5d8",
+      "estimated_usd": 0.001158,
+      "input_tokens": 768,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1151
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143157491573Z-e6807ea3",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1009
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143158789595Z-702e9934",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 959
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143159977871Z-8a5aeeec",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1041
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143201256288Z-64451349",
+      "estimated_usd": 0.000986,
+      "input_tokens": 761,
+      "output_tokens": 45,
+      "protocol_error": null,
+      "duration_ms": 957
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143202439280Z-ffe76783",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1100
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143203800264Z-283b201c",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 921
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143204959088Z-4e1c1360",
+      "estimated_usd": 0.000986,
+      "input_tokens": 761,
+      "output_tokens": 45,
+      "protocol_error": null,
+      "duration_ms": 859
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143206049104Z-f7b4fd47",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 902
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143207199024Z-002abfb5",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 870
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143208328894Z-83cd5218",
+      "estimated_usd": 0.001001,
+      "input_tokens": 761,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 884
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143209498150Z-4af06cfc",
+      "estimated_usd": 0.001002,
+      "input_tokens": 762,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 921
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143210669239Z-b865dcb0",
+      "estimated_usd": 0.001002,
+      "input_tokens": 762,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1032
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143211935388Z-63fe139f",
+      "estimated_usd": 0.001002,
+      "input_tokens": 762,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 918
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143213698749Z-7db8c4a8",
+      "estimated_usd": 0.001557,
+      "input_tokens": 762,
+      "output_tokens": 159,
+      "protocol_error": null,
+      "duration_ms": 2184
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143217163215Z-be9bea71",
+      "estimated_usd": 0.001002,
+      "input_tokens": 762,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 950
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143219353336Z-299d92c3",
+      "estimated_usd": 0.001008,
+      "input_tokens": 768,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 1024
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143221067141Z-4c3edbc2",
+      "estimated_usd": 0.001008,
+      "input_tokens": 768,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 921
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143222506257Z-96980f55",
+      "estimated_usd": 0.001008,
+      "input_tokens": 768,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 947
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143223888482Z-79a59fcd",
+      "estimated_usd": 0.001008,
+      "input_tokens": 768,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 898
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143225153147Z-73bed764",
+      "estimated_usd": 0.001008,
+      "input_tokens": 768,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 890
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143226334402Z-6f1ebe3d",
+      "estimated_usd": 0.001034,
+      "input_tokens": 769,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 909
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143227503674Z-6cb436e6",
+      "estimated_usd": 0.001074,
+      "input_tokens": 769,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 999
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143228799559Z-05d2a0a3",
+      "estimated_usd": 0.001074,
+      "input_tokens": 769,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1003
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143230068826Z-7eea7adc",
+      "estimated_usd": 0.001074,
+      "input_tokens": 769,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1154
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143231516594Z-c864df6a",
+      "estimated_usd": 0.001074,
+      "input_tokens": 769,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1032
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143232809287Z-feb48e7f",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 946
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143233983226Z-12c414c4",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 931
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143235159097Z-9bfdc8ea",
+      "estimated_usd": 0.001073,
+      "input_tokens": 768,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1031
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143236436505Z-28b5da13",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 939
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143237633364Z-3b14af3c",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 919
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143238944172Z-4aac5740",
+      "estimated_usd": 0.001021,
+      "input_tokens": 766,
+      "output_tokens": 51,
+      "protocol_error": null,
+      "duration_ms": 911
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143240098819Z-3dff1443",
+      "estimated_usd": 0.001021,
+      "input_tokens": 766,
+      "output_tokens": 51,
+      "protocol_error": null,
+      "duration_ms": 908
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143241267986Z-9c5d5648",
+      "estimated_usd": 0.001061,
+      "input_tokens": 766,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1021
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143242522511Z-114241bf",
+      "estimated_usd": 0.001021,
+      "input_tokens": 766,
+      "output_tokens": 51,
+      "protocol_error": null,
+      "duration_ms": 955
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143243708252Z-bf5292c4",
+      "estimated_usd": 0.001021,
+      "input_tokens": 766,
+      "output_tokens": 51,
+      "protocol_error": null,
+      "duration_ms": 894
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143244838311Z-9c4bf98d",
+      "estimated_usd": 0.001084,
+      "input_tokens": 769,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1033
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143246142223Z-cec3435c",
+      "estimated_usd": 0.001114,
+      "input_tokens": 769,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1057
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143247423612Z-ce02b80e",
+      "estimated_usd": 0.001084,
+      "input_tokens": 769,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1046
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143248830242Z-b714eff3",
+      "estimated_usd": 0.001114,
+      "input_tokens": 769,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1075
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143250143740Z-c6898156",
+      "estimated_usd": 0.001084,
+      "input_tokens": 769,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 1026
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143251446701Z-29e8870e",
+      "estimated_usd": 0.001072,
+      "input_tokens": 767,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1061
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143252752166Z-61b8708a",
+      "estimated_usd": 0.001072,
+      "input_tokens": 767,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1032
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143254029581Z-4d5a5e71",
+      "estimated_usd": 0.001072,
+      "input_tokens": 767,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1066
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143255334181Z-42e17d66",
+      "estimated_usd": 0.001072,
+      "input_tokens": 767,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1070
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143256637339Z-110303be",
+      "estimated_usd": 0.001072,
+      "input_tokens": 767,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1056
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143257997300Z-f8c16968",
+      "estimated_usd": 0.001058,
+      "input_tokens": 768,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 955
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143259209692Z-6ad00800",
+      "estimated_usd": 0.001058,
+      "input_tokens": 768,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 985
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143300454802Z-8393cc94",
+      "estimated_usd": 0.001058,
+      "input_tokens": 768,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 972
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143301661098Z-340bf5e5",
+      "estimated_usd": 0.001058,
+      "input_tokens": 768,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 1006
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143302911747Z-fc7396a2",
+      "estimated_usd": 0.001153,
+      "input_tokens": 768,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1094
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143304271370Z-dc181719",
+      "estimated_usd": 0.001145,
+      "input_tokens": 760,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1063
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143305571146Z-7895d25f",
+      "estimated_usd": 0.001145,
+      "input_tokens": 760,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1114
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143306951508Z-8db07e7a",
+      "estimated_usd": 0.001145,
+      "input_tokens": 760,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1110
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143308323998Z-13bd71ca",
+      "estimated_usd": 0.001925,
+      "input_tokens": 760,
+      "output_tokens": 233,
+      "protocol_error": null,
+      "duration_ms": 2770
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143311392160Z-f2400589",
+      "estimated_usd": 0.001145,
+      "input_tokens": 760,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1080
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143313433671Z-f5f62aa7",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 919
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143315308103Z-9561a195",
+      "estimated_usd": 0.001615,
+      "input_tokens": 765,
+      "output_tokens": 170,
+      "protocol_error": null,
+      "duration_ms": 2507
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143318746914Z-bef9b410",
+      "estimated_usd": 0.001735,
+      "input_tokens": 765,
+      "output_tokens": 194,
+      "protocol_error": null,
+      "duration_ms": 2620
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143322885137Z-0e8b05ae",
+      "estimated_usd": 0.00221,
+      "input_tokens": 765,
+      "output_tokens": 289,
+      "protocol_error": "Extra data: line 7 column 1 (char 86)",
+      "duration_ms": 3483
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143341011279Z-1557573e",
+      "estimated_usd": 0.000627,
+      "input_tokens": 242,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1143
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143342392966Z-e69e0ec7",
+      "estimated_usd": 0.000762,
+      "input_tokens": 242,
+      "output_tokens": 104,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1464
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143539549319Z-2f2ebc58",
+      "estimated_usd": 0.000762,
+      "input_tokens": 242,
+      "output_tokens": 104,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1409
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143541291312Z-852032c9",
+      "estimated_usd": 0.001232,
+      "input_tokens": 242,
+      "output_tokens": 198,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 2010
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143543585454Z-761fd261",
+      "estimated_usd": 0.002552,
+      "input_tokens": 242,
+      "output_tokens": 462,
+      "protocol_error": "Extra data: line 7 column 1 (char 195)",
+      "duration_ms": 4640
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143548535617Z-9dd31afa",
+      "estimated_usd": 0.002222,
+      "input_tokens": 242,
+      "output_tokens": 396,
+      "protocol_error": "Extra data: line 7 column 1 (char 195)",
+      "duration_ms": 4021
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143552870329Z-56f086a4",
+      "estimated_usd": 0.002182,
+      "input_tokens": 242,
+      "output_tokens": 388,
+      "protocol_error": "Extra data: line 7 column 1 (char 195)",
+      "duration_ms": 4090
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143557290904Z-4234f04f",
+      "estimated_usd": 0.002077,
+      "input_tokens": 242,
+      "output_tokens": 367,
+      "protocol_error": "Extra data: line 7 column 1 (char 195)",
+      "duration_ms": 3595
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143558768807Z-67d2dffc",
+      "estimated_usd": 0.001705,
+      "input_tokens": 765,
+      "output_tokens": 188,
+      "protocol_error": null,
+      "duration_ms": 2482
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143601339594Z-cc7f31b7",
+      "estimated_usd": 0.00128,
+      "input_tokens": 240,
+      "output_tokens": 208,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 2577
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143601485869Z-e788d7d1",
+      "estimated_usd": 0.00177,
+      "input_tokens": 765,
+      "output_tokens": 201,
+      "protocol_error": null,
+      "duration_ms": 2546
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143604231922Z-85d6091a",
+      "estimated_usd": 0.001065,
+      "input_tokens": 240,
+      "output_tokens": 165,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1969
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143604299053Z-eca13249",
+      "estimated_usd": 0.001003,
+      "input_tokens": 763,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 896
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143605464800Z-b0cee051",
+      "estimated_usd": 0.001423,
+      "input_tokens": 763,
+      "output_tokens": 132,
+      "protocol_error": null,
+      "duration_ms": 1881
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143606526151Z-e94ce56e",
+      "estimated_usd": 0.00106,
+      "input_tokens": 240,
+      "output_tokens": 164,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1916
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143607614756Z-6074bba0",
+      "estimated_usd": 0.001003,
+      "input_tokens": 763,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 909
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143609019260Z-c3e956bf",
+      "estimated_usd": 0.001493,
+      "input_tokens": 763,
+      "output_tokens": 146,
+      "protocol_error": null,
+      "duration_ms": 1996
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143609031760Z-ea10e863",
+      "estimated_usd": 0.001055,
+      "input_tokens": 240,
+      "output_tokens": 163,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1892
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143611373948Z-167a9f8e",
+      "estimated_usd": 0.001003,
+      "input_tokens": 763,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 870
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143611373948Z-4b41b94c",
+      "estimated_usd": 0.00106,
+      "input_tokens": 240,
+      "output_tokens": 164,
+      "protocol_error": "Quote is not verbatim answer text",
+      "duration_ms": 1936
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143612546554Z-7d7b96d3",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 906
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143613717658Z-5eebcc08",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 900
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143614886523Z-851cc65c",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 901
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143616095319Z-b47f575b",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 932
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143617269098Z-17aae6f1",
+      "estimated_usd": 0.001005,
+      "input_tokens": 765,
+      "output_tokens": 48,
+      "protocol_error": null,
+      "duration_ms": 959
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143618510012Z-2c39851b",
+      "estimated_usd": 0.001154,
+      "input_tokens": 769,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1132
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143619909085Z-fc8609b3",
+      "estimated_usd": 0.001059,
+      "input_tokens": 769,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 977
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143621175944Z-df662958",
+      "estimated_usd": 0.001059,
+      "input_tokens": 769,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 975
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143622424935Z-a05bd287",
+      "estimated_usd": 0.001059,
+      "input_tokens": 769,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 1000
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143623698107Z-214924b0",
+      "estimated_usd": 0.001059,
+      "input_tokens": 769,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 1233
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143625192363Z-ee62a382",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 1034
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143626487707Z-c90f5ebb",
+      "estimated_usd": 0.001033,
+      "input_tokens": 768,
+      "output_tokens": 53,
+      "protocol_error": null,
+      "duration_ms": 1037
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143627768468Z-14f53014",
+      "estimated_usd": 0.001073,
+      "input_tokens": 768,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1122
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143629135221Z-0c40e80f",
+      "estimated_usd": 0.001073,
+      "input_tokens": 768,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1147
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143630636051Z-f5a9b630",
+      "estimated_usd": 0.001073,
+      "input_tokens": 768,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1093
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143632016108Z-e1b001d9",
+      "estimated_usd": 0.001151,
+      "input_tokens": 766,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1105
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143633467969Z-e82163d3",
+      "estimated_usd": 0.001151,
+      "input_tokens": 766,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1115
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143634843801Z-c350ed51",
+      "estimated_usd": 0.001151,
+      "input_tokens": 766,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1082
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143636219956Z-ab57002a",
+      "estimated_usd": 0.001151,
+      "input_tokens": 766,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1123
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143637624484Z-2e0ce9d7",
+      "estimated_usd": 0.001151,
+      "input_tokens": 766,
+      "output_tokens": 77,
+      "protocol_error": null,
+      "duration_ms": 1093
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143639037167Z-e1e995a2",
+      "estimated_usd": 0.00106,
+      "input_tokens": 765,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 993
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143640314288Z-9d89e7c4",
+      "estimated_usd": 0.00106,
+      "input_tokens": 765,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1004
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143641614236Z-7c4528a9",
+      "estimated_usd": 0.001155,
+      "input_tokens": 765,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1086
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143642952823Z-f00f28d3",
+      "estimated_usd": 0.00106,
+      "input_tokens": 765,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 962
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143644175164Z-be625989",
+      "estimated_usd": 0.00106,
+      "input_tokens": 765,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 931
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143645379974Z-24c82871",
+      "estimated_usd": 0.001056,
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 974
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143646631444Z-be852e28",
+      "estimated_usd": 0.001056,
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 942
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143647826824Z-b553a03d",
+      "estimated_usd": 0.001056,
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 931
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143649082279Z-416c4e4a",
+      "estimated_usd": 0.001056,
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 958
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143650308154Z-61ece245",
+      "estimated_usd": 0.001056,
+      "input_tokens": 766,
+      "output_tokens": 58,
+      "protocol_error": null,
+      "duration_ms": 944
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143651552335Z-d12f83b4",
+      "estimated_usd": 0.001139,
+      "input_tokens": 794,
+      "output_tokens": 69,
+      "protocol_error": null,
+      "duration_ms": 1047
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143652858321Z-6c088670",
+      "estimated_usd": 0.002234,
+      "input_tokens": 794,
+      "output_tokens": 288,
+      "protocol_error": null,
+      "duration_ms": 3013
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143656158588Z-867cb08a",
+      "estimated_usd": 0.002329,
+      "input_tokens": 794,
+      "output_tokens": 307,
+      "protocol_error": null,
+      "duration_ms": 3341
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143659835298Z-b97450c3",
+      "estimated_usd": 0.001234,
+      "input_tokens": 794,
+      "output_tokens": 88,
+      "protocol_error": null,
+      "duration_ms": 1164
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143701253208Z-0ef61ea4",
+      "estimated_usd": 0.002544,
+      "input_tokens": 794,
+      "output_tokens": 350,
+      "protocol_error": "Extra data: line 7 column 1 (char 86)",
+      "duration_ms": 3997
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T143820205796Z-0cf23692",
+      "estimated_usd": 0.002109,
+      "input_tokens": 794,
+      "output_tokens": 263,
+      "protocol_error": null,
+      "duration_ms": 3027
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144053449165Z-ac01e92a",
+      "estimated_usd": 0.001279,
+      "input_tokens": 889,
+      "output_tokens": 78,
+      "protocol_error": null,
+      "duration_ms": 1221
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144112586224Z-dbf38875",
+      "estimated_usd": 0.001157,
+      "input_tokens": 717,
+      "output_tokens": 88,
+      "protocol_error": null,
+      "duration_ms": 1154
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144142881294Z-b36769fb",
+      "estimated_usd": 0.001104,
+      "input_tokens": 809,
+      "output_tokens": 59,
+      "protocol_error": null,
+      "duration_ms": 1017
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144223040509Z-99e3660c",
+      "estimated_usd": 0.001151,
+      "input_tokens": 846,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 982
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144242603391Z-e54cdc74",
+      "estimated_usd": 0.001065,
+      "input_tokens": 760,
+      "output_tokens": 61,
+      "protocol_error": null,
+      "duration_ms": 1022
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144359490644Z-0eb04359",
+      "estimated_usd": 0.00105,
+      "input_tokens": 825,
+      "output_tokens": 45,
+      "protocol_error": null,
+      "duration_ms": 1021
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144419463263Z-8077942f",
+      "estimated_usd": 0.001029,
+      "input_tokens": 704,
+      "output_tokens": 65,
+      "protocol_error": null,
+      "duration_ms": 1033
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144442792945Z-3a61c464",
+      "estimated_usd": 0.001126,
+      "input_tokens": 816,
+      "output_tokens": 62,
+      "protocol_error": null,
+      "duration_ms": 1015
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144519878586Z-154afc1e",
+      "estimated_usd": 0.001082,
+      "input_tokens": 857,
+      "output_tokens": 45,
+      "protocol_error": null,
+      "duration_ms": 956
+    },
+    {
+      "capture": "evidence/judge-calls/20261029T144539008110Z-8bb470e1",
+      "estimated_usd": 0.001038,
+      "input_tokens": 723,
+      "output_tokens": 63,
+      "protocol_error": null,
+      "duration_ms": 993
+    }
+  ],
+  "agent_requests": [
+    {
+      "request_id": "6adc10d9b11f4179",
+      "folder": "evidence/runs/20261029T140650869324Z-pilot-3d4a86a2",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "74f40e145f4d4612",
+      "folder": "evidence/runs/20261029T140650869324Z-pilot-3d4a86a2",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "31c8d4de3d7d4bcc",
+      "folder": "evidence/runs/20261029T140650869324Z-pilot-3d4a86a2",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "9ebb93501d764df2",
+      "folder": "evidence/runs/20261029T140650869324Z-pilot-3d4a86a2",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "810a51c4d4294a37",
+      "folder": "evidence/runs/20261029T140904349329Z-pilot-67f01634",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "bef24118dc5b4569",
+      "folder": "evidence/runs/20261029T140904349329Z-pilot-67f01634",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "6f654715acd2450b",
+      "folder": "evidence/runs/20261029T140904349329Z-pilot-67f01634",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "fecc3327462f4c6a",
+      "folder": "evidence/runs/20261029T140904349329Z-pilot-67f01634",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "f9efa68df3af4b19",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "a1f261d3f84a42c0",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "d7b1921da9e147e9",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "15733aa49a414f14",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "83c0a0864b964cba",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "9b00665933794300",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "328a1c9456f34ad9",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "30f2197b723346c6",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "264008c48405489b",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "1fd8628c6a1145d1",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "2e61cd6f5797483d",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "978ecb183b664b94",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "7574f724b2364db6",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "155cafe901de44c1",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "adca15e12e8d4e0e",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "f5c18b3a58f0404a",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "79616588ad084532",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "b978a8c5c448430a",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "9a880c08629e4b19",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "c53bf20d4bcc4a1a",
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "3945615930f14932",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "0e136de1377f45bc",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "691e2bd9cbc14a0c",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "85f792b027f4467c",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "ac979d639e374b9e",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "66dbecbbeb814674",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "d9d0bdcf96964f03",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "c6952e10a7cd42fd",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "42f0175cda764266",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "035eba78d77a4a1d",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "f5e892b6dbe1434a",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "5fb979f3c8ef4cdd",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "4fdb72e3efc24812",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "3134300f96a843e2",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "5c0d1663756f4c18",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "9567e39a84b2463b",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "92134dc998aa47bb",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "fc15ccd72c61429b",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "9eb5374e10da43fb",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "990978a4f9e143fa",
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "4f5cc3b2bee7452e",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-001",
+      "profile": "clean"
+    },
+    {
+      "request_id": "5d2c00f06b974021",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "c044201d0d884ca0",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "b600d29372174380",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "8c238a7b5a6a447b",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "17e20328ae034096",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-002",
+      "profile": "clean"
+    },
+    {
+      "request_id": "43c6ca28029b4a17",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J01",
+      "profile": "clean"
+    },
+    {
+      "request_id": "025c90692b3b469a",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J01",
+      "profile": "clean"
+    },
+    {
+      "request_id": "adaf7e104b6547a2",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J01",
+      "profile": "clean"
+    },
+    {
+      "request_id": "ca22635e032048c3",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J01",
+      "profile": "clean"
+    },
+    {
+      "request_id": "1cc83eb2a10e4143",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J01",
+      "profile": "clean"
+    },
+    {
+      "request_id": "274ec1a970314e20",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J02",
+      "profile": "clean"
+    },
+    {
+      "request_id": "123e654e473e4eec",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J02",
+      "profile": "clean"
+    },
+    {
+      "request_id": "e4cd3af071fd484b",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J02",
+      "profile": "clean"
+    },
+    {
+      "request_id": "37bb090e1deb4128",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J02",
+      "profile": "clean"
+    },
+    {
+      "request_id": "f6daf347eed44a33",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J02",
+      "profile": "clean"
+    },
+    {
+      "request_id": "ff4b76e6484d4ad8",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J03",
+      "profile": "clean"
+    },
+    {
+      "request_id": "080f49664f7c436d",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J03",
+      "profile": "clean"
+    },
+    {
+      "request_id": "f57f5ba1e9fe4a00",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J03",
+      "profile": "clean"
+    },
+    {
+      "request_id": "07f1c4a839ec4fee",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J03",
+      "profile": "clean"
+    },
+    {
+      "request_id": "e9ed3676c88042fa",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J03",
+      "profile": "clean"
+    },
+    {
+      "request_id": "3ee66c61da264fcb",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J04",
+      "profile": "clean"
+    },
+    {
+      "request_id": "bf47e0b5945e475f",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J04",
+      "profile": "clean"
+    },
+    {
+      "request_id": "60c0a04f7e79441b",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J04",
+      "profile": "clean"
+    },
+    {
+      "request_id": "693d600e66c743fd",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J04",
+      "profile": "clean"
+    },
+    {
+      "request_id": "363279360578457e",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J04",
+      "profile": "clean"
+    },
+    {
+      "request_id": "4997f2bfb8ac410b",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J05",
+      "profile": "clean"
+    },
+    {
+      "request_id": "a5a40ccb3714467c",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J05",
+      "profile": "clean"
+    },
+    {
+      "request_id": "f4f2c4fcf3584681",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J05",
+      "profile": "clean"
+    },
+    {
+      "request_id": "e93f2d2b3b9649d3",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J05",
+      "profile": "clean"
+    },
+    {
+      "request_id": "1fccdcbb35994205",
+      "folder": "evidence/runs/20261029T143913419317Z-working-clean-ec2efb",
+      "case": "ESC-J05",
+      "profile": "clean"
+    },
+    {
+      "request_id": "ead973af445d4868",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-001",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "3a951389a55346f2",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "afcb494099e74f96",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "a7ccdf32d412435f",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "8b0389da868943d1",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "b0670e75dd934210",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-002",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "21a99cfeea764593",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J01",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "b5caa2fd3ed946ed",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J01",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "d72af439ebf34c5e",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J01",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "6698d282946e42f5",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J01",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "7399b59a11814540",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J01",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "cb388c40c59a491f",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J02",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "01f02b74719340e7",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J02",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "9da9e4af18414bae",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J02",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "c9c4e9a7bc274a9f",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J02",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "ce73592b50434335",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J02",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "937f725266b548a6",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J03",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "537a616de4574931",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J03",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "5a68f7e3a04d4b68",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J03",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "0039370b5e2f477f",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J03",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "779e7bb002054071",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J03",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "867cff8e0b08416b",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J04",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "ac4bff7fe18e487b",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J04",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "70eb90bcdd134333",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J04",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "84a0fb1a85fd4692",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J04",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "6077c3ac46f94e13",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J04",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "5220f09b289c467e",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J05",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "49279001212f4034",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J05",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "0db83d7ab0984234",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J05",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "1775c616366e4e39",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J05",
+      "profile": "lesson-09"
+    },
+    {
+      "request_id": "f765800644654502",
+      "folder": "evidence/runs/20261029T144243715820Z-working-lesson-09-1bbca9",
+      "case": "ESC-J05",
+      "profile": "lesson-09"
+    }
+  ]
+}
