@@ -23,7 +23,7 @@ def _parse(raw,answer):
 def judge(question,answer,rubric,model=None,temperature=None):
  require_paid();model=model or os.environ.get('JUDGE_MODEL')
  if not model:raise RuntimeError('JUDGE_MODEL is not configured')
- if temperature is None:temperature=float(os.environ.get('TEMP','0.7'))
+ if temperature is None:temperature=float(os.environ.get('HW8_JUDGE_TEMPERATURE','0.7'))
  prompt=f'CUSTOMER QUESTION:\n{question}\n\nAGENT ANSWER:\n{answer}\n\nRUBRIC:\n{rubric}\n\nJSON:'
  is_ollama=model.startswith('ollama:') or os.environ.get('JUDGE_BACKEND')=='ollama'
  body={'model':model.removeprefix('ollama:'),'stream':False,'format':'json','options':{'temperature':temperature},'system':SYSTEM,'prompt':prompt} if is_ollama else {'model':model,'max_tokens':800,'temperature':temperature,'system':SYSTEM,'messages':[{'role':'user','content':prompt}]}

@@ -57,3 +57,15 @@ class PaidSafety(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp,patch.object(judge,'ROOT',Path(tmp)),patch.object(judge,'require_paid'),patch.dict(os.environ,{'ANTHROPIC_API_KEY':'fixture-not-a-key'}),patch.object(judge._opener,'open',return_value=Response()) as opened:
    with self.assertRaises(ValueError):judge.judge('q','answer','rubric','fixture',.7)
    self.assertEqual(opened.call_count,1);record=json.loads(next(Path(tmp).glob('evidence/judge-calls/*/call.json')).read_text(encoding='utf-8'));self.assertEqual(record['usage']['input_tokens'],42);self.assertEqual(record['output_text'],'not JSON');self.assertEqual(record['effective_temperature'],.7);self.assertIsNotNone(record['error'])
+
+class WindowsConfiguration(unittest.TestCase):
+ def test_system_temp_is_not_a_sampling_parameter(self):
+  import tempfile
+  from unittest.mock import patch
+  with patch.dict(os.environ,{'TEMP':'C:\\system-temp','HW8_JUDGE_TEMPERATURE':'0.7'}):
+   class Response:
+    def __enter__(self):return self
+    def __exit__(self,*args):pass
+    def read(self):return json.dumps({'id':'fixture','model':'fixture','usage':{},'content':[{'type':'text','text':json.dumps({'verdict':'PASS','trigger':'T1','evidence_turn':1,'quote':'human'})}]}).encode()
+   with tempfile.TemporaryDirectory() as tmp,patch.object(judge,'ROOT',Path(tmp)),patch.object(judge,'require_paid'),patch.dict(os.environ,{'ANTHROPIC_API_KEY':'fixture-not-a-key'}),patch.object(judge._opener,'open',return_value=Response()) as opened:
+    r=judge.judge('q','human answer','rubric','fixture');self.assertEqual(r['temperature'],.7);request=opened.call_args.args[0];self.assertEqual(json.loads(request.data)['temperature'],.7);self.assertEqual(os.environ['TEMP'],'C:\\system-temp')

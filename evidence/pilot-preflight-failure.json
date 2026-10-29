@@ -1,0 +1,8 @@
+{
+  "folder": "evidence/runs/20261029T140600269665Z-pilot-a68ebeef",
+  "cause": "Windows TEMP is the system temporary-directory path; collision with upstream temperature convention",
+  "confirmed_judge_http_calls": 0,
+  "agent_chat_calls": 0,
+  "correction": "HW8_JUDGE_TEMPERATURE=0.7; system TEMP left unchanged",
+  "frozen_inputs_changed": false
+}

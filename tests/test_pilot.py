@@ -30,7 +30,7 @@ class Pilot(unittest.TestCase):
    cases={c['id']:c for c in [json.loads(x) for x in (ROOT/'evals/sets/l09_labels.jsonl').read_text(encoding='utf-8').splitlines()]}
    for ident in ['HW8-01','HW8-11','HW8-25']:
     c=cases[ident];judge_attempts+=1;manifest['judge_attempts']=judge_attempts;save(folder/'manifest.json',manifest)
-    result=judge.judge(c['input'],c['answer_under_test'],c['additional_metadata']['rubric'],os.environ['JUDGE_MODEL'],float(os.environ['TEMP']))
+    result=judge.judge(c['input'],c['answer_under_test'],c['additional_metadata']['rubric'],os.environ['JUDGE_MODEL'],float(os.environ['HW8_JUDGE_TEMPERATURE']))
     judged.append({'case_id':ident,'label':c['additional_metadata']['label'],'result':result});save(folder/'judge-results.json',judged)
     self.assertEqual(result['temperature'],.7);self.assertEqual(result['judge_model'],'claude-haiku-4-5-20251001')
    working=[json.loads(x) for x in (ROOT/'sets/l09_escalation.jsonl').read_text(encoding='utf-8').splitlines()][:2]

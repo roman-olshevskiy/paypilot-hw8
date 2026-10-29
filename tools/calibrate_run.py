@@ -75,7 +75,7 @@ def main(argv=None):
  if not a.diagnostic and path.resolve()!=(ROOT/frozen['labels_path']).resolve():raise ValueError('Only canonical frozen human labels may be calibrated')
  if not a.diagnostic and any(c['additional_metadata']['rubric']!=(ROOT/frozen['rubric_path']).read_text(encoding='utf-8') for c in cases):raise ValueError('Case rubric differs from frozen rubric file')
  if a.draft:raise ValueError('Draft inputs can never be run')
- model=os.environ.get('JUDGE_MODEL');temp=float(os.environ.get('TEMP','0.7'))
+ model=os.environ.get('JUDGE_MODEL');temp=float(os.environ.get('HW8_JUDGE_TEMPERATURE','0.7'))
  if not model:raise ValueError('Exact JUDGE_MODEL required')
  versions={c['additional_metadata']['rubric_version'] for c in cases}
  if len(versions)!=1:raise ValueError('Mixed rubric versions')
