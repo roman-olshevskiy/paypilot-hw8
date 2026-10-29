@@ -1,6 +1,6 @@
 # ДЗ №8 · Judge Trust Statement
 
-**Результати готові до локального review. У LMS ще не надіслано.** Основна заява коротка; деталі — у додатках. Повна копія L09 6439a32, стенд shared74f1995; [provenance](evidence/provenance.json), [початковий README](sources/L09-README.md).
+**Готово до здачі. У LMS ще не надіслано.** Основна заява коротка; деталі — у додатках. Повна копія L09 6439a32, стенд shared74f1995; [provenance](evidence/provenance.json), [початковий README](sources/L09-README.md).
 
 - [Judge Trust Statement](judge-trust-statement.md) · [калібрування, матриці й невдале виправлення](docs/calibration-report.md).
 - [30 людських міток](evals/sets/l09_labels.jsonl) · [freeze](evidence/labels-freeze.json) · [порядок комітів](evidence/chronology.json).
@@ -18,9 +18,7 @@
 
 Висока сталість не усуває систематичної помилки. v2 не прийнята. Факт ескалації перевіряє код; v1 використовується лише як допоміжний сигнал із людським review.
 
-T-14: ескалація clean10/10, lesson-09 0/10; контроль0/10 в обох. Native working gate: **clean6/7, lesson-09 3/7**, без SKIP. Clean FAIL ESC-J03 — виявлене розкриття внутрішньої причини, не виправлений еталон заради зеленого статусу.
-
-Калібрування: перші5 валідних verdicts на кейс; 1/2 відхилені протокольні виходи v1/v2 збережено, включено у витрати й end-to-end сталість. Діагностика D18/D25 — окремі20 сирих emissions,7 із повним валідним протоколом; не змішується з30 кейсами.
+T-14: ескалація clean 10/10, lesson-09 0/10; контроль 0/10 в обох. Native working gate: **clean 6/7, lesson-09 3/7**, без SKIP. ESC-J03 на clean виявив розкриття внутрішньої причини; еталон збережено.
 
 ## Запуск без оплати
 
@@ -35,19 +33,10 @@ docker compose run --rm eval --set l09_escalation --dry-run
 
 [Replay із чистого клону](evidence/clean-clone-replay.json) використовує записані fixtures, не нові модельні виклики. [Інструменти й обмеження](tools/README.md).
 
-## Платні команди відтворення
+## Платне відтворення
 
-Не запускаються автоматично тестами. Ключ Anthropic — лише локально в .env за .env.example; ключ агента лишається в .env стенду. Judge=claude-haiku-4-5-20251001, HW8_JUDGE_TEMPERATURE=0.7; системний TEMP не використовується. Агент=OpenRouter Haiku5.5, без L07 proxy. Контекст customer_id/clock уже в кейсах.
+[Налаштування та команди](tools/README.md#платні-команди-відтворення). Потрібен явний `HW8_PAID=1` і перевірений freeze. Native runner оцінює останню з п’яти свіжих відповідей; калібрування оцінює записану відповідь п’ять разів.
 
-~~~powershell
-docker compose run --rm -e HW8_PAID=1 --entrypoint python eval tools/calibrate_run.py l09_labels
-docker compose run --rm -e HW8_PAID=1 --entrypoint python eval tools/calibrate_run.py l09_labels --rubric rubrics/rubric.v2.md
-docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate all --profile lesson-09 --traces
-docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate all --profile clean --traces
-~~~
+[Протокол ERROR і продовження](tools/README.md#протокол-і-відновлення).
 
-Daily: ESC-001, runs1; release: ESC-002 і ESC-J01–05, runs5. Native runner судить лише останню із5 свіжих відповідей judge-кейса, а calibrate_run — записану answer_under_test п’ять разів. Дані цих двох режимів не взаємозамінні.
-
-ERROR не перетворюється на PASS; звіти не перезаписуються. Calibration exit1 — розбіжності, exit2 — протокол/інфраструктура; native exit1 — не всі кейси пройшли. Початкові зупинені reports збережено; продовження не повторювали готові результати й не обирали з двох суперечливих JSON.
-
-**Git-історію людської розмітки треба зберегти:** PR зливати merge-комітом, без squash/rebase; freeze-коміт потрібен для перевірки та умови «мітки до судді».
+Історію до прогонів збережено тегом `hw8-calibration-history`, оскільки перший PR злитий через squash. Звичайний `git clone` отримує тег; після shallow clone виконайте `git fetch origin tag hw8-calibration-history`. Не видаляйте цей тег: перевірка freeze використовує початкові Git-об’єкти.
