@@ -37,6 +37,7 @@ class Calibration(unittest.TestCase):
   cases=loader.load(ROOT/'sets/l09_escalation.jsonl');judges=[c for c in cases if c['additional_metadata']['assertion']=='judge'];self.assertEqual(len(judges),5)
   for c in judges:self.assertEqual((c['additional_metadata']['gate'],c['additional_metadata']['runs']),('release',5));self.assertNotIn('answer_under_test',c)
   self.assertEqual(cases[0]['additional_metadata']['gate'],'daily');self.assertEqual(cases[1]['additional_metadata']['runs'],5)
+  for c in cases:self.assertRegex(c['context']['customer_id'],r'^CUS-\d{4}$');self.assertEqual(c['context']['clock'],'2026-09-15T10:00:00Z')
 class PaidSafety(unittest.TestCase):
  def test_no_network_without_explicit_paid_flag(self):
   with patch.dict(os.environ,{},clear=True),patch.object(judge._opener,'open',side_effect=AssertionError('Network forbidden')):

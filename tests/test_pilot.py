@@ -22,13 +22,14 @@ class Pilot(unittest.TestCase):
   load_env();require_paid();import stand,judge
   stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');folder=ROOT/'evidence/runs'/f'{stamp}-pilot-{uuid.uuid4().hex[:8]}';folder.mkdir(parents=True)
   before=stand.profile();rows=[];judged=[];error=None;agent_attempts=0;judge_attempts=0
-  manifest={'started_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'frozen_inputs':json.loads((ROOT/'evidence/labels-freeze.json').read_text(encoding='utf-8')),'scope':'Pilot only: 4 agent chats,3 judge calls, one per condition/case, not final 5-run calibration','before':before,'agent_attempts':0,'judge_attempts':0,'error':None}
+  agent_only=os.environ.get('HW8_AGENT_ONLY')=='1'
+  manifest={'agent_only':agent_only,'started_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'frozen_inputs':json.loads((ROOT/'evidence/labels-freeze.json').read_text(encoding='utf-8')),'scope':'Pilot only: 4 agent chats,3 judge calls, one per condition/case, not final 5-run calibration','before':before,'agent_attempts':0,'judge_attempts':0,'error':None}
   save(folder/'manifest.json',manifest)
   private=ROOT.parent/'Lectures/HW08/work/billing';private.mkdir(exist_ok=True)
   save(private/(folder.name+'-before.json'),private_key_usage())
   try:
    cases={c['id']:c for c in [json.loads(x) for x in (ROOT/'evals/sets/l09_labels.jsonl').read_text(encoding='utf-8').splitlines()]}
-   for ident in ['HW8-01','HW8-11','HW8-25']:
+   for ident in ([] if agent_only else ['HW8-01','HW8-11','HW8-25']):
     c=cases[ident];judge_attempts+=1;manifest['judge_attempts']=judge_attempts;save(folder/'manifest.json',manifest)
     result=judge.judge(c['input'],c['answer_under_test'],c['additional_metadata']['rubric'],os.environ['JUDGE_MODEL'],float(os.environ['HW8_JUDGE_TEMPERATURE']))
     judged.append({'case_id':ident,'label':c['additional_metadata']['label'],'result':result});save(folder/'judge-results.json',judged)
@@ -38,10 +39,13 @@ class Pilot(unittest.TestCase):
     stand.set_profile(profile);stand.set_defects('')
     for c in working:
      stand.reset();agent_attempts+=1;manifest['agent_attempts']=agent_attempts;save(folder/'manifest.json',manifest)
-     started=time.perf_counter();answer=stand.chat(c['input']);row={'case_id':c['id'],'profile':profile,'input':c['input'],'response':answer,'duration_ms':round((time.perf_counter()-started)*1000),'trace':None,'disputes':None};rows.append(row);save(folder/'agent-captures.json',rows)
+     started=time.perf_counter();answer=stand.chat(c['input'],customer_id=c['context']['customer_id']);row={'case_id':c['id'],'profile':profile,'input':c['input'],'customer_id':c['context']['customer_id'],'response':answer,'duration_ms':round((time.perf_counter()-started)*1000),'trace':None,'disputes':None};rows.append(row);save(folder/'agent-captures.json',rows)
      row['trace']=stand.trace(answer['request_id']);row['disputes']=stand.state('disputes');row['escalate_to_human']=stand.has_span(row['trace'],'tool.escalate_to_human') or stand.has_span(row['trace'],'escalate_to_human');save(folder/'agent-captures.json',rows)
      self.assertIsNotNone(row['trace']);self.assertTrue(answer.get('request_id'))
-   self.assertEqual(len(judged),3);self.assertEqual(len(rows),4)
+   self.assertEqual(len(judged),0 if agent_only else 3);self.assertEqual(len(rows),4)
+   for row in rows:
+    errors=[s['attributes'].get('tool.result') for s in stand.spans(row['trace']) if s['name']=='tool.get_account']
+    self.assertFalse(any(isinstance(x,dict) and x.get('error')=='no customer is signed in for this session' for x in errors))
   except Exception as e:error=f'{type(e).__name__}: {e}';raise
   finally:
    try:
