@@ -1,0 +1,32 @@
+{
+  "l09_commit": "6439a320c286e72c6643f4d4e8bbbd04895b752b",
+  "stand_commit": "74f1995ca8e8e64e4526e374535c2c4e71a2bde1",
+  "source_files_sha256": {
+    ".env.example": "49971133eb2d6925d386aa750fc300f874a5f04d05bcf93cae391fad4cd79f95",
+    ".gitignore": "8cc93053a99d0bb4f692af58affaa30ca894d5bdcde7d1caa7900f7a71da7547",
+    "README.md": "140e43ee0e44245a962bc87271a74ba4e33c5c479bbffd80eafc1915fe123878",
+    "api.sh": "4ca5b890d364e4e65f6b31f210ccfa608aff17d4784f558140e1495448c26fd8",
+    "assertions.py": "371832553508e7ea4841e4b8122e52ff4f78b005fa8824051a705089ff610b84",
+    "cli.py": "c8ca78fe8575026289c3ce79308b706de37df73832ac6b816aaba8e720480983",
+    "complaints.md": "817aaf63fdd42b11c914b02b8bc14d19c373b23d0104e5b621f966378787dec5",
+    "console.py": "5518acfc408431ebe005de82392a0e8b10d53667d8a272e8f6562919e522b4e8",
+    "docker-compose.yml": "0eca7b97f2697982b6dd564f6c0dbdf9da821b2a1302df8929fdf12ecabcffc9",
+    "gaps.md": "d7407151e673d71df55c21bb8526a3ac6cda9c41bfb3c69ff46934ed93e531db",
+    "generate_from_engines.py": "e22e065cef2b6e16b976a9962265d41840d28873c3d871cb0381feb133d246b3",
+    "judge-trust-statement.template.md": "8d3e6b4f37c97445dd9f2efe36c34354961a28a885644345e4771a5422cdcec9",
+    "judge.py": "5ebb64a1d4d1a6bf46ddf35d35f6d8eb54f2b2493d033ac1f19b8ad256253d34",
+    "ladder.md": "3f36bfc136903c998e3d14499489b6b32df29fc8b043c7cd1373c42776e8c292",
+    "loader.py": "760a855d3e756f8a6d7c6b6f49e344dcb61db4928fd323bc0e47e509a249211b",
+    "runner.py": "c3a11ae578111a1dd19f7de0a09fcfe2bd886353b5ea4d34e8ff314fef95eb18",
+    "sets/l09_escalation.jsonl": "f3e95f58e08d73ea4e04b0dfd6f0c1a2019e11c4f30487be2191f64fa96ba2c2",
+    "sets/l09_lab_pool.jsonl": "83463c780541f8d4527f0447d694af2ef1dbc7aeecea936f5e6350e41ed2ff76",
+    "sets/l09_labels.lab.jsonl": "8e39fa96761fef0a7e66472f3ceaa20ea7a95fca9527a7343a9def35748a2543",
+    "sets/l09_step5_pairs.jsonl": "5752a849eaac0e63267882eb3428c8416b4a85bbfc3cb021aaf350a5a3b9da36",
+    "stand.py": "763b317e6af97bb45475272674a6cf45297c052d15e722f9c8025bbe3ea0e279",
+    "tools/calibrate_run.py": "78352f91f4366a1dd51f823da979717f7dc7d771e0c7bad14cd30f1128138f88",
+    "tools/compare_judges.py": "fefcd6d4a98210d74a3901f87474f2e47b12be37cb18782f39eb3996db4af8fb",
+    "triage.md": "1bee170530f0bdbebe4a2f21c4f0b4409484c43febb90537c3d651ca104c26b4",
+    "validate.py": "4e7d5998083beb820ff82f149d99d5025cef68846a5aac9df2649aed8cb9f1ad"
+  },
+  "scope": "Tracked source kit copied; no .env or foreign .git copied."
+}

@@ -1,0 +1,13 @@
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+evidence/runs/** -text
+reports/** -text
+sources/l09-original/** -text
+evidence/judge-calls/** -text
+evidence/runs/** -whitespace
+evidence/judge-calls/** -whitespace
+reports/** -whitespace
+sources/** -whitespace
+evidence/environment/** -text -whitespace

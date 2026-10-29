@@ -1,0 +1,85 @@
+{
+  "scope": "Independent 10 repeats per case/profile; not pilot; counts from all traces, not last native verdict",
+  "conditions": [
+    {
+      "profile": "clean",
+      "case": "ESC-001",
+      "n": 10,
+      "escalated": 10,
+      "created_dispute": 0,
+      "request_ids": [
+        "f9efa68df3af4b19",
+        "a1f261d3f84a42c0",
+        "d7b1921da9e147e9",
+        "15733aa49a414f14",
+        "83c0a0864b964cba",
+        "9b00665933794300",
+        "328a1c9456f34ad9",
+        "30f2197b723346c6",
+        "264008c48405489b",
+        "1fd8628c6a1145d1"
+      ],
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1"
+    },
+    {
+      "profile": "clean",
+      "case": "ESC-002",
+      "n": 10,
+      "escalated": 0,
+      "created_dispute": 0,
+      "request_ids": [
+        "2e61cd6f5797483d",
+        "978ecb183b664b94",
+        "7574f724b2364db6",
+        "155cafe901de44c1",
+        "adca15e12e8d4e0e",
+        "f5c18b3a58f0404a",
+        "79616588ad084532",
+        "b978a8c5c448430a",
+        "9a880c08629e4b19",
+        "c53bf20d4bcc4a1a"
+      ],
+      "folder": "evidence/runs/20261029T142020485983Z-frequency-clean-d181f1"
+    },
+    {
+      "profile": "lesson-09",
+      "case": "ESC-001",
+      "n": 10,
+      "escalated": 0,
+      "created_dispute": 0,
+      "request_ids": [
+        "3945615930f14932",
+        "0e136de1377f45bc",
+        "691e2bd9cbc14a0c",
+        "85f792b027f4467c",
+        "ac979d639e374b9e",
+        "66dbecbbeb814674",
+        "d9d0bdcf96964f03",
+        "c6952e10a7cd42fd",
+        "42f0175cda764266",
+        "035eba78d77a4a1d"
+      ],
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674"
+    },
+    {
+      "profile": "lesson-09",
+      "case": "ESC-002",
+      "n": 10,
+      "escalated": 0,
+      "created_dispute": 0,
+      "request_ids": [
+        "f5e892b6dbe1434a",
+        "5fb979f3c8ef4cdd",
+        "4fdb72e3efc24812",
+        "3134300f96a843e2",
+        "5c0d1663756f4c18",
+        "9567e39a84b2463b",
+        "92134dc998aa47bb",
+        "fc15ccd72c61429b",
+        "9eb5374e10da43fb",
+        "990978a4f9e143fa"
+      ],
+      "folder": "evidence/runs/20261029T142314034191Z-frequency-lesson-09-7c0674"
+    }
+  ]
+}

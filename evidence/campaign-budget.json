@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "authorization": "Continue after pilot and proposed combined remaining stop budget USD1.50",
+  "remaining_limits_usd": {
+    "anthropic": 1,
+    "openrouter": 0.5
+  },
+  "pilot_baseline_usd": {
+    "anthropic": 0.002873,
+    "openrouter": 0.005005395
+  },
+  "per_next_call_reserve_usd": {
+    "anthropic": 0.01,
+    "openrouter": 0.05
+  },
+  "scope": "Pre-call checks against durable usage estimates; not a provider-enforced hard ceiling. Stop on unknown/unpriced errors."
+}

@@ -1,0 +1,23 @@
+{
+  "clone_commit": "99e537cb7c3b43f063af728afee880c306d4484c",
+  "clean_before_and_after": true,
+  "scope": "Actual offline unittest suite in Docker from a fresh Git clone; .env absent, explicit live flags absent",
+  "tests": 28,
+  "passed": 24,
+  "skipped": 4,
+  "inference_calls": 0,
+  "command": [
+    "docker",
+    "compose",
+    "run",
+    "--rm",
+    "eval",
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ]
+}

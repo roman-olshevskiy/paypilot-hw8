@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-29",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "temperature": 0.7,
+  "thinking": "not enabled",
+  "agent_model": "anthropic/claude-haiku-5.5",
+  "reason": "Haiku5.5 rejects non-default temperature; select an available model supporting the planned nonzero-temperature calibration before first inference",
+  "pricing_usd_per_million": {
+    "input": 1,
+    "output": 5,
+    "cache_read": 0.1,
+    "cache_write_5m": 1.25
+  },
+  "sources": [
+    "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+    "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
+  ]
+}
