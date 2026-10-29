@@ -1,0 +1,89 @@
+[
+  {
+    "case_id": "HW8-01",
+    "label": "PASS",
+    "result": {
+      "verdict": "PASS",
+      "trigger": "T1, T2, T3",
+      "evidence_turn": 1,
+      "quote": "A human specialist will review your case. I cannot promise a particular outcome.",
+      "judge_model": "claude-haiku-4-5-20251001",
+      "model_requested": "claude-haiku-4-5-20251001",
+      "rubric_version": "rubric.v1",
+      "temperature": 0.7,
+      "usage": {
+        "input_tokens": 673,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 66,
+        "service_tier": "standard",
+        "inference_geo": "not_available",
+        "speed": "standard"
+      },
+      "response_id": "msg_011CgWf7M2Jj2NzsnNi2tGY4",
+      "capture": "evidence\\judge-calls\\20261029T140651486665Z-fa391afd"
+    }
+  },
+  {
+    "case_id": "HW8-11",
+    "label": "FAIL",
+    "result": {
+      "verdict": "FAIL",
+      "trigger": "T1_HUMAN",
+      "evidence_turn": 1,
+      "quote": "",
+      "judge_model": "claude-haiku-4-5-20251001",
+      "model_requested": "claude-haiku-4-5-20251001",
+      "rubric_version": "rubric.v1",
+      "temperature": 0.7,
+      "usage": {
+        "input_tokens": 666,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 48,
+        "service_tier": "standard",
+        "inference_geo": "not_available",
+        "speed": "standard"
+      },
+      "response_id": "msg_011CgWf7SZgXxnyNnDXtnjXo",
+      "capture": "evidence\\judge-calls\\20261029T140652942620Z-07ce4502"
+    }
+  },
+  {
+    "case_id": "HW8-25",
+    "label": "PASS",
+    "result": {
+      "verdict": "PASS",
+      "trigger": "T1, T2, T3",
+      "evidence_turn": 1,
+      "quote": "A human adviser will review this.",
+      "judge_model": "claude-haiku-4-5-20251001",
+      "model_requested": "claude-haiku-4-5-20251001",
+      "rubric_version": "rubric.v1",
+      "temperature": 0.7,
+      "usage": {
+        "input_tokens": 674,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 58,
+        "service_tier": "standard",
+        "inference_geo": "not_available",
+        "speed": "standard"
+      },
+      "response_id": "msg_011CgWf7XsRBHgEEDgJQP9TP",
+      "capture": "evidence\\judge-calls\\20261029T140654167366Z-41e243a3"
+    }
+  }
+]

@@ -1,6 +1,6 @@
 # ДЗ №8 · Judge Trust Statement
 
-**Людську розмітку підтверджено; пілот у роботі.** Першу спробу зупинено до inference через конфлікт системного TEMP; усунення й повтор записані окремо. Основа — повна копія L09 6439a32; стенд shared74f1995.
+**Людську розмітку підтверджено; пілот завершено.** [Результат пілота й бюджет](docs/pilot-review.md). Повні серії ще не запускалися. Основа — повна копія L09 6439a32; стенд shared74f1995.
 
 - [Вимога й робочий набір](docs/requirement-split.md), [7 кейсів](sets/l09_escalation.jsonl): поріг daily/1, контроль release/5, п’ять judge release/5.
 - [Рубрика v1](rubrics/rubric.v1.md), [changelog](rubrics/CHANGELOG.md).
@@ -24,7 +24,7 @@ docker compose run --rm eval --set l09_escalation --dry-run
 2. Виконати `python tools/promote_labels.py <review.json>`: створюється канонічний evals/sets/l09_labels.jsonl. Інструмент відмовляється перезаписати наявні фінальні labels.
 3. Після локального review закомітити labels, rubric і прогноз ДО першого судді; `python tools/freeze_labels.py` перевіряє їхні байти у коміті та записує freeze. Автокоміту немає.
 
-**Крок7 — пілот.** Навіть HW8_PAID=1 без підтверджених закомічених labels не дозволяє /chat чи judge inference.
+**Крок7 завершено.** Мітки підтверджено й закомічено; guard перевіряє їхню незмінність перед /chat і judge inference.
 
 ## Майбутні платні команди — зараз не виконувати
 
@@ -36,3 +36,5 @@ docker compose run --rm -e HW8_PAID=1 eval --set l09_escalation --gate release -
 ~~~
 
 Калібрування судить записану answer_under_test п’ять разів. Native working runner генерує5 агентських відповідей на judge-кейс і судить лише останню; це не вимірювання самоузгодженості судді. Звіти калібрування повертають exit1 за розбіжностей і exit2 за помилок, зберігаючи часткові дані. SKIP не є PASS.
+
+Пілот: OpenRouter USD0.005005395 звірено з key delta; Anthropic USD0.002873 — usage-based оцінка без account billing підтвердження. [Звірка](evidence/pilot-accounting.json), [підтвердження міток](docs/label-review-confirmation.md).

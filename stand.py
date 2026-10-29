@@ -22,6 +22,8 @@ def _call(method: str, path: str, payload=None, timeout=120):
         sys.path.insert(0, str(Path(__file__).resolve().parent / 'tools'))
         from hw8_guard import require_paid
         require_paid()
+        from hw8_budget import check
+        check('openrouter')
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
     req = urllib.request.Request(
         BASE + path, data=data, method=method,

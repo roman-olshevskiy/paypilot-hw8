@@ -1,0 +1,106 @@
+{
+  "scope": "All pilot stages including four unauthenticated diagnostic chats; one pre-inference TEMP failure had zero model calls. Pilot repeats never count as final calibration.",
+  "chat_responses": 8,
+  "judge_responses": 3,
+  "openrouter_provider_sum_usd": 0.005005395,
+  "openrouter_key_delta_usd": 0.005005395,
+  "openrouter_key_minus_spans_usd": 0.0,
+  "anthropic_price_estimate_usd": 0.002873,
+  "anthropic_account_billing_verified": false,
+  "openrouter_billing_status": "matched",
+  "total_pilot_estimated_usd": 0.007878395,
+  "judge_model": "claude-haiku-4-5-20251001",
+  "temperature_requested_and_accepted": 0.7,
+  "judge_agreements_pilot_only": 3,
+  "judge_calls": [
+    {
+      "case": "HW8-01",
+      "verdict": "PASS",
+      "price_usd": 0.001003
+    },
+    {
+      "case": "HW8-11",
+      "verdict": "FAIL",
+      "price_usd": 0.000906
+    },
+    {
+      "case": "HW8-25",
+      "verdict": "PASS",
+      "price_usd": 0.000964
+    }
+  ],
+  "authenticated_agent_results": [
+    {
+      "case": "ESC-001",
+      "profile": "clean",
+      "escalation": true,
+      "tools": [
+        "tool.get_account",
+        "tool.get_transactions",
+        "tool.check_dispute_eligibility",
+        "tool.escalate_to_human"
+      ],
+      "provider_usd": 0.0009948
+    },
+    {
+      "case": "ESC-002",
+      "profile": "clean",
+      "escalation": false,
+      "tools": [
+        "tool.get_account",
+        "tool.get_transactions",
+        "tool.check_dispute_eligibility"
+      ],
+      "provider_usd": 0.00073656
+    },
+    {
+      "case": "ESC-001",
+      "profile": "lesson-09",
+      "escalation": false,
+      "tools": [
+        "tool.get_account",
+        "tool.get_transactions",
+        "tool.check_dispute_eligibility"
+      ],
+      "provider_usd": 0.00064056
+    },
+    {
+      "case": "ESC-002",
+      "profile": "lesson-09",
+      "escalation": false,
+      "tools": [
+        "tool.get_account",
+        "tool.get_transactions",
+        "tool.check_dispute_eligibility"
+      ],
+      "provider_usd": 0.00064726
+    }
+  ],
+  "stages": [
+    {
+      "folder": "evidence/runs/20261029T140650869324Z-pilot-3d4a86a2",
+      "authenticated_agent": false,
+      "chat_responses": 4,
+      "judge_responses": 3,
+      "key_usage_delta_usd": 0.0
+    },
+    {
+      "folder": "evidence/runs/20261029T140904349329Z-pilot-67f01634",
+      "authenticated_agent": true,
+      "chat_responses": 4,
+      "judge_responses": 0,
+      "key_usage_delta_usd": 0.0
+    }
+  ],
+  "rates_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+  "rough_remaining_estimate_usd": {
+    "anthropic_330_calls_at_pilot_mean": 0.31603,
+    "openrouter_102_chats_at_authenticated_pilot_mean": 0.07698909
+  },
+  "proposed_remaining_stop_budgets_usd": {
+    "anthropic": 1.0,
+    "openrouter": 0.5,
+    "combined": 1.5
+  },
+  "budget_status": "Proposed after pilot; full matrix not started. Estimates from small sample, not spending guarantees."
+}

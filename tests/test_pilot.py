@@ -55,4 +55,19 @@ class Pilot(unittest.TestCase):
    except Exception as e:manifest['billing_read_error']=str(e)
    manifest.update(error=error,finished_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),agent_attempts=agent_attempts,judge_attempts=judge_attempts)
    manifest['sha256']={p.name:digest(p) for p in folder.glob('*.json') if p.name!='manifest.json'};save(folder/'manifest.json',manifest)
-   save(ROOT/'evidence/pilot-index.json',{'folder':str(folder.relative_to(ROOT)),'status':'complete' if error is None else 'ERROR'});print('PILOT CAPTURE',folder)
+   save(ROOT/'evidence/pilot-index.json',{'folder':folder.relative_to(ROOT).as_posix(),'status':'complete' if error is None else 'ERROR'});print('PILOT CAPTURE',folder)
+
+@unittest.skipUnless(os.environ.get('HW8_SETTLE')=='1','Explicit read-only billing check disabled')
+class BillingSnapshot(unittest.TestCase):
+ def test_current_counter_and_runtime_key_match(self):
+  import subprocess
+  vals={}
+  for line in (ROOT.parent/'paypilot-stand-shared/.env').read_text(encoding='utf-8-sig').splitlines():
+   if '=' in line and not line.lstrip().startswith('#'):
+    k,v=line.split('=',1);vals[k.strip()]=v.strip().strip(chr(34)).strip(chr(39))
+  expected=hashlib.sha256(vals['OPENROUTER_API_KEY'].encode()).hexdigest()
+  script="import os,hashlib;print(hashlib.sha256(os.environ.get('OPENROUTER_API_KEY','').encode()).hexdigest())"
+  actual=subprocess.check_output(['docker','compose','exec','-T','stand','python','-c',script],cwd=ROOT.parent/'paypilot-stand-shared',text=True).strip()
+  self.assertEqual(expected,actual,'Runtime key differs from configured .env key')
+  folder=ROOT.parent/'Lectures/HW08/work/billing';stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+  result=private_key_usage();save(folder/('settled-'+stamp+'.json'),result);print('Read-only key counter recorded locally; runtime key matches .env.')

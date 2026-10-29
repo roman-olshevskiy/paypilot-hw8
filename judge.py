@@ -21,7 +21,10 @@ def _parse(raw,answer):
  return {k:d[k] for k in ['verdict','trigger','evidence_turn','quote']}
 
 def judge(question,answer,rubric,model=None,temperature=None):
- require_paid();model=model or os.environ.get('JUDGE_MODEL')
+ require_paid()
+ from hw8_budget import check
+ check('anthropic')
+ model=model or os.environ.get('JUDGE_MODEL')
  if not model:raise RuntimeError('JUDGE_MODEL is not configured')
  if temperature is None:temperature=float(os.environ.get('HW8_JUDGE_TEMPERATURE','0.7'))
  prompt=f'CUSTOMER QUESTION:\n{question}\n\nAGENT ANSWER:\n{answer}\n\nRUBRIC:\n{rubric}\n\nJSON:'
