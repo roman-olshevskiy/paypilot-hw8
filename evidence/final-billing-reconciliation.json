@@ -5,11 +5,17 @@
   "openrouter_difference_usd": 0.0,
   "openrouter_verified": true,
   "anthropic_usage_price_estimate_usd": 0.406193,
-  "anthropic_account_verified": false,
+  "anthropic_account_verified": true,
   "total_estimated_usd": 0.477081895,
   "agent_chats": 110,
   "judge_provider_calls": 336,
   "remaining_stop_budget_usd": 1.5,
   "pricing_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
-  "account_available_balances_published": false
+  "account_available_balances_published": false,
+  "anthropic_confirmed_task_usd": 0.41,
+  "anthropic_confirmation_source": "Account balance change, explicitly confirmed in chat on 2026-10-29",
+  "anthropic_balance_display_precision_usd": 0.01,
+  "anthropic_estimate_difference_usd": 0.003807,
+  "anthropic_reconciliation_note": "Account balances are rounded to cents; the $0.003807 difference is within display precision. No exact provider ledger is claimed.",
+  "total_with_confirmed_anthropic_usd": 0.480888895
 }
