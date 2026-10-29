@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-29",
+  "stage": "prepaid-preparation",
+  "human_review": "pending",
+  "final_labels_exists": false,
+  "freeze_exists": false,
+  "paid_inference_calls": 0,
+  "host_tests": {
+    "passed": 14,
+    "failed": 0,
+    "includes_readonly_services": 1
+  },
+  "docker_offline_tests_last": {
+    "passed": 13,
+    "skipped": 1,
+    "failed": 0
+  },
+  "working_cases": 7,
+  "working_judge_cases": 5,
+  "draft_calibration_cases": 30,
+  "source_l09_commit": "6439a320c286e72c6643f4d4e8bbbd04895b752b"
+}
