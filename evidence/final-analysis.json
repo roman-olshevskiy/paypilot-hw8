@@ -566,7 +566,7 @@
   "agent_chat_count": 110,
   "judge_provider_call_count": 336,
   "judge_protocol_error_count": 16,
-  "anthropic_estimated_usd": 0.40619299999999997,
+  "anthropic_estimated_usd": 0.406193,
   "openrouter_provider_usd": 0.070888895,
   "raw_judge_calls": [
     {

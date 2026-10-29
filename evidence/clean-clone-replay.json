@@ -1,0 +1,25 @@
+{
+  "clone_commit": "8192fd10f14ca9e80c31514c2caa0e5cf2b2f1c8",
+  "clean_before_and_after": true,
+  "scope": "Clean Git clone, actual native CLI on recorded full response/trace/judge fixtures. Not a new live run.",
+  "results": [
+    {
+      "profile": "clean",
+      "native_exit": 1,
+      "verdicts_reproduced": 7,
+      "fixture_chats": 31,
+      "fixture_judgements": 5,
+      "real_http_calls": 0,
+      "real_model_calls": 0
+    },
+    {
+      "profile": "lesson-09",
+      "native_exit": 1,
+      "verdicts_reproduced": 7,
+      "fixture_chats": 31,
+      "fixture_judgements": 5,
+      "real_http_calls": 0,
+      "real_model_calls": 0
+    }
+  ]
+}
