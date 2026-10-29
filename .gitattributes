@@ -5,3 +5,4 @@
 evidence/runs/** -text
 reports/** -text
 sources/l09-original/** -text
+evidence/judge-calls/** -text

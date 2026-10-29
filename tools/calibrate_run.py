@@ -37,7 +37,7 @@ def metrics(rows):
   groups[name]={'agreement':wilson(sum(r['agree'] for r in part),len(part)),'self_consistency':wilson(sum(r['stable'] for r in part),len(part))}
  matrix={'missed_defect':sum(r['label']=='FAIL' and r['majority']=='PASS' for r in complete),'false_alarm':sum(r['label']=='PASS' and r['majority']=='FAIL' for r in complete),'correct_PASS':sum(r['label']=='PASS' and r['majority']=='PASS' for r in complete),'correct_FAIL':sum(r['label']=='FAIL' and r['majority']=='FAIL' for r in complete)}
  agreement=groups['all']['agreement'];sc=groups['all']['self_consistency']
- return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']]} 
+ return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']]}
 
 def run(cases,path,model,temp,infer=None,output=None,rubric_override=None):
  infer=infer or judge_module.judge;stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');out=Path(output) if output else ROOT/'reports'/f'calibration-{Path(path).stem}-{stamp}-{uuid.uuid4().hex[:8]}.json'

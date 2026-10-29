@@ -20,7 +20,7 @@ def promote(review_path):
   if m['disputed']:m['why_disputed']=review.get('reasons',{}).get(c['id'],m['why_disputed'])
  path=ROOT/'evals/sets/l09_labels.jsonl'
  if path.exists():raise ValueError('Final labels already exist; never overwrite historical labels')
- path.write_text(''.join(json.dumps(c,ensure_ascii=False)+'\n' for c in draft),encoding='utf-8');save(ROOT/'evidence/human-review.json',{'confirmed':True,'confirmed_at_utc':now,'review_path':str(Path(review_path).name),'case_count':len(draft),'source':'Explicit human review of proposed labels; not independent second annotation'})
+ path.write_bytes(''.join(json.dumps(c,ensure_ascii=False)+'\n' for c in draft).encode('utf-8'));save(ROOT/'evidence/human-review.json',{'confirmed':True,'confirmed_at_utc':now,'review_path':str(Path(review_path).name),'case_count':len(draft),'source':'Explicit human review of proposed labels; not independent second annotation'})
  return path
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('review_json');a=p.parse_args();print(promote(a.review_json))
