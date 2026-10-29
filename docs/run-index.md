@@ -1,14 +1,14 @@
-# Прогони й докази ДЗ8
+# Прогони й докази ДЗ 8
 
 Усі серії окремі; labels і відповіді не змінювалися після судді.
 
 ## Калібрування
 
-- [v1, завершена когорта30](../reports/calibration-l09_labels-20261029T142704481494Z-02244a87.json); джерельний ERROR — [окремо](../reports/calibration-l09_labels-20261029T142020036786Z-51c9c04e.json).
+- [v1, завершена когорта 30](../reports/calibration-l09_labels-20261029T142704481494Z-02244a87.json); джерельний ERROR — [окремо](../reports/calibration-l09_labels-20261029T142020036786Z-51c9c04e.json).
 
-- [v2, завершена когорта30](../reports/calibration-l09_labels-20261029T143819958028Z-f23d6ab6.json); попередні ERROR — [report](../reports/calibration-l09_labels-20261029T143029033067Z-ed659b53.json), [report](../reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json).
+- [v2, завершена когорта 30](../reports/calibration-l09_labels-20261029T143819958028Z-f23d6ab6.json); попередні ERROR — [report](../reports/calibration-l09_labels-20261029T143029033067Z-ed659b53.json), [report](../reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json).
 
-- [Діагностичні4 пари ×5 сирих виходів](../reports/diagnostic-pairs-20261029T143539150040Z.json); незавершені початкові calibrate reports не є фінальною30-кейсовою когортою.
+- [4 діагностичні кейси (2 пари) ×5 сирих виходів](../reports/diagnostic-pairs-20261029T143539150040Z.json); незавершені початкові calibrate reports не є фінальною 30-кейсовою когортою.
 
 - [Метод, протокол і таблиці](calibration-report.md).
 
@@ -25,7 +25,7 @@
 
 - [Пілот і дві виправлені передумови](pilot-review.md);8 chats +3 judge calls, включені у загальну вартість.
 
-- Частоти основної серії:40 chats. Working гейт:62 chats +10 judge calls. Разом110 chats і336 judge provider calls (303 основного калібрування,20 діагностичних,10 working,3 pilot).
+- Частоти основної серії:40 chats. Working гейт:62 chats +10 judge calls. Разом 110 chats і 336 judge provider calls (303 основного калібрування,20 діагностичних,10 working,3 pilot).
 
 - [Білінг](../evidence/final-billing-reconciliation.json); [сирі judge-відповіді](../evidence/judge-calls).
 
@@ -39,6 +39,6 @@ ESC-J03 на clean FAIL через T3. Дослівна цитата судді:
 
 ### Фінальна звірка витрат
 
-OpenRouter: **USD0.070888895**, точний збіг приросту usage ключа й provider spans. Anthropic: **USD0.41**, підтверджена зміна балансу з точністю до цента; оцінка за usage **USD0.406193** відрізняється на USD0.003807 і узгоджується з округленням. Сума зі звіреним Anthropic — **USD0.480888895** (приблизно USD0.48); це не точний до мікродолара рахунок Anthropic. Доступні баланси не публікуються.
+OpenRouter: **USD0.070888895**, точний збіг приросту usage ключа й provider spans. Anthropic: **USD0.41**, підтверджена зміна балансу з точністю до цента; оцінка за usage **USD0.406193** відрізняється на USD0.003807 і узгоджується з округленням. Загальна витрата — **приблизно USD0.48**; точні складові збережені в JSON.
 
 [Чистий Docker clone](../evidence/clean-clone-docker.json): 24 passed, 4 explicit skipped; платних викликів немає.
