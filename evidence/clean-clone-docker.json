@@ -1,5 +1,8 @@
 {
-  "clone_commit": "99e537cb7c3b43f063af728afee880c306d4484c",
+  "clone_source": "https://github.com/roman-olshevskiy/paypilot-hw8.git",
+  "remote_clone": true,
+  "history_tag": "hw8-calibration-history",
+  "clone_commit": "2df813ff8a02cc8b616c11231fd31a32d9245fa4",
   "clean_before_and_after": true,
   "scope": "Actual offline unittest suite in Docker from a fresh Git clone; .env absent, explicit live flags absent",
   "tests": 28,
