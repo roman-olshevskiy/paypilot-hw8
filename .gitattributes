@@ -10,3 +10,4 @@ evidence/runs/** -whitespace
 evidence/judge-calls/** -whitespace
 reports/** -whitespace
 sources/** -whitespace
+evidence/environment/** -text -whitespace
