@@ -23,7 +23,7 @@ class Calibration(unittest.TestCase):
   c=sample();hits=[]
   def fake(*args):
    hits.append(1)
-   if len(hits)==2:raise ValueError('invalid JSON fixture')
+   if len(hits)==2:raise RuntimeError('network fixture')
    return {'verdict':'PASS','quote':'Recorded'}
   with tempfile.TemporaryDirectory() as tmp:
    p=Path(tmp)/'input';p.write_text('fixture',encoding='utf-8');code,out,r=cal.run([c],p,'fixture',.7,infer=fake,output=Path(tmp)/'report.json');saved=json.loads(out.read_text(encoding='utf-8'));self.assertEqual(code,2);self.assertEqual(len(hits),2);self.assertEqual(saved['cases'][0]['verdicts'],['PASS']);self.assertIsNone(saved['cases'][0]['majority']);self.assertEqual(saved['incomplete_cases'],1)
@@ -39,7 +39,7 @@ class Calibration(unittest.TestCase):
   self.assertEqual(cases[0]['additional_metadata']['gate'],'daily');self.assertEqual(cases[1]['additional_metadata']['runs'],5)
   for c in cases:self.assertRegex(c['context']['customer_id'],r'^CUS-\d{4}$');self.assertEqual(c['context']['clock'],'2026-09-15T10:00:00Z')
 class PaidSafety(unittest.TestCase):
- def test_no_network_without_explicit_paid_flag(self):
+ def test_missing_credentials_cannot_reach_network(self):
   with patch.dict(os.environ,{},clear=True),patch.object(judge._opener,'open',side_effect=AssertionError('Network forbidden')):
    with self.assertRaises(RuntimeError):judge.judge('q','a','r','fixture',.7)
    with self.assertRaises(RuntimeError):stand.chat('q')
@@ -71,15 +71,29 @@ class WindowsConfiguration(unittest.TestCase):
    with tempfile.TemporaryDirectory() as tmp,patch.object(judge,'ROOT',Path(tmp)),patch.object(judge,'require_paid'),patch.dict(os.environ,{'ANTHROPIC_API_KEY':'fixture-not-a-key'}),patch.object(judge._opener,'open',return_value=Response()) as opened:
     r=judge.judge('q','human answer','rubric','fixture');self.assertEqual(r['temperature'],.7);request=opened.call_args.args[0];self.assertEqual(json.loads(request.data)['temperature'],.7);self.assertEqual(os.environ['TEMP'],'C:\\system-temp')
 
-class ExplicitRecovery(unittest.TestCase):
- def test_resume_reuses_valid_prefix_without_selecting_verdicts(self):
-  c=sample();hits=[]
-  def broken(*args):
+class FixedRawAttempts(unittest.TestCase):
+ def test_invalid_quote_is_a_miss_not_replaced(self):
+  hits=[]
+  def fake(*args):
    hits.append(1)
-   if len(hits)==3:raise ValueError('two conflicting JSON objects')
+   if len(hits) in (1,2,3):raise ValueError('Quote is not verbatim answer text')
    return {'verdict':'PASS','quote':'Recorded'}
-  with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
-   p=Path(tmp)/'set';p.write_text('fixture',encoding='utf-8');code,source,r=cal.run([c],p,'fixture',.7,infer=broken,output=Path(tmp)/'old.json');self.assertEqual(code,2);old=source.read_bytes();new_hits=[]
-   def remaining(*args):new_hits.append(1);return {'verdict':'PASS','quote':'Recorded'}
-   code,out,r=cal.run([c],p,'fixture',.7,infer=remaining,output=Path(tmp)/'new.json',resume=source)
-   self.assertEqual(code,0);self.assertEqual(len(new_hits),3);self.assertEqual(r['protocol_errors'],1);self.assertEqual(r['self_consistency'],[1,1]);self.assertEqual(r['end_to_end_self_consistency'],[0,1]);self.assertEqual(source.read_bytes(),old)
+  with tempfile.TemporaryDirectory() as tmp:
+   p=Path(tmp)/'set';p.write_text('fixture')
+   code,out,r=cal.run([sample()],p,'fixture',.7,infer=fake,output=Path(tmp)/'report.json')
+   self.assertEqual(len(hits),5);self.assertEqual(r['cases'][0]['verdicts'],['MISS']*3+['PASS']*2);self.assertEqual(r['agreement'],[0,1]);self.assertEqual(r['attempt_agreement'],[2,5]);self.assertEqual(r['self_consistency'],[0,1]);self.assertEqual(code,1)
+ def test_historical_resume_cannot_replace_invalid_attempt(self):
+  with self.assertRaisesRegex(ValueError,'disabled'):cal.run([],Path('fixture'),'fixture',.7,resume=Path('old-report'))
+
+class L10Compatibility(unittest.TestCase):
+ def test_standard_ollama_judge_without_hw8_flag_or_freeze(self):
+  class Response:
+   def __enter__(self):return self
+   def __exit__(self,*args):pass
+   def read(self):return json.dumps({'response':json.dumps({'verdict':'PASS','trigger':'T1','evidence_turn':1,'quote':'human'})}).encode()
+  with tempfile.TemporaryDirectory() as tmp,patch.dict(os.environ,{},clear=True),patch.object(judge,'ROOT',Path(tmp)),patch.object(judge,'require_paid',side_effect=AssertionError('HW8 freeze must not gate standard L10 API')),patch.object(judge._opener,'open',return_value=Response()) as opened:
+   passed,detail=judge.verdict('q','A human agent.','rubric','ollama:fixture')
+   self.assertTrue(passed);self.assertIn('PASS',detail);self.assertEqual(opened.call_count,1)
+ def test_explicit_campaign_guard_still_blocks_without_paid_flag(self):
+  with patch.dict(os.environ,{'HW8_CAMPAIGN_GUARD':'1'},clear=True),patch.object(judge._opener,'open',side_effect=AssertionError('Network forbidden')):
+   with self.assertRaises(RuntimeError):judge.judge('q','a','r','ollama:fixture')

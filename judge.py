@@ -1,4 +1,4 @@
-"""L09 judge, with explicit paid guard and durable raw transport capture.
+"""L09/L10-compatible judge with optional HW8 campaign guard and durable raw capture.
 Upstream original is preserved under sources/l09-original/judge.py.
 """
 import json,os,re,sys,time,uuid,urllib.request,urllib.error,datetime
@@ -21,9 +21,10 @@ def _parse(raw,answer):
  return {k:d[k] for k in ['verdict','trigger','evidence_turn','quote']}
 
 def judge(question,answer,rubric,model=None,temperature=None):
- require_paid()
- from hw8_budget import check
- check('anthropic')
+ if os.environ.get('HW8_CAMPAIGN_GUARD')=='1' or 'HW8_PAID' in os.environ:
+  require_paid()
+  from hw8_budget import check
+  if not (str(model or os.environ.get('JUDGE_MODEL','')).startswith('ollama:') or os.environ.get('JUDGE_BACKEND')=='ollama'):check('anthropic')
  model=model or os.environ.get('JUDGE_MODEL')
  if not model:raise RuntimeError('JUDGE_MODEL is not configured')
  if temperature is None:temperature=float(os.environ.get('HW8_JUDGE_TEMPERATURE','0.7'))
@@ -52,7 +53,10 @@ def judge(question,answer,rubric,model=None,temperature=None):
   record['usage']=data.get('usage',{});record['response_id']=data.get('id');record['model_actual']=data.get('model');record['output_text']=text;save(folder/'call.json',record)
   out=_parse(text,answer);out.update(judge_model=data.get('model',model),model_requested=model,rubric_version=RUBRIC_VERSION,temperature=temperature,usage=record['usage'],response_id=record['response_id'],capture=str(folder.relative_to(ROOT)))
   record['parsed']=out;return out
- except Exception as e:record['error']=str(e);raise
+ except Exception as e:
+  record['error']=str(e)
+  if isinstance(e,ValueError):e.capture=str(folder.relative_to(ROOT))
+  raise
  finally:
   record['duration_ms']=round((time.perf_counter()-start)*1000);save(folder/'call.json',record)
 

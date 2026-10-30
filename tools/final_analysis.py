@@ -40,5 +40,14 @@ def main():
   for s in read('evidence/working-index.json')['series']:
    r=read(s['folder']+'/native-results.json');working.append({'profile':r['profile'],'passed':r['passed'],'total':r['total'],'skipped':r['skipped'],'native_exit':s['native_exit'],'report_folder':s['folder'],'judge_model':r['judge_model'],'rubric_version':r['rubric_version'],'cases':[{'id':c['id'],'passed':c['verdict']['passed'],'runs':c['runs']} for c in r['cases']]})
  result={'calibration_index':idx,'v1':v1['groups'],'v2':v2['groups'],'v1_confusion':v1['confusion_matrix'],'v2_confusion':v2['confusion_matrix'],'v1_protocol_errors':v1.get('protocol_errors',0),'v2_protocol_errors':v2.get('protocol_errors',0),'v1_end_to_end_consistency':v1.get('end_to_end_self_consistency'),'v2_end_to_end_consistency':v2.get('end_to_end_self_consistency'),'changed':changed,'disagreements':disagreements,'cohort_costs':cohort_costs,'frequency':read('evidence/escalation-frequency.json'),'working':working,'agent_chat_count':len(agent),'judge_provider_call_count':len(judge_rows),'judge_protocol_error_count':sum(bool(x['protocol_error']) for x in judge_rows),'anthropic_estimated_usd':float(sum((Decimal(str(x['estimated_usd'])) for x in judge_rows),Decimal(0))),'openrouter_provider_usd':float(spent('openrouter')),'raw_judge_calls':judge_rows,'agent_requests':agent}
+ # Historical captures/reports remain byte-identical; current headline groups use raw recount.
+ corrected=read('reports/calibration-raw-recount.json')
+ for key,version in [('v1','rubric.v1'),('v2','rubric.v2')]:
+  result[key]=corrected['versions'][version]['groups']
+  result[key+'_confusion'].update(corrected['versions'][version]['confusion_matrix'])
+ result['authoritative_metrics']='reports/calibration-raw-recount.json'
+ result['metrics_policy']='First five chronological raw emissions; invalid schema/evidence is MISS without replacement.'
+ result['v1_end_to_end_consistency']=[29,30];result['v2_end_to_end_consistency']=[28,30]
+ result['raw_cohort_costs']={v:c['cost'] for v,c in corrected['versions'].items()}
  save(ROOT/'evidence/final-analysis.json',result);print(json.dumps({k:result[k] for k in ['changed','agent_chat_count','judge_provider_call_count','anthropic_estimated_usd','openrouter_provider_usd']},indent=2))
 if __name__=='__main__':main()

@@ -1,6 +1,6 @@
 """Five RAW emissions per supplied diagnostic case, reusing existing captures.
 A wrong quote is retained as protocol failure; verdict-only views never imply valid evidence.
-Primary calibration still requires five valid structured verdicts.
+Primary calibration now uses five raw attempts; invalid evidence is MISS.
 """
 import json,sys,os,datetime,uuid
 from pathlib import Path

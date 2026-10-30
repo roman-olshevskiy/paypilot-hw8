@@ -28,46 +28,37 @@ def validate(cases,allow_draft=False,reference=False):
 
 def case_result(c,outputs,error=None):
  m=c['additional_metadata'];vs=[r['verdict'] for r in outputs];complete=len(vs)==5 and error is None
- major=Counter(vs).most_common(1)[0][0] if complete else None
- return {'id':c['id'],'label':m['label'],'disputed':bool(m.get('disputed')),'verdicts':vs,'outputs':outputs,'majority':major,'complete':complete,'stable':complete and len(set(vs))==1,'agree':complete and major==m['label'],'error':error,'answer_lines':len(c['answer_under_test'].splitlines()),'contains_digits':any(x.isdigit() for x in c['answer_under_test'])}
+ counts=Counter(v for v in vs if v in ('PASS','FAIL'))
+ major=next((v for v,n in counts.items() if n>=3),'MISS') if complete else None
+ return {'id':c['id'],'label':m['label'],'disputed':bool(m.get('disputed')),'verdicts':vs,'outputs':outputs,'majority':major,'complete':complete,'stable':complete and len(set(vs))==1 and 'MISS' not in vs,'agree':complete and major==m['label'],'error':error,'answer_lines':len(c['answer_under_test'].splitlines()),'contains_digits':any(x.isdigit() for x in c['answer_under_test'])}
 
 def metrics(rows):
  complete=[r for r in rows if r['complete']];groups={}
  for name,part in [('all',complete),('obvious',[r for r in complete if not r['disputed']]),('obvious_PASS',[r for r in complete if not r['disputed'] and r['label']=='PASS']),('obvious_FAIL',[r for r in complete if not r['disputed'] and r['label']=='FAIL']),('disputed',[r for r in complete if r['disputed']])]:
   groups[name]={'agreement':wilson(sum(r['agree'] for r in part),len(part)),'self_consistency':wilson(sum(r['stable'] for r in part),len(part))}
- matrix={'missed_defect':sum(r['label']=='FAIL' and r['majority']=='PASS' for r in complete),'false_alarm':sum(r['label']=='PASS' and r['majority']=='FAIL' for r in complete),'correct_PASS':sum(r['label']=='PASS' and r['majority']=='PASS' for r in complete),'correct_FAIL':sum(r['label']=='FAIL' and r['majority']=='FAIL' for r in complete)}
+ matrix={'missed_defect':sum(r['label']=='FAIL' and r['majority']=='PASS' for r in complete),'false_alarm':sum(r['label']=='PASS' and r['majority']=='FAIL' for r in complete),'correct_PASS':sum(r['label']=='PASS' and r['majority']=='PASS' for r in complete),'correct_FAIL':sum(r['label']=='FAIL' and r['majority']=='FAIL' for r in complete),'no_valid_majority':sum(r['majority']=='MISS' for r in complete)}
  agreement=groups['all']['agreement'];sc=groups['all']['self_consistency']
- return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']],'protocol_errors':sum(len(r.get('prior_errors',[]))+int(bool(r.get('error'))) for r in rows),'end_to_end_self_consistency':[sum(r['stable'] and not r.get('prior_errors') for r in complete),len(complete)]}
+ return {'groups':groups,'confusion_matrix':matrix,'incomplete_cases':len(rows)-len(complete),'agreement':[agreement['k'],agreement['n']],'self_consistency':[sc['k'],sc['n']],'agreement_wilson':[agreement['low'],agreement['high']],'protocol_errors':sum(o.get('verdict')=='MISS' for r in rows for o in r['outputs']),'attempt_agreement':[sum(o['verdict']==r['label'] for r in rows for o in r['outputs']),sum(len(r['outputs']) for r in rows)],'end_to_end_self_consistency':[sc['k'],sc['n']]}
 
 def run(cases,path,model,temp,infer=None,output=None,rubric_override=None,resume=None):
+ if resume:raise ValueError('Resume replacing invalid outputs is disabled. Recount historical first five raw attempts offline with tools/recount_raw.py.')
  infer=infer or judge_module.judge;stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');out=Path(output) if output else ROOT/'reports'/f'calibration-{Path(path).stem}-{stamp}-{uuid.uuid4().hex[:8]}.json'
  if out.exists():raise ValueError('Never overwrite a calibration report')
- report={'set':Path(path).stem,'set_hash':digest(path)[:12],'set_sha256':digest(path),'judge_model':model,'rubric_version':judge_module.RUBRIC_VERSION,'temperature_requested':temp,'temperature':temp,'planned_cases':len(cases),'agent_prompt_snapshot':'evidence/environment/readiness.json','agent_prompt_snapshot_sha256':digest(ROOT/'evidence/environment/readiness.json') if (ROOT/'evidence/environment/readiness.json').exists() else None,'runs':5,'ran_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cases':[],'status':'running','scope':'Frozen recorded answers, not fresh agent responses; n is cases, not 5n generations'}
- source=None;prefix=0
- if resume:
-  source=json.loads(Path(resume).read_text(encoding='utf-8'))
-  if source['status']!='ERROR' or source['set_sha256']!=report['set_sha256'] or source['judge_model']!=model or source['rubric_version']!=report['rubric_version'] or source['temperature']!=temp:raise ValueError('Resume must match the same frozen inputs/settings and an ERROR report')
-  while prefix<len(source['cases']) and source['cases'][prefix]['complete']:prefix+=1
-  report['cases']=source['cases'][:prefix]
-  if [r['id'] for r in report['cases']]!=[c['id'] for c in cases[:prefix]]:raise ValueError('Resume case order differs')
-  report['resumed_from']=str(Path(resume).resolve().relative_to(ROOT));report['resumed_from_sha256']=digest(resume)
-  report['schema_policy']='First five valid structured verdicts; rejected protocol outputs remain errors, count in cost and end-to-end consistency; no selection by PASS/FAIL'
+ report={'set':Path(path).stem,'set_hash':digest(path)[:12],'set_sha256':digest(path),'judge_model':model,'rubric_version':judge_module.RUBRIC_VERSION,'temperature_requested':temp,'temperature':temp,'planned_cases':len(cases),'agent_prompt_snapshot':'evidence/environment/readiness.json','agent_prompt_snapshot_sha256':digest(ROOT/'evidence/environment/readiness.json') if (ROOT/'evidence/environment/readiness.json').exists() else None,'runs':5,'ran_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cases':[],'status':'running','schema_policy':'Exactly five attempts per case. Invalid evidence or schema is MISS, counted as disagreement and never replaced. At least three valid identical votes required.','scope':'Frozen recorded answers, not fresh agent responses; n is cases, not 5n generations'}
  save(out,report)
- for idx,c in enumerate(cases[prefix:],prefix):
-  previous=source['cases'][idx] if source and idx<len(source['cases']) else None
-  outputs=list(previous['outputs']) if previous else [];error=None;prior_errors=list(previous.get('prior_errors',[])) if previous else []
-  if previous and previous.get('error'):prior_errors.append(previous['error'])
-  for repeat in range(len(outputs),5):
+ for c in cases:
+  outputs=[];error=None
+  for repeat in range(5):
    try:outputs.append(infer(c['input'],c['answer_under_test'],rubric_override or c['additional_metadata']['rubric'],model,temp))
-   except Exception as e:error=f'{type(e).__name__}: {e}';break
-   # Every successful paid verdict is durable before the next call.
+   except ValueError as exc:outputs.append({'verdict':'MISS','protocol_error':str(exc),'capture':getattr(exc,'capture',None)})
+   except Exception as exc:error=f'{type(exc).__name__}: {exc}';break
    report['in_progress']={'id':c['id'],'outputs':outputs};save(out,report)
-  row=case_result(c,outputs,error);row['prior_errors']=prior_errors;row['provider_attempts_for_case']=len(outputs)+len(prior_errors)+int(error is not None);report['cases'].append(row);report.pop('in_progress',None);report.update(metrics(report['cases']));save(out,report)
+  row=case_result(c,outputs,error);row['provider_attempts_for_case']=len(outputs)+int(error is not None);report['cases'].append(row);report.pop('in_progress',None);report.update(metrics(report['cases']));save(out,report)
   if error:report['status']='ERROR';break
  else:report['status']='complete'
  if digest(path)!=report['set_sha256']:report['status']='ERROR';report['error']='Input changed during run'
  report.update(metrics(report['cases']));report['models_actual']=sorted({o.get('judge_model',model) for r in report['cases'] for o in r['outputs']});report['temperatures_effective']=sorted({o['temperature'] for r in report['cases'] for o in r['outputs'] if 'temperature' in o});save(out,report)
- code=2 if report['status']=='ERROR' else (0 if all(r['agree'] for r in report['cases']) else 1)
+ code=2 if report['status']=='ERROR' else (0 if all(r['agree'] for r in report['cases']) and not report['protocol_errors'] else 1)
  return code,out,report
 
 def main(argv=None):
