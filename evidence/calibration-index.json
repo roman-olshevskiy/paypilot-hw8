@@ -9,5 +9,7 @@
     "reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json"
   ],
   "selected_rubric": "rubric.v1",
-  "decision": "Reject v2: agreement25/30\u219224/30, missed defects2\u21923, no correction of T1 false alarms. Keep v1 as an advisory signal with human review, not autonomous regulatory approval."
+  "decision": "Reject v2. Disputed agreement 5/10, Wilson 0.237\u20130.763 for both; all-case 25/30 vs24/30. All escalation release verdicts PASS/FAIL/ERROR require human approval regardless of stability.",
+  "authoritative_metrics": "reports/calibration-raw-recount.json",
+  "historical_reports_policy": "Primary archived reports used five valid outputs; superseded by first-five-raw recount on 2026-10-30."
 }

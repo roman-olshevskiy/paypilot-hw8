@@ -1,6 +1,6 @@
 # ДЗ №8 · Артефакти здачі
 
-**Готово до здачі; у LMS ще не надіслано.**
+**Доопрацьовано за фідбеком ментора; готово до повторної здачі.**
 
 1. [Judge Trust Statement](judge-trust-statement.md).
 2. [30 людських міток](evals/sets/l09_labels.jsonl), [доказ freeze до судді](evidence/chronology.json).
@@ -10,3 +10,5 @@
 6. [Витрати](evidence/final-billing-reconciliation.json), [чистий clone/replay](evidence/clean-clone-replay.json).
 
 [Посилання для LMS](https://github.com/roman-olshevskiy/paypilot-hw8/blob/main/SUBMISSION.md).
+
+Перерахунок без платних викликів: [перші п’ять сирих спроб, невалідний вихід = MISS](reports/calibration-raw-recount.json). Головна метрика — спірні 5/10, 95% Wilson 23.7–76.3%.

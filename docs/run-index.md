@@ -4,6 +4,8 @@
 
 ## Калібрування
 
+**Чинні метрики після рев’ю:** [офлайн-перерахунок перших п’яти сирих спроб](../reports/calibration-raw-recount.json), невалідні цитати/JSON — MISS без заміни. Нижче — первинні історичні звіти з попередньою політикою відбору валідних виходів; їхні метрики самоузгодженості замінено перерахунком.
+
 - [v1, завершена когорта 30](../reports/calibration-l09_labels-20261029T142704481494Z-02244a87.json); джерельний ERROR — [окремо](../reports/calibration-l09_labels-20261029T142020036786Z-51c9c04e.json).
 
 - [v2, завершена когорта 30](../reports/calibration-l09_labels-20261029T143819958028Z-f23d6ab6.json); попередні ERROR — [report](../reports/calibration-l09_labels-20261029T143029033067Z-ed659b53.json), [report](../reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json).

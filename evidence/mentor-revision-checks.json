@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "scope": "Mentor correction, existing captures only; working tree verification, not a fresh committed clone",
+  "base_commit": "1a22c4ef1968ab49cfc8bb77f2a0536911c8ce4e",
+  "new_inference_calls": 0,
+  "new_agent_calls": 0,
+  "frozen_labels_rubrics_forecast_and_raw_captures_unchanged": true,
+  "host_unittest": {
+    "tests": 34,
+    "passed": 30,
+    "explicit_skips": 4
+  },
+  "docker_unittest": {
+    "tests": 34,
+    "passed": 30,
+    "explicit_skips": 4
+  },
+  "l10_compatibility": "Mocked standard Ollama verdict API without HW8_PAID or HW8 freeze; no actual L10 calibration",
+  "authoritative_metrics": "reports/calibration-raw-recount.json",
+  "raw_capture_files": 336
+}

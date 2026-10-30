@@ -10,7 +10,9 @@
       "reports/calibration-l09_labels-20261029T143558519430Z-af33160a.json"
     ],
     "selected_rubric": "rubric.v1",
-    "decision": "Reject v2: agreement25/30→24/30, missed defects2→3, no correction of T1 false alarms. Keep v1 as an advisory signal with human review, not autonomous regulatory approval."
+    "decision": "Reject v2. Disputed agreement 5/10, Wilson 0.237–0.763 for both; all-case 25/30 vs24/30. All escalation release verdicts PASS/FAIL/ERROR require human approval regardless of stability.",
+    "authoritative_metrics": "reports/calibration-raw-recount.json",
+    "historical_reports_policy": "Primary archived reports used five valid outputs; superseded by first-five-raw recount on 2026-10-30."
   },
   "v1": {
     "all": {
@@ -23,12 +25,16 @@
         "half_width": 0.13114135472664246
       },
       "self_consistency": {
-        "k": 30,
+        "k": 29,
         "n": 30,
-        "estimate": 1.0,
-        "low": 0.8864829086095221,
-        "high": 1.0,
-        "half_width": 0.056758545695239006
+        "estimate": 0.9666666666666667,
+        "low": 0.8332924860304112,
+        "high": 0.9940915620051425,
+        "half_width": 0.08039953798736568
+      },
+      "attempt_agreement": {
+        "k": 125,
+        "n": 150
       }
     },
     "obvious": {
@@ -47,6 +53,10 @@
         "low": 0.8388698745050667,
         "high": 1.0,
         "half_width": 0.08056506274746661
+      },
+      "attempt_agreement": {
+        "k": 100,
+        "n": 100
       }
     },
     "obvious_PASS": {
@@ -65,6 +75,10 @@
         "low": 0.7224598312333834,
         "high": 1.0,
         "half_width": 0.1387700843833083
+      },
+      "attempt_agreement": {
+        "k": 50,
+        "n": 50
       }
     },
     "obvious_FAIL": {
@@ -83,6 +97,10 @@
         "low": 0.7224598312333834,
         "high": 1.0,
         "half_width": 0.1387700843833083
+      },
+      "attempt_agreement": {
+        "k": 50,
+        "n": 50
       }
     },
     "disputed": {
@@ -95,12 +113,16 @@
         "half_width": 0.2634104063845127
       },
       "self_consistency": {
-        "k": 10,
+        "k": 9,
         "n": 10,
-        "estimate": 1.0,
-        "low": 0.7224598312333834,
-        "high": 1.0,
-        "half_width": 0.1387700843833083
+        "estimate": 0.9,
+        "low": 0.5958436145024278,
+        "high": 0.9821242504842788,
+        "half_width": 0.19314031799092546
+      },
+      "attempt_agreement": {
+        "k": 25,
+        "n": 50
       }
     }
   },
@@ -115,12 +137,16 @@
         "half_width": 0.13900534639313103
       },
       "self_consistency": {
-        "k": 30,
+        "k": 28,
         "n": 30,
-        "estimate": 1.0,
-        "low": 0.8864829086095221,
-        "high": 1.0,
-        "half_width": 0.056758545695239006
+        "estimate": 0.9333333333333333,
+        "low": 0.7867618227892791,
+        "high": 0.9815233646723066,
+        "half_width": 0.09738077094151376
+      },
+      "attempt_agreement": {
+        "k": 120,
+        "n": 150
       }
     },
     "obvious": {
@@ -139,6 +165,10 @@
         "low": 0.8388698745050667,
         "high": 1.0,
         "half_width": 0.08056506274746661
+      },
+      "attempt_agreement": {
+        "k": 95,
+        "n": 100
       }
     },
     "obvious_PASS": {
@@ -157,6 +187,10 @@
         "low": 0.7224598312333834,
         "high": 1.0,
         "half_width": 0.1387700843833083
+      },
+      "attempt_agreement": {
+        "k": 50,
+        "n": 50
       }
     },
     "obvious_FAIL": {
@@ -175,6 +209,10 @@
         "low": 0.7224598312333834,
         "high": 1.0,
         "half_width": 0.1387700843833083
+      },
+      "attempt_agreement": {
+        "k": 45,
+        "n": 50
       }
     },
     "disputed": {
@@ -187,12 +225,16 @@
         "half_width": 0.2634104063845127
       },
       "self_consistency": {
-        "k": 10,
+        "k": 8,
         "n": 10,
-        "estimate": 1.0,
-        "low": 0.7224598312333834,
-        "high": 1.0,
-        "half_width": 0.1387700843833083
+        "estimate": 0.8,
+        "low": 0.49015684672072335,
+        "high": 0.9433190520193067,
+        "half_width": 0.22658110264929163
+      },
+      "attempt_agreement": {
+        "k": 25,
+        "n": 50
       }
     }
   },
@@ -200,13 +242,15 @@
     "missed_defect": 2,
     "false_alarm": 3,
     "correct_PASS": 14,
-    "correct_FAIL": 11
+    "correct_FAIL": 11,
+    "no_valid_majority": 0
   },
   "v2_confusion": {
     "missed_defect": 3,
     "false_alarm": 3,
     "correct_PASS": 14,
-    "correct_FAIL": 10
+    "correct_FAIL": 10,
+    "no_valid_majority": 0
   },
   "v1_protocol_errors": 1,
   "v2_protocol_errors": 2,
@@ -3919,5 +3963,21 @@
       "case": "ESC-J05",
       "profile": "lesson-09"
     }
-  ]
+  ],
+  "authoritative_metrics": "reports/calibration-raw-recount.json",
+  "metrics_policy": "First five chronological raw emissions; invalid schema/evidence is MISS without replacement.",
+  "raw_cohort_costs": {
+    "rubric.v1": {
+      "first_150_attempts_estimated_usd": 0.18262,
+      "all_paid_attempts_estimated_usd": 0.18353,
+      "mean_input_tokens": 672.8666666666667,
+      "median_duration_ms": 1031.5
+    },
+    "rubric.v2": {
+      "first_150_attempts_estimated_usd": 0.18263,
+      "all_paid_attempts_estimated_usd": 0.186509,
+      "mean_input_tokens": 767.8666666666667,
+      "median_duration_ms": 1044.0
+    }
+  }
 }
